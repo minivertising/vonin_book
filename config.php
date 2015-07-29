@@ -4,11 +4,11 @@
 	//환경설정 파일
 	include_once "include/global.php"; 			//변수정보
 	include_once "include/function.php"; 		//함수정보
-	include_once "include/dbi.php"; 			//DB 연결정보
+	//include_once "include/dbi.php"; 			//DB 연결정보
 	include_once "include/page.class.php";		//페이징 처리 CLASS
 	include_once "include/phprandom.php";		//난수번호 생성 CLASS
 
-	mysqli_query ($my_db,"set names utf8");
+	//mysqli_query ($my_db,"set names utf8");
 
 	/*
 	if ($_SERVER['REMOTE_ADDR'] != "61.40.46.41")
