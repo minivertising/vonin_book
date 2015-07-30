@@ -15,7 +15,7 @@
 <!----------------- 참여방법  팝업 ----------------->
 </div>
 <!----------------- 개인정보 입력  팝업 ----------------->
-<div id="insert_popup" style="position:absolute;background:white;width:500px;height:700px;">
+<div id="insert_popup" style="position:absolute;background:white;width:500px;height:700px;display:none">
   <a href="#" onclick="$.colorbox.close()">닫기</a>
   <h1>설레임 개론을 받기 위해선 고객님의 소중한 정보가 필요해요!</h1>
   이름 <input type="text" name="mb_name" id="mb_name"><br />

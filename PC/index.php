@@ -65,7 +65,7 @@
 	var consumer_seq		= "1012";
 	var livere_seq			= "23924";
 	var smartlogin_seq		= "1255";
-	var title					= "보닌 설레함 개론";
+	var title					= "보닌 설렘학 개론";
 	var refer					= "www.mnv.kr";
 	refer						= refer.replace("http://","");
 
@@ -267,5 +267,10 @@ function chk_reply(param)
 	}else{
 		alert('22');
 	}
+}
+
+function show_inspop()
+{
+	alert('11');
 }
 </script>
