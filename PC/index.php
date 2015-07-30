@@ -1,15 +1,15 @@
 <?
 	include_once   "./header.php";
 ?>
-<div style="width:100%;">
-  <input type="text" name="movie_num" id="movie_num">
+<div id="main_wrap" style="width:100%;">
+  <input type="hidden" name="movie_num" id="movie_num">
   <div style="width:100%;height:70px;background:skyblue">
     <a href="index.php">VONIN</a>
     <a href="#" id="top_gift_link" onclick="show_gift2();">GIFT</a>
     <a href="#" id="top_join_link" onclick="show_join();">JOIN IN</a>
     <a href="#">VONIN SHOP</a>
   </div>
-  <div id="main_area" style="width:100%;height:100%;background:gray">
+  <div id="main_area" style="width:100%;height:100%;background:gray;z-index:100">
     <a href="#" onclick="sel_book('w')">여성을 위한 개론서 episode4</a><br />
     <a href="#" onclick="sel_book('m')">남성을 위한 개론서 episode4</a><br />
     <a href="#" id="gift_link" onclick="show_gift();">선물보기</a>
@@ -36,7 +36,7 @@
     <a href="#" onclick="change_chapter('m','3')">Chapter3. 15cm의 법칙</a><br />
     <a href="#" onclick="change_chapter('m','4')">Chapter4. 3020의 법칙</a><br />
   </div>
-  <div id="woman_area" style="width:100%;height:100%;background:orange;display:none">
+  <div id="woman_area" style="width:100%;height:100%;background:orange;display:none;z-index:1000;position:absolute">
     <h1  style="padding-top:20px">STEP.1 설렘학 개론(여성)</h1>
     <a href="#">선물보기</a><br />
     <a href="#">참여방법</a><br />
@@ -109,16 +109,21 @@ function sel_book(gender)
 {
 	if (gender == "w")
 	{
-		$("#woman_area").show();
 		$("#main_area").hide();
-		$("#w_ytplayer1").attr("src","<?=$_gl['w_yt_url1']?>");
-		$("#movie_num").val('w_1');
+		$( "#woman_area" ).fadeIn( "slow", function() {
+			$("#w_ytplayer1").attr("src","<?=$_gl['w_yt_url1']?>");
+			$("#movie_num").val('w_1');
+		});
+		//$("#woman_area").show();
 		//$("#w_ytplayer2").attr("src","<?=$_gl['w_yt_url2']?>");
 		//$("#w_ytplayer3").attr("src","<?=$_gl['w_yt_url3']?>");
 		//$("#w_ytplayer4").attr("src","<?=$_gl['w_yt_url4']?>");
 	}else{
-		$("#man_area").show();
 		$("#main_area").hide();
+		$( "#man_area" ).fadeIn( "slow", function() {
+			$("#m_ytplayer1").attr("src","<?=$_gl['m_yt_url1']?>");
+			$("#movie_num").val('m_1');
+		});
 		$("#m_ytplayer1").attr("src","<?=$_gl['m_yt_url1']?>");
 		$("#movie_num").val('m_1');
 		//$("#m_ytplayer2").attr("src","<?=$_gl['m_yt_url2']?>");
