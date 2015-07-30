@@ -9,8 +9,8 @@
      *
      ******************************************************************************/
 	//$my_db = new mysqli("10.3.0.31", "root", "m!nv#Rtisin9", "babience_relay");
-	$my_db = new mysql("localhost", "root", "6alslqjxkdlwld@%*)", "vonin_aio");
-	if (mysql_connect_error()) {
-		exit('Connect Error (' . mysql_connect_errno() . ') '. mysql_connect_error());
+	$my_db = new mysqli("localhost", "root", "6alslqjxkdlwld@%*)", "vonin_aio");
+	if (mysqli_connect_error()) {
+		exit('Connect Error (' . mysqli_connect_errno() . ') '. mysqli_connect_error());
 	}
 ?>
