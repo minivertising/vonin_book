@@ -2,7 +2,7 @@
 	include_once   "./header.php";
 ?>
 <div style="width:100%;">
-  <input type="hidden" name="movie_num" id="movie_num">
+  <input type="text" name="movie_num" id="movie_num">
   <div style="width:100%;height:70px;background:skyblue">
     <a href="index.php">VONIN</a>
     <a href="#" id="top_gift_link" onclick="show_gift2();">GIFT</a>
@@ -53,10 +53,10 @@
       <iframe allowfullscreen="1" src="" frameborder="0" id="w_ytplayer4" class="ytplayer" style="width:100%;height:100%;"></iframe>
     </div>
     <input type="checkbox" name="movie_check" id="movie_check" onclick="chk_reply(this)"><label for="movie_check">영상 선택</label><br />
-    <a href="#" onclick="change_chapter('m','1')">Chapter1. 5cm의 법칙</a><br />
-    <a href="#" onclick="change_chapter('m','2')">Chapter2. 3척의 마법</a><br />
-    <a href="#" onclick="change_chapter('m','3')">Chapter3. 15cm의 법칙</a><br />
-    <a href="#" onclick="change_chapter('m','4')">Chapter4. 3020의 법칙</a><br />
+    <a href="#" onclick="change_chapter('w','1')">Chapter1. 5cm의 법칙</a><br />
+    <a href="#" onclick="change_chapter('w','2')">Chapter2. 3척의 마법</a><br />
+    <a href="#" onclick="change_chapter('w','3')">Chapter3. 15cm의 법칙</a><br />
+    <a href="#" onclick="change_chapter('w','4')">Chapter4. 3020의 법칙</a><br />
   </div>
   <div id="comment_area" style="width:100%;height:100%;background:gray;display:none">
     <h1  style="padding-top:20px">설렘을 모르는 내 남자에게 영상과 함께 한마디 남겨주세요!</h1>
@@ -269,8 +269,139 @@ function chk_reply(param)
 	}
 }
 
-function show_inspop()
+
+var consumer_seq;
+var content;
+var image1;
+var image2;
+var image3;
+var ip_address;
+var link1;
+var link2;
+var link3;
+var livere_seq;
+var member_domain;
+var member_group_seq;
+var member_icon;
+var member_id;
+var member_seq;
+var member_url;
+var member_name;
+var parent_seq;
+var rep_seq;
+var reply_seq;
+var site;
+var agent;
+var member_title;
+var reply_regdate;
+var status;
+var septSNSObj;
+var info1;
+var info2;
+var info3;
+function show_inspop(obj)
 {
-	alert('11');
+	for(key in obj) {
+		if (key = "consumer_seq")
+			consumer_seq = obj[key];
+		if (key = "content")
+			content = obj[key];
+		if (key = "image1")
+			image1 = obj[key];
+		if (key = "image2")
+			image2 = obj[key];
+		if (key = "image3")
+			image3 = obj[key];
+		if (key = "ip_address")
+			ip_address = obj[key];
+		if (key = "link1")
+			link1 = obj[key];
+		if (key = "link2")
+			link2 = obj[key];
+		if (key = "link3")
+			link3 = obj[key];
+		if (key = "livere_seq")
+			livere_seq = obj[key];
+		if (key = "member_domain")
+			member_domain = obj[key];
+		if (key = "member_group_seq")
+			member_group_seq = obj[key];
+		if (key = "member_icon")
+			member_icon = obj[key];
+		if (key = "member_id")
+			member_id = obj[key];
+		if (key = "member_seq")
+			member_seq = obj[key];
+		if (key = "member_url")
+			member_url = obj[key];
+		if (key = "name")
+			member_name = obj[key];
+		if (key = "parent_seq")
+			parent_seq = obj[key];
+		if (key = "rep_seq")
+			rep_seq = obj[key];
+		if (key = "reply_seq")
+			reply_seq = obj[key];
+		if (key = "site")
+			site = obj[key];
+		if (key = "agent")
+			agent = obj[key];
+		if (key = "title")
+			member_title = obj[key];
+		if (key = "reply_regdate")
+			reply_regdate = obj[key];
+		if (key = "status")
+			status = obj[key];
+		if (key = "septSNSObj")
+			septSNSObj = obj[key];
+		if (key = "info1")
+			info1 = obj[key];
+		if (key = "info2")
+			info2 = obj[key];
+		if (key = "info3")
+			info3 = obj[key];
+	}
+
+	$.ajax({
+		type:"POST",
+		data:{
+			"exec"					: "insert_comment_info",
+			"consumer_seq"		: consumer_seq,
+			"content"				: content,
+			"image1"					: image1,
+			"image2"					: image2,
+			"image3"					: image3,
+			"ip_address"				: ip_address,
+			"link1"					: link1,
+			"link2"					: link2,
+			"link3"					: link3,
+			"livere_seq"				: livere_seq,
+			"member_domain"		: member_domain,
+			"member_group_seq"	: member_group_seq,
+			"member_icon"			: member_icon,
+			"member_id"			: member_id,
+			"member_seq"			: member_seq,
+			"member_url"			: member_url,
+			"member_name"		: member_name,
+			"parent_seq"			: parent_seq,
+			"rep_seq"				: rep_seq,
+			"reply_seq"				: reply_seq,
+			"site"						: site,
+			"agent"					: agent,
+			"member_title"			: member_title,
+			"reply_regdate"			: reply_regdate,
+			"status"					: status,
+			"septSNSObj"			: septSNSObj,
+			"info1"					: info1,
+			"info2"					: info2,
+			"info3"					: info3
+		},
+		url: "../main_exec.php",
+		success: function(response){
+			$.colorbox({width:"542px", height:"742px", inline:true, opacity:"0.9", closeButton:false, href:"#insert_popup"});
+		}
+	});
+
+	alert(str);
 }
 </script>
