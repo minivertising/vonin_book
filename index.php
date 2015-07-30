@@ -1,5 +1,5 @@
 <?
-//phpinfo();
+phpinfo();
 //exit;
 	include_once "config.php";
 
