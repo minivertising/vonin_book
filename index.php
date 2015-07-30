@@ -1,4 +1,6 @@
 <?
+phpinfo();
+exit;
 	include_once "config.php";
 
 	//unset($media);
