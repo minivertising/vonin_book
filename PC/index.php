@@ -60,6 +60,19 @@
   </div>
   <div id="comment_area" style="width:100%;height:100%;background:gray;display:none">
     <h1  style="padding-top:20px">설렘을 모르는 내 남자에게 영상과 함께 한마디 남겨주세요!</h1>
+    <div id="livereContainer">
+<script type="text/javascript">
+	var consumer_seq		= "1012";
+	var livere_seq			= "23924";
+	var smartlogin_seq		= "1255";
+	var title					= "보닌 설레함 개론";
+	var refer					= "www.mnv.kr";
+	refer						= refer.replace("http://","");
+
+	livereReply				- new Livere(livere_seq, refer, title);
+	livereLib.start();
+</script>
+    </div>
   </div>
 </div>
 <?

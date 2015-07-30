@@ -27,6 +27,7 @@
     <script type="text/javascript" src="../js/main.js"></script>
     <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
     <script type="text/javascript" src="http://www.youtube.com/player_api"></script>
+    <script type="text/javascript" src="https://101.livere.co.kr/js/livere8_lib.js" charset="utf-8"></script>
   </head>
   <body style="margin:0;padding:0">
 <style>
