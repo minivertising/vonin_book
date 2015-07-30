@@ -1,5 +1,7 @@
 <?
 phpinfo();
+
+print_r(php_ini_loaded_file());
 //exit;
 	include_once "config.php";
 
