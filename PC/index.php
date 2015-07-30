@@ -69,7 +69,7 @@
 	var refer					= "www.mnv.kr";
 	refer						= refer.replace("http://","");
 
-	livereReply				- new Livere(livere_seq, refer, title);
+	livereReply				= new Livere(livere_seq, refer, title);
 	livereLib.start();
 </script>
     </div>
