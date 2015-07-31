@@ -145,7 +145,7 @@
 <div id="use_agree_popup" class="popup_wrap">
   <div class="p_mid_agree p_position">
     <div class="block_close clearfix">
-      <a href="#" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+      <a href="#" onclick="back_input()" class="btn_close"><img src="images/popup/btn_close.png" /></a>
     </div>
     <div class="block_content">
       <div class="inner">
@@ -175,7 +175,7 @@
 <div id="privacy_agree_popup" class="popup_wrap">
   <div class="p_mid_agree p_position">
     <div class="block_close clearfix">
-      <a href="#" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+      <a href="#"  onclick="back_input()" class="btn_close"><img src="images/popup/btn_close.png" /></a>
     </div>
     <div class="block_content">
       <div class="inner">
@@ -198,7 +198,7 @@
 <div id="adver_agree_popup" class="popup_wrap">
   <div class="p_mid_agree p_position">
     <div class="block_close clearfix">
-      <a href="#" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+      <a href="#" onclick="back_input()" class="btn_close"><img src="images/popup/btn_close.png" /></a>
     </div>
     <div class="block_content">
       <div class="inner">

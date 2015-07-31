@@ -29,7 +29,7 @@
     <a href="#" id="gift_link" onclick="show_gift();"><img src="images/img_gift.png" alt=""/></a>
   </div>
   <div class="sec_top">
-    <div class="bg_top"><img src="images/bg_top.jpg" alt=""/></div>
+    <div class="bg_top" id="cover_image1"><img src="images/bg_top.jpg" alt=""/></div>
   </div>
 </div>  
 
@@ -112,6 +112,8 @@ $(document).ready(function() {
 		restartOnRequestAfter: false
 	}
 
+	//setInterval("changeImage()",7000);
+
 	$("#cboxTopLeft").hide();
 	$("#cboxTopRight").hide();
 	$("#cboxBottomLeft").hide();
@@ -122,6 +124,56 @@ $(document).ready(function() {
 	$("#cboxBottomCenter").hide();
 	$("")
 });
+
+var rolling_num=0;
+function changeImage()
+{
+	if (rolling_num == 0)
+	{
+	$("#cover_image1").fadeOut("slow",function(){
+		$("#cover_image2").fadeIn("slow");
+		rolling_num=1;
+		/*
+		if (rolling_num == 0)
+		{
+			$("#cover_image").attr("src","images/img_gift.png");
+			rolling_num=1;
+		}else if (rolling_num == 1){
+			$("#cover_image").attr("src","images/bg_top.jpg");
+			rolling_num=2;
+		}else if (rolling_num == 2){
+			$("#cover_image").attr("src","images/img_gift.png");
+			rolling_num=3;
+		}else if (rolling_num == 3){
+			$("#cover_image").attr("src","images/bg_top.jpg");
+			rolling_num=0;
+		}
+		*/
+	});
+	}else{
+	$("#cover_image2").fadeOut("slow",function(){
+		$("#cover_image1").fadeIn("slow");
+		rolling_num=1;
+		/*
+		if (rolling_num == 0)
+		{
+			$("#cover_image").attr("src","images/img_gift.png");
+			rolling_num=1;
+		}else if (rolling_num == 1){
+			$("#cover_image").attr("src","images/bg_top.jpg");
+			rolling_num=2;
+		}else if (rolling_num == 2){
+			$("#cover_image").attr("src","images/img_gift.png");
+			rolling_num=3;
+		}else if (rolling_num == 3){
+			$("#cover_image").attr("src","images/bg_top.jpg");
+			rolling_num=0;
+		}
+		*/
+	});
+	}
+
+}
 
 function sel_book(gender)
 {
@@ -250,20 +302,10 @@ function yt_api(cnt)
 
 function show_gift()
 {
-	//popup_desc("gift_popup");
-	//$("#inline").colorbox({inline:true, href:"#gift_popup"});
 	$("#gift_link").colorbox({width:"712px", height:"602px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#gift_popup", onComplete: function(){
 		$("#cboxLoadedContent").height(560);
 	}});
-	//$(".iframe").colorbox({iframe:true, fixed:true, width:"1055", height:"80%", opacity: '0.5'});
 
-/*
-	$('#gift_popup').css('top','-1400px');
-	// 이동위치값 지정
-	var position = "50%";
-	event_triger = 0;
-	$('#gift_popup').show().animate({top:position},{duration:1000,easing:'easeOutBounce'});
-*/
 }
 function show_gift2()
 {
@@ -277,6 +319,13 @@ function show_join()
 	//$("#top_join_link").colorbox({width:"592px", height:"502px", inline:true, opacity:"0.9", closeButton:false, href:"#join_popup"});
 	$("#top_join_link").colorbox({width:"592px", height:"502px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#join_popup", onComplete: function(){
 		$("#cboxLoadedContent").height(460);
+	}});
+}
+
+function back_input()
+{
+	$.colorbox({width:"492px", height:"632px", inline:true, opacity:"0.9", closeButton:false, href:"#insert_popup", onComplete:function(){
+		$("#cboxLoadedContent").height(592);
 	}});
 }
 
