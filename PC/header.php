@@ -11,6 +11,7 @@
     <meta property="og:image" content="http://www.babience-giveandtake.com/MOBILE/images/img_sns_share.jpg" />
     <meta property="og:description" content="우리 아기 이름으로 첫 기부도 하고, 매일매일 100% 당첨 선물도 테이크하세요!">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
     <!-- <link rel="shortcut icon" type="image/x-icon" href="./images/pavicon.ico" /> -->
     <link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="../lib/Magnific-Popup/magnific-popup.css"> 
@@ -30,7 +31,7 @@
     <script type="text/javascript" src="http://www.youtube.com/player_api"></script>
     <script type="text/javascript" src="https://101.livere.co.kr/js/livere8_lib.js" charset="utf-8"></script>
   </head>
-  <body style="margin:0;padding:0">
+  <body class="main">
 <style>
 .pace {
   -webkit-pointer-events: none;

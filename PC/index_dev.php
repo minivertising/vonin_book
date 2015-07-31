@@ -1,38 +1,19 @@
 <?
 	include_once   "./header.php";
 ?>
-<input type="hidden" name="movie_num" id="movie_num">
-<div class="sec_navi">
-  <div class="navi">
-    <div class="left"><a href="index.php"><img src="images/logo.png" alt=""/></a></div>
-    <div class="right">
-      <a href="#" id="top_gift_link" onclick="show_gift2();"><img src="images/gnb_gift.png" alt=""/></a>
-      <a href="#" id="top_join_link" onclick="show_join();"><img src="images/gnb_howto.png" alt=""/></a>
-      <a href="http://everymanis.lgbeautymall.com/everymanis.jsp" target="_blank"><img src="images/gnb_vonin.png" alt=""/></a>
-    </div>
+<div id="main_wrap" style="width:100%;">
+  <input type="hidden" name="movie_num" id="movie_num">
+  <div style="width:100%;height:70px;background:skyblue">
+    <a href="index.php">VONIN</a>
+    <a href="#" id="top_gift_link" onclick="show_gift2();">GIFT</a>
+    <a href="#" id="top_join_link" onclick="show_join();">JOIN IN</a>
+    <a href="#">VONIN SHOP</a>
   </div>
-</div>
-<div id="main_area" class="wrap_sec_top"> 
-  <div class="title">
-    <img src="images/title.png" alt=""/>
+  <div id="main_area" style="width:100%;height:100%;background:gray;z-index:100">
+    <a href="#" onclick="sel_book('w')">여성을 위한 개론서 episode4</a><br />
+    <a href="#" onclick="sel_book('m')">남성을 위한 개론서 episode4</a><br />
+    <a href="#" id="gift_link" onclick="show_gift();">선물보기</a>
   </div>
-  <div class="btn_1">
-    <a href="#" onclick="sel_book('w')"><img src="images/btn_movie_woman.png" alt=""/></a>
-  </div>
-  <div class="bar">
-    <a href="#"><img src="images/bar.png" alt=""/></a>
-  </div>
-  <div class="btn_2">
-    <a href="#" onclick="sel_book('m')"><img src="images/btn_movie_man.png" alt=""/></a>
-  </div>
-  <div class="img_gift">
-    <a href="#" id="gift_link" onclick="show_gift();"><img src="images/img_gift.png" alt=""/></a>
-  </div>
-  <div class="sec_top">
-    <div class="bg_top"><img src="images/bg_top.jpg" alt=""/></div>
-  </div>
-</div>  
-
   <div id="man_area" style="width:100%;height:100%;background:orange;display:none">
     <h1  style="padding-top:20px">STEP.1 설렘학 개론(남성)</h1>
     <a href="#">선물보기</a><br />
@@ -93,6 +74,7 @@
 </script>
     </div>
   </div>
+</div>
 <?
 	include_once   "./popup_div.php";
 
@@ -100,7 +82,7 @@
 ?>
 <script type="text/javascript">
 $(document).ready(function() {
-	//$("#main_area").height($(document).height() - 70);
+	$("#main_area").height($(document).height() - 70);
 	$("#man_area").height($(document).height() - 70);
 	$("#woman_area").height($(document).height() - 70);
 
@@ -120,7 +102,7 @@ $(document).ready(function() {
 	$("#cboxMiddleRight").hide();
 	$("#cboxTopCenter").hide();
 	$("#cboxBottomCenter").hide();
-	$("")
+
 });
 
 function sel_book(gender)
@@ -252,9 +234,7 @@ function show_gift()
 {
 	//popup_desc("gift_popup");
 	//$("#inline").colorbox({inline:true, href:"#gift_popup"});
-	$("#gift_link").colorbox({width:"712px", height:"602px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#gift_popup", onComplete: function(){
-		$("#cboxLoadedContent").height(560);
-	}});
+	$("#gift_link").colorbox({width:"542px", height:"742px", inline:true, opacity:"0.9", closeButton:false, href:"#gift_popup"});
 	//$(".iframe").colorbox({iframe:true, fixed:true, width:"1055", height:"80%", opacity: '0.5'});
 
 /*
@@ -267,38 +247,12 @@ function show_gift()
 }
 function show_gift2()
 {
-	$("#top_gift_link").colorbox({width:"712px", height:"602px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#gift_popup", onComplete: function(){
-		$("#cboxLoadedContent").height(560);
-	}});
+	$("#top_gift_link").colorbox({width:"542px", height:"742px", inline:true, opacity:"0.9", closeButton:false, href:"#gift_popup"});
 }
 
 function show_join()
 {
-	//$("#top_join_link").colorbox({width:"592px", height:"502px", inline:true, opacity:"0.9", closeButton:false, href:"#join_popup"});
-	$("#top_join_link").colorbox({width:"592px", height:"502px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#join_popup", onComplete: function(){
-		$("#cboxLoadedContent").height(460);
-	}});
-}
-
-function show_use_agree()
-{
-	$.colorbox({width:"492px", height:"566px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#use_agree_popup", onComplete: function(){
-		$("#cboxLoadedContent").height(526);
-	}});
-}
-
-function show_privacy_agree()
-{
-	$.colorbox({width:"492px", height:"566px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#privacy_agree_popup", onComplete: function(){
-		$("#cboxLoadedContent").height(526);
-	}});
-}
-
-function show_adver_agree()
-{
-	$.colorbox({width:"492px", height:"566px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#adver_agree_popup", onComplete: function(){
-		$("#cboxLoadedContent").height(526);
-	}});
+	$("#top_join_link").colorbox({width:"542px", height:"742px", inline:true, opacity:"0.9", closeButton:false, href:"#join_popup"});
 }
 
 var gender_gubun;
@@ -449,11 +403,10 @@ function show_inspop(obj)
 		},
 		url: "../main_exec.php",
 		success: function(response){
-			$.colorbox({width:"492px", height:"632px", inline:true, opacity:"0.9", closeButton:false, href:"#insert_popup", onComplete:function(){
-				$("#cboxLoadedContent").height(592);
-			}});
+			$.colorbox({width:"542px", height:"742px", inline:true, opacity:"0.9", closeButton:false, href:"#insert_popup"});
 		}
 	});
 
+	alert(str);
 }
 </script>
