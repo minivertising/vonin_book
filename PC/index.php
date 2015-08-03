@@ -468,11 +468,12 @@ function chk_reply(param)
 	{
 		$("#man_area1").hide();
 		$("#man_area2").hide();
-		$("#comment_area").show();
+		$( "#comment_area" ).fadeIn("slow");
+		//$("#comment_area").show();
 	}else{
 		$("#woman_area1").hide();
 		$("#woman_area2").hide();
-		$("#comment_area").show();
+		$( "#comment_area" ).fadeIn("slow");
 	}
 }
 
