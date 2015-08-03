@@ -8,7 +8,7 @@
 	include_once "include/page.class.php";		//페이징 처리 CLASS
 	include_once "include/phprandom.php";		//난수번호 생성 CLASS
 
-	//mysqli_query ($my_db,"set names utf8");
+	mysqli_query ($my_db,"set names utf8");
 
 	/*
 	if ($_SERVER['REMOTE_ADDR'] != "61.40.46.41")
