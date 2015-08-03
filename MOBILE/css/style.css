@@ -308,6 +308,33 @@ body{
 	text-indent:-999999px;	
 }
 
+
+
+.popup_wrap .p_mid.p_position.keep{
+	width:280px;
+	margin:0 auto;
+}
+.popup_wrap .p_mid.p_position.keep .block_content{
+	width:100%;
+}
+.popup_wrap .p_mid.p_position.keep .block_content a{
+	position:absolute;
+	display:block;
+	width:60px;
+	height:20px;
+	bottom:48px;
+	text-indent:-999999px;	
+}
+.popup_wrap .p_mid.p_position.keep .block_content a.btn_out{
+	left:70px;
+}
+.popup_wrap .p_mid.p_position.keep .block_content a.btn_keep{
+	right:70px;
+}
+
+
+
+
 .popup_wrap .p_mid.p_position.product .block_content a.btn_p1{
 	left:10%;
 }
