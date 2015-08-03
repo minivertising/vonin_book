@@ -1,5 +1,6 @@
 <?
 	include_once   "./header.php";
+	print_r($_SESSION);
 ?>
 <input type="hidden" name="movie_num" id="movie_num">
 <div class="sec_navi">
@@ -104,6 +105,7 @@ $(document).ready(function() {
 	$("#man_area").height($(document).height() - 70);
 	$("#woman_area").height($(document).height() - 70);
 
+/*
 	paceOptions = {
 	  // Disable the 'elements' source
 		ajax: true, // disabled
@@ -111,7 +113,7 @@ $(document).ready(function() {
 		eventLag: true,
 		restartOnRequestAfter: false
 	}
-
+*/
 	//setInterval("changeImage()",7000);
 
 	$("#cboxTopLeft").hide();
@@ -271,6 +273,7 @@ function change_chapter(gender, cnt)
 	}
 }
 
+/*
 var yt_player_ctr	= "";
 var controllable_player,start;
 function yt_api(cnt)
@@ -299,6 +302,7 @@ function yt_api(cnt)
 		onYouTubeIframeAPIReady();
 	}
 }
+*/
 
 function show_gift()
 {

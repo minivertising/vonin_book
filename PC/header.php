@@ -24,15 +24,15 @@
     <script type="text/javascript" src="../js/jquery.smoothState.min.js"></script>
     <script type="text/javascript" src="../lib/Magnific-Popup/jquery.magnific-popup.js"></script>
     <script type='text/javascript' src='../lib/iCheck/icheck.js'></script>
-    <script type="text/javascript" src="../js/pace.min.js"></script>
+    <!-- <script type="text/javascript" src="../js/pace.min.js"></script> -->
     <script type="text/javascript" src="../lib/colorbox/jquery.colorbox-min.js"></script>
     <script type="text/javascript" src="../js/main.js"></script>
     <script src="https://developers.kakao.com/sdk/js/kakao.min.js"></script>
-    <script type="text/javascript" src="http://www.youtube.com/player_api"></script>
+    <!-- <script type="text/javascript" src="http://www.youtube.com/player_api"></script> -->
     <script type="text/javascript" src="https://101.livere.co.kr/js/livere8_lib.js" charset="utf-8"></script>
   </head>
   <body class="main">
-<style>
+<!-- <style>
 .pace {
   -webkit-pointer-events: none;
   pointer-events: none;
@@ -55,4 +55,4 @@
   width: 100%;
   height: 2px;
 }
-</style>
+</style> -->
