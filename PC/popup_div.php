@@ -33,7 +33,7 @@
 <div id="insert_popup" class="popup_wrap">
   <div class="p_mid_input p_position">
     <div class="block_close clearfix">
-      <a href="#" onclick="$.colorbox.close()" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+      <a href="#" onclick="show_confirm();return false;" class="btn_close"><img src="images/popup/btn_close.png" /></a>
     </div>
     <div class="block_content">
       <div class="inner">
@@ -112,20 +112,24 @@
 </div>
 <!----------------- 개인정보 입력  팝업 ----------------->
 <!----------------- 참여완료  팝업 ----------------->
-<div id="thanks_popup" class="popup_wrap">
-  <div class="p_mid ending p_position">
-    <div class="block_close clearfix">
-      <a href="index.php" class="btn_close"><img src="images/popup/btn_close.png" /></a>
-    </div>
-    <div class="block_content">
-      <div class="inner">
-        <div class="block_btn_home">
-          <a href="index.php"><img src="images/popup/btn_.png" /></a>
+	<div id="thanks_popup" class="popup_wrap">
+   	  <div class="p_mid ending p_position">
+            <div class="block_close clearfix">
+                <a href="index.php" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+            </div>
+            <div class="block_content">
+            	<div class="inner">
+                    <div class="block_btn_home">
+                    	<a href="index.php"><img src="images/popup/btn_other_movie.png" /></a>
+                        <a href="index.php"><img src="images/popup/btn_comp.png" /></a>
+                    </div>
+                    
+                    
+                </div><!--inner-->
+            </div>
         </div>
-      </div><!--inner-->
-    </div>
-  </div>
-</div>
+	</div>
+
 <!----------------- 참여완료  팝업 ----------------->
 
 <!----------------- 개인정보 활용약관 팝업 ----------------->
@@ -197,4 +201,23 @@
   </div>
 </div>
 <!----------------- 광고동의약관 팝업 ----------------->
+
+<!----------------- 선택창 팝업 ----------------->
+<div id="confirm_popup" class="popup_wrap">
+  <div class="p_mid out p_position">
+    <div class="block_close clearfix">
+      <a href="#" onclick="back_input()" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+    </div>
+    <div class="block_content">
+      <div class="inner">
+        <div class="block_btn_keep">
+          <a href="index.php"><img src="images/popup/btn_out.png" /></a>
+          <a href="#" onclick="back_input()"><img src="images/popup/btn_keep.png" /></a>
+        </div>
+      </div><!--inner-->
+    </div>
+  </div>
+</div>
+<!----------------- 선택창 팝업 ----------------->
+
 </div>

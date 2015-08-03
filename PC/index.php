@@ -29,7 +29,7 @@
 </div>
 
 
-<div id="main_area" class="wrap_sec_top" style="overflow:hidden;width:100%;height:100%;min-width:1200px;min-height:600px"> 
+<div id="main_area" class="wrap_sec_top"> 
   <div class="title">
     <img src="images/title.png" alt=""/>
   </div>
@@ -41,7 +41,7 @@
   <div class="img_gift">
     <a href="#" id="gift_link" onclick="show_gift();"><img src="images/img_gift.png" alt=""/></a>
   </div>
-  <div class="sec_top" style="width:100%;height:100%;min-width:1200px;min-height:600px">
+  <div class="sec_top">
     <div class="bg_top"><img src="images/bg_top.jpg" alt=""  id="cover_image1"/></div>
   </div>
 </div>
@@ -497,6 +497,10 @@ function back_input()
 {
 	$.colorbox({width:"492px", height:"632px", inline:true, opacity:"0.9", closeButton:false, href:"#insert_popup", onComplete:function(){
 		$("#cboxLoadedContent").height(592);
+		$("#cboxContent").css("background","none");
+	},
+	onClosed: function(){
+		$("#cboxContent").css("background","#fff");
 	}});
 }
 
@@ -504,6 +508,7 @@ function show_use_agree()
 {
 	$.colorbox({width:"492px", height:"566px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#use_agree_popup", onComplete: function(){
 		$("#cboxLoadedContent").height(526);
+		$("#cboxContent").css("background","none");
 	}});
 }
 
@@ -511,6 +516,7 @@ function show_privacy_agree()
 {
 	$.colorbox({width:"492px", height:"566px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#privacy_agree_popup", onComplete: function(){
 		$("#cboxLoadedContent").height(526);
+		$("#cboxContent").css("background","none");
 	}});
 }
 
@@ -518,6 +524,15 @@ function show_adver_agree()
 {
 	$.colorbox({width:"492px", height:"566px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#adver_agree_popup", onComplete: function(){
 		$("#cboxLoadedContent").height(526);
+		$("#cboxContent").css("background","none");
+	}});
+}
+
+function show_confirm()
+{
+	$.colorbox({width:"452px", height:"312px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#confirm_popup", onComplete: function(){
+		$("#cboxLoadedContent").height(526);
+		$("#cboxContent").css("background","none");
 	}});
 }
 
@@ -675,6 +690,10 @@ function show_inspop(obj)
 		success: function(response){
 			$.colorbox({width:"492px", height:"632px", inline:true, opacity:"0.9", closeButton:false, href:"#insert_popup", onComplete:function(){
 				$("#cboxLoadedContent").height(592);
+				$("#cboxContent").css("background","none");
+			},
+			onClosed: function(){
+				$("#cboxContent").css("background","#fff");
 			}});
 		}
 	});
