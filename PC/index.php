@@ -1,6 +1,7 @@
 <?
 	include_once   "./header.php";
 	print_r($media);
+	print_r($_SESSION);
 ?>
 <input type="hidden" name="movie_num" id="movie_num">
 <input type="hidden" name="allchk" id="allchk" value="N">
