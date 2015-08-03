@@ -120,18 +120,19 @@ body{
 .navi{
 	height:50px;
 	position:relative;
-	padding-top:10px;
+	padding-top:15px;
 }
 .navi .left{
 	position:absolute;
-	left:1.5%;
+	left:1%;
 	padding-top:0;
 }
 .navi .right{
 	position:absolute;
-	right:1.5%;
-	width:620px;
+	right:1%;
+	width:400px;
 	padding-top:3px;
+	text-align:right;
 }
 .navi .right .right_wrap{
 	
@@ -163,7 +164,9 @@ body{
 body.main{
 	background:url(../images/bg.jpg) repeat-x center top;	
 }
-
+body.sub{
+	background:url(../images/bg_sub.jpg);	
+}
 .sec_top{
 	width:100%;
 	text-align:center;
@@ -171,46 +174,117 @@ body.main{
 .sec_top .bg_top img{
 	width:100%;
 }
+.wrap_sec_top{
+	position:relative;
+	width:100%;
+	height:100%;
+}
 .wrap_sec_top .title{
 	position:absolute;
 	width:100%;
 	text-align:center;
-	margin-top:200px;
+	margin-top:-95px;
+	top:30%;
+}
+.wrap_sec_top .btn_block{
+	position:absolute;
+	text-align:center;
+	width:500px;
+	margin:0 auto;
+	bottom:45%;
+	margin-bottom:-50px;
+	left:50%;
+	margin-left:-250px;
 }
 
-.wrap_sec_top .img_gift{
-	width:100%;
-	text-align:center;
-	top:80%;
-}
-.wrap_sec_top .btn_1,
-.wrap_sec_top .bar,
-.wrap_sec_top .btn_2,
 .wrap_sec_top .img_gift{
 	position:absolute;
+	width:100%;
+	text-align:center;
+	bottom:5%;
 }
 
 
-.wrap_sec_top .btn_1,
-.wrap_sec_top .bar,
-.wrap_sec_top .btn_2{
-	top:45%;
-}
-.wrap_sec_top .btn_1{
-	left:38%;
-}
-.wrap_sec_top .bar{
-	left:50%;
-}
-.wrap_sec_top .btn_2{
-	right:38%;
-}
+
 .sec_top .block_title{
 	text-align:center;
 	background:url(../images/title.png) no-repeat center bottom;
 	width:943px;
 	height:803px;
 	position:relative;
+}
+
+
+.wrap_sec_sub_1_top{
+	width:765px;
+	margin:0 auto;
+}
+.wrap_sec_sub_1_top .title{
+	text-align:center;
+	padding:30px 0;
+}
+.wrap_sec_sub_1_top .block_movie{
+	background:url(../images/bg_movie.png) no-repeat 0 0;
+	height:600px;
+}
+.wrap_sec_sub_1_top .block_movie .label_ch{
+	padding:30px 0 15px;
+	padding-left:60px;
+}
+
+.wrap_sec_sub_1_top .block_movie .movie{
+	background:#ccc;
+	width:625px;
+	height:330px;
+	margin-left:60px;
+}
+
+.wrap_sec_sub_1_top .block_movie .btn_block{
+	text-align:center;
+	padding-top:20px;
+}
+
+.wrap_sec_sub_1_bottom{
+	background:url(../images/bg_sub_bottom.jpg);
+	padding:20px 0 40px;
+}
+.wrap_sec_sub_1_bottom .thumb_movie{
+	width:750px;
+	margin:0 auto;
+}
+
+body.sub2{
+	background:url(../images/bg_sub_bottom.jpg);
+}
+.wrap_sec_sub_2_top{
+	width:100%;
+	text-align:center;
+	position:relative;
+}
+.wrap_sec_sub_2_top .bg_top{
+	width:100%;
+	bottom:0;
+	position:absolute;
+}
+.wrap_sec_sub_2_top .bg_blank{
+	width:100%;
+	height:350px;
+}
+.wrap_sec_sub_2_top .bg_top img{
+	width:100%;
+}
+.wrap_sec_sub_2_top .title{
+	position:absolute;
+	width:100%;
+	text-align:center;
+	z-index:100;
+	top:60px;
+}
+
+.sec_comment{
+	width:600px;
+	margin:0 auto;
+	padding-top:20px;
 }
 
 
@@ -403,11 +477,20 @@ body.main{
 .popup_wrap .p_position.p_mid.gift .block_content a{
 	display:block;
 	position:absolute;
+	top:460px;
 }
-
-
-
-
+.popup_wrap .p_position.p_mid.gift .block_content a.pro_1{
+	left:73px;
+}
+.popup_wrap .p_position.p_mid.gift .block_content a.pro_2{
+	left:210px;
+}
+.popup_wrap .p_position.p_mid.gift .block_content a.pro_3{
+	left:345px;
+}
+.popup_wrap .p_position.p_mid.gift .block_content a.pro_4{
+	left:475px;
+}
 .popup_wrap .p_position.p_mid.small{
 	position:relative;
 	width:500px;
@@ -702,12 +785,12 @@ body.main{
 
 /*개인정보입력*/
 .popup_wrap .p_position.p_mid_input .block_input{
-	padding-left:50px;
-	padding-top:35px;
+	padding-left:70px;
+	padding-top:45px;
 }
 .popup_wrap .p_position.p_mid_input .block_input .input_one{
 	width:100%;
-	padding-top:6px;
+	padding-top:0;
 }
 .popup_wrap .p_position.p_mid_input .block_input .input_one .label,
 .popup_wrap .p_position.p_mid_input .block_input .input_one .input,
@@ -724,8 +807,8 @@ body.main{
 }
 
 .popup_wrap .p_position.p_mid_input .block_input .input_one input{
-	padding:5px 3px;
-	width:160px;
+	padding:8px 3px;
+	width:300px;
 	font-family:'나눔고딕',nanumgothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;
 	font-weight:bold;
 	font-size:14px;
@@ -768,7 +851,7 @@ body.main{
 }
 
 .popup_wrap .p_position.p_mid_input .check_block{
-	padding: 30px 72px 0px 70px;
+	padding: 20px 72px 10px 70px;
 }
 .popup_wrap .p_position.p_mid_input .check_block .check_one{
 	width:100%;
@@ -790,7 +873,11 @@ body.main{
 	text-align:right;
 	padding-right:0;
 }
-
+.block_btn_home{
+	position:absolute;
+	left:90px;
+	top:485px;
+}
 
 
 
