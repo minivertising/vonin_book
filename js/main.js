@@ -31,6 +31,9 @@ function input_info()
 	var mb_phone2			= $("#mb_phone2").val();
 	var mb_phone3			= $("#mb_phone3").val();
 	var sel_movie			= $("#movie_num").val();
+	var use_agree			= $("#usechk").val();
+	var privacy_agree		= $("#privacychk").val();
+	var adver_agree		= $("#adverchk").val();
 	var mb_phone			= mb_phone1 + "-" + mb_phone2 + "-" + mb_phone3;
 
 	if (mb_name == "")
@@ -63,6 +66,28 @@ function input_info()
 		return false;
 	}
 
+	if (use_agree == "N")
+	{
+		alert("개인정보 활용 동의를 안 하셨습니다");
+		chk_ins = 0;
+		return false;
+	}
+
+	if (privacy_agree == "N")
+	{
+		alert("개인정보 취급 위탁 동의를 안 하셨습니다");
+		chk_ins = 0;
+		return false;
+	}
+
+	if (adver_agree == "N")
+	{
+		alert("광고성 정보전송 약관에 동의를 안 하셨습니다");
+		chk_ins = 0;
+		return false;
+	}
+
+/*
 	if ($('#use_agree').is(":checked") == false)
 	{
 		alert("개인정보 활용 동의를 안 하셨습니다");
@@ -83,6 +108,7 @@ function input_info()
 		chk_ins = 0;
 		return false;
 	}
+*/
 
 	$.ajax({
 		type:"POST",

@@ -79,7 +79,7 @@
             -
             </div>
             <div class="txt_check">
-              <img src="images/popup/label_agree_all.png"  name="all_agree" id="all_agree" alt=""/>
+              <img src="images/popup/label_agree_all.png"  name="all_agree" id="all_agree" alt="" onclick="all_check()" />
             </div>
           </div>  
           <div class="check_one clearfix">
@@ -87,7 +87,7 @@
             -
             </div>
             <div class="txt_check">
-              <img src="images/popup/agree_info.png" name="use_agree" id="use_agree" alt=""/>
+              <img src="images/popup/agree_info.png" name="use_agree" id="use_agree" onclick="use_check()" alt=""/>
             </div>
             <div class="btn_check">
               <a href="#" onclick="show_use_agree();return false;"><img src="images/popup/btn_agree.png" alt=""/></a>
@@ -98,7 +98,7 @@
             -
             </div>
             <div class="txt_check">
-              <img src="images/popup/agree_info_agency.png" name="privacy_agree" id="privacy_agree" alt=""/>
+              <img src="images/popup/agree_info_agency.png" name="privacy_agree" id="privacy_agree" onclick="privacy_check()" alt=""/>
             </div>
             <div class="btn_check">
               <a href="#" onclick="show_privacy_agree();return false;"><img src="images/popup/btn_agree.png" alt=""/></a>
@@ -109,7 +109,7 @@
             -
             </div>
             <div class="txt_check">
-              <img src="images/popup/agree_info_ad.png" name="adver_agree" id="adver_agree" alt=""/>
+              <img src="images/popup/agree_info_ad.png" name="adver_agree" id="adver_agree" onclick="adver_check()" alt=""/>
             </div>
             <div class="btn_check">
               <a href="#" onclick="show_adver_agree();return false;"><img src="images/popup/btn_agree.png" alt=""/></a>
@@ -210,5 +210,4 @@
   </div>
 </div>
 <!----------------- 광고동의약관 팝업 ----------------->
-
 </div>

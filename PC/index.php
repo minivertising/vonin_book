@@ -3,6 +3,10 @@
 	print_r($_SESSION);
 ?>
 <input type="hidden" name="movie_num" id="movie_num">
+<input type="hidden" name="allchk" id="allchk" value="N">
+<input type="hidden" name="usechk" id="usechk" value="N">
+<input type="hidden" name="privacychk" id="privacychk" value="N">
+<input type="hidden" name="adverchk" id="adverchk" value="N">
 <div class="sec_navi">
   <div class="navi">
     <div class="left"><a href="index.php"><img src="images/logo.png" alt=""/></a></div>
@@ -509,4 +513,64 @@ function show_inspop(obj)
 	});
 
 }
+
+var all_flag		= 0;
+var use_flag		= 0;
+var privacy_flag	= 0;
+var adver_flag	= 0;
+function all_check()
+{
+	if (all_flag == 0)
+	{
+		$("#allchk").val('Y');
+		$("#usechk").val('Y');
+		$("#privacychk").val('Y');
+		$("#adverchk").val('Y');
+		all_flag	= "1";
+	}else{
+		$("#allchk").val('N');
+		$("#usechk").val('N');
+		$("#privacychk").val('N');
+		$("#adverchk").val('N');
+		all_flag	= "0";
+	}
+}
+
+function use_check()
+{
+	if (use_flag == 0)
+	{
+		$("#usechk").val('Y');
+		use_flag	= "1";
+	}else{
+		$("#usechk").val('N');
+		use_flag	= "0";
+	}
+}
+
+function privacy_check()
+{
+	if (privacy_flag == 0)
+	{
+		$("#privacychk").val('Y');
+		privacy_flag	= "1";
+	}else{
+		$("#privacychk").val('N');
+		privacy_flag	= "0";
+	}
+}
+
+function adver_check()
+{
+	if (adver_flag == 0)
+	{
+		$("#adverchk").val('Y');
+		adver_flag	= "1";
+	}else{
+		$("#adverchk").val('N');
+		adver_flag	= "0";
+	}
+}
+
+
 </script>
