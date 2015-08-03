@@ -48,7 +48,7 @@ switch ($_REQUEST['exec'])
 		$info1							= $_REQUEST['info1'];
 		$info2							= $_REQUEST['info2'];
 		$info3							= $_REQUEST['info3'];
-		//$media						= $_SESSION['ss_media'];
+		$media						= $_SESSION['ss_media'];
 
 		$query 		= "INSERT INTO ".$_gl['comment_info_table']."(consumer_seq, content, image1, image2, image3, ip_address, link1, link2, link3, livere_seq, member_domain, member_group_seq, member_icon, member_id, member_seq, member_url, member_name, parent_seq, rep_seq, reply_seq, site, agent, member_title, reply_regdate, status, sept_sns, info1, info2, info3, comm_media) values('".$consumer_seq."','".$content."','".$image1."','".$image2."','".$image3."','".$ip_address."','".$link1."','".$link2."','".$link3."','".$livere_seq."','".$member_domain."','".$member_group_seq."','".$member_icon."','".$member_id."','".$member_seq."','".$member_url."','".$member_name."','".$parent_seq."','".$rep_seq."','".$reply_seq."','".$site."','".$agent."','".$member_title."','".$reply_regdate."','".$status."','".$septSNSObj."','".$info1."','".$info2."','".$info3."','".$media."')";
 		$result 	= mysqli_query($my_db, $query);
@@ -65,7 +65,7 @@ switch ($_REQUEST['exec'])
 		$mb_name	= $_REQUEST['mb_name'];
 		$mb_phone	= $_REQUEST['mb_phone'];
 		$sel_movie	= $_REQUEST['sel_movie'];
-		//$media		= $_SESSION['ss_media'];
+		$media		= $_SESSION['ss_media'];
 
 		$query 		= "INSERT INTO ".$_gl['member_info_table']."(mb_ipaddr, mb_name, mb_phone, mb_movie, mb_gubun, mb_media, mb_regdate) values('".$_SERVER['REMOTE_ADDR']."','".$mb_name."','".$mb_phone."','".$sel_movie."','".$gubun."','".$media."','".date("Y-m-d H:i:s")."')";
 		$result 	= mysqli_query($my_db, $query);
