@@ -31,7 +31,7 @@
             </thead>
             <tbody>
 <?php 
-	$date_query = "SELECT substr(mb_regdate,1,10) mb_date FROM ".$_gl['member_info_table']." WHERE 1 Group by substr(mb_regdate,1,10) order by mb_regdate desc";
+	$date_query = "SELECT substr(mb_regdate,1,10) mb_date FROM ".$_gl['member_info_table']." WHERE mb_regdate <> '0000-00-00 00:00:00' Group by substr(mb_regdate,1,10) order by mb_regdate desc";
 	$res = mysqli_query($my_db, $date_query);
 
 	$pc_total_count		= 0;
@@ -40,12 +40,12 @@
 	$all_total_count			= 0;
 	while ($date_data = @mysqli_fetch_array($res))
 	{		
-		$pc_query		= "SELECT * FROM ".$_gl['member_info_table']." WHERE mb_blogger<>0 AND mb_regdate LIKE  '%".$date_data['mb_date']."%' AND mb_gubun='PC'";
+		$pc_query		= "SELECT * FROM ".$_gl['member_info_table']." WHERE mb_regdate LIKE  '%".$date_data['mb_date']."%' AND mb_gubun='PC'";
 		$pc_count		= mysqli_num_rows(mysqli_query($my_db, $pc_query));
-		$mobile_query	= "SELECT * FROM ".$_gl['member_info_table']." WHERE mb_blogger<>0 AND mb_regdate LIKE  '%".$date_data['mb_date']."%' AND mb_gubun='MOBILE'";
+		$mobile_query	= "SELECT * FROM ".$_gl['member_info_table']." WHERE mb_regdate LIKE  '%".$date_data['mb_date']."%' AND mb_gubun='MOBILE'";
 		$mobile_count	= mysqli_num_rows(mysqli_query($my_db, $mobile_query));
 		$total_count = $pc_count + $mobile_count;
-		$unique_query	= "SELECT * FROM ".$_gl['member_info_table']." WHERE mb_blogger<>0 AND mb_regdate LIKE  '%".$date_data['mb_date']."%' AND mb_s_url<>''";
+		$unique_query	= "SELECT * FROM ".$_gl['member_info_table']." WHERE mb_regdate LIKE  '%".$date_data['mb_date']."%'";
 		$unique_count	= mysqli_num_rows(mysqli_query($my_db, $unique_query));
 
 ?>

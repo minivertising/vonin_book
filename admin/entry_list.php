@@ -104,12 +104,10 @@
                 <th>IP주소</th>
                 <th>이름</th>
                 <th>전화번호</th>
-                <th>아기이름</th>
-                <th>추천한블로거</th>
+                <th>선택한 영상</th>
                 <th>유입매체</th>
-                <th>당첨선물</th>
                 <th>구분</th>
-                <th>추천일자</th>
+                <th>참여일자</th>
               </tr>
             </thead>
             <tbody>
@@ -123,7 +121,7 @@
 	{
 		$where	.= " AND ".$search_type." like '%".$search_txt."%'";
 	}
-	$buyer_count_query = "SELECT count(*) FROM ".$_gl['member_info_table']." WHERE 1 ".$where."";
+	$buyer_count_query = "SELECT count(*) FROM ".$_gl['member_info_table']." WHERE mb_name <> 'admin' ".$where."";
 
 	list($buyer_count) = @mysqli_fetch_array(mysqli_query($my_db, $buyer_count_query));
 	$PAGE_CLASS = new Page($pg,$buyer_count,$page_size,$block_size);
@@ -141,43 +139,22 @@
 
 	foreach($buyer_info as $key => $val)
 	{
-		$blogger_query = "SELECT * FROM ".$_gl['blogger_info_table']." WHERE idx='".$buyer_info[$key]['mb_blogger']."'";
-		$blogger_info = mysqli_fetch_array(mysqli_query($my_db, $blogger_query));
-
-		if ($buyer_info[$key]['mb_winner'] == "CASH")
-		{
-			$winner_gift	="베비언스 3천원 쿠폰";
-		}else if ($buyer_info[$key]['mb_winner'] == "CAMERA"){
-			$winner_gift	="DSLR 카메라";
-		}else if ($buyer_info[$key]['mb_winner'] == "HOTEL"){
-			$winner_gift	="하얏트 호텔 숙박권";
-		}else if ($buyer_info[$key]['mb_winner'] == "WG"){
-			$winner_gift	="베베프람 웨건";
-		}else if ($buyer_info[$key]['mb_winner'] == "MILK"){
-			$winner_gift	="베비언스 분유 1년치";
-		}else if ($buyer_info[$key]['mb_winner'] == "WATER"){
-			$winner_gift	="베이비워터 24병";
-		}else if ($buyer_info[$key]['mb_winner'] == "WASH"){
-			$winner_gift	="메소드 핸드워시";
-		}
-
+		//$blogger_query = "SELECT * FROM ".$_gl['blogger_info_table']." WHERE idx='".$buyer_info[$key]['mb_blogger']."'";
+		//$blogger_info = mysqli_fetch_array(mysqli_query($my_db, $blogger_query));
 ?>
               <tr>
                 <td><?php echo $PAGE_UNCOUNT--?></td>	<!-- No. 하나씩 감소 -->
                 <td><?php echo $buyer_info[$key]['mb_ipaddr']?></td>
                 <td><?php echo $buyer_info[$key]['mb_name']?></td>
                 <td><?php echo $buyer_info[$key]['mb_phone']?></td>
-                <td><?php echo $buyer_info[$key]['baby_name']?></td>
-                <td><?php echo $blogger_info['blogger_name']?></td>
+                <td><?php echo $buyer_info[$key]['mb_movie']?></td>
                 <td><?php echo $buyer_info[$key]['mb_media']?></td>
-                <td><?php echo $winner_gift?></td>
                 <td><?php echo $buyer_info[$key]['mb_gubun']?></td>
                 <td><?php echo $buyer_info[$key]['mb_regdate']?></td>
               </tr>
 <?php 
 	}
 ?>
-
 
               <tr><td colspan="10"><div class="pageing"><?php echo $BLOCK_LIST?></div></td></tr>
             </tbody>
