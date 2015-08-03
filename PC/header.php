@@ -31,7 +31,8 @@
     <!-- <script type="text/javascript" src="http://www.youtube.com/player_api"></script> -->
     <script type="text/javascript" src="https://101.livere.co.kr/js/livere8_lib.js" charset="utf-8"></script>
   </head>
-  <body class="main">
+  <body class="main" style="width:100%;height:100%;min-width:1200px;min-height:600px;">
+  <!-- <body class="main"> -->
 <!-- <style>
 .pace {
   -webkit-pointer-events: none;

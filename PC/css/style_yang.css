@@ -162,7 +162,7 @@ body{
 }
 
 body.main{
-	background:url(../images/bg.jpg) repeat-x center top;	
+	background:url(../images/bg.jpg) repeat-x center top;
 }
 body.sub{
 	background:url(../images/bg_sub.jpg);	

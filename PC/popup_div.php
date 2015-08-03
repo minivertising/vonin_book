@@ -1,10 +1,5 @@
 <div style="display:none;">
 <!----------------- 선물 팝업 ----------------->
-<!-- <div id="gift_popup" style="position:absolute;background:white;width:500px;height:700px;">
-  <a href="#" onclick="$.colorbox.close()">닫기</a>
-  <h1>당신의 설렘을 되찾기 위해!</h1>
-  <h3>설렘의 시작은 피부관리 입니다. 책 속에 숨겨진 보닌 올인원으로 시작하세요!</h3>
-</div> -->
 <div id="gift_popup" class="popup_wrap">
   <div class="p_mid gift p_position">
     <div class="block_close clearfix">
@@ -12,23 +7,16 @@
     </div>
     <div class="block_content">
       <div class="inner">
-        <a href="#" class="pro_1"><img src="images/popup/btn_.png" /></a>
-        <a href="#" class="pro_2"><img src="images/popup/btn_.png" /></a>
-        <a href="#" class="pro_3"><img src="images/popup/btn_.png" /></a>
-        <a href="#" class="pro_4"><img src="images/popup/btn_.png" /></a>
+        <a href="http://www.vonin.co.kr/product/detail.jsp?pid=ACM25248" target="_blank" class="pro_1"><img src="images/popup/btn_p_1.png" /></a>
+        <a href="http://www.vonin.co.kr/product/detail.jsp?pid=ACM25247" target="_blank" class="pro_2"><img src="images/popup/btn_p_2.png" /></a>
+        <a href="http://www.vonin.co.kr/product/detail.jsp?pid=ACM25249" target="_blank" class="pro_3"><img src="images/popup/btn_p_3.png" /></a>
+        <a href="http://www.vonin.co.kr/product/detail.jsp?pid=ACM25250" target="_blank" class="pro_4"><img src="images/popup/btn_p_4.png" /></a>
       </div><!--inner-->
     </div>
   </div>
 </div>
-
 <!----------------- 선물 팝업 ----------------->
 <!----------------- 참여방법  팝업 ----------------->
-<!-- <div id="join_popup" style="position:absolute;background:white;width:500px;height:700px;">
-  <a href="#" onclick="$.colorbox.close()">닫기</a>
-  <h1>참여방법</h1>
-  <h3>참여방법에 대한 설명</h3>
-</div> -->
-
 <div id="join_popup" class="popup_wrap">
   <div class="p_mid howto p_position">
     <div class="block_close clearfix">
@@ -40,7 +28,6 @@
     </div>
   </div>
 </div>
-
 <!----------------- 참여방법  팝업 ----------------->
 <!----------------- 개인정보 입력  팝업 ----------------->
 <div id="insert_popup" class="popup_wrap">
