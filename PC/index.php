@@ -68,10 +68,10 @@
 </div>  
 <div id="man_area2" class="wrap_sec_sub_1_bottom" style="display:none"> 
   <div class="thumb_movie">
-    <a href="#" onclick="change_chapter('m','1')"><img src="images/img_thumb_1_on.png" alt="" id="m_thumb_img1"/></a>
-    <a href="#" onclick="change_chapter('m','2')"><img src="images/img_thumb_2_off.png" alt="" id="m_thumb_img2" /></a>
-    <a href="#" onclick="change_chapter('m','3')"><img src="images/img_thumb_3_off.png" alt="" id="m_thumb_img3" /></a>
-    <a href="#" onclick="change_chapter('m','4')"><img src="images/img_thumb_4_off.png" alt="" id="m_thumb_img4" /></a>
+    <a href="#" onclick="change_chapter('m','1');return false;"><img src="images/img_thumb_1_on.png" alt="" id="m_thumb_img1"/></a>
+    <a href="#" onclick="change_chapter('m','2');return false;"><img src="images/img_thumb_2_off.png" alt="" id="m_thumb_img2" /></a>
+    <a href="#" onclick="change_chapter('m','3');return false;"><img src="images/img_thumb_3_off.png" alt="" id="m_thumb_img3" /></a>
+    <a href="#" onclick="change_chapter('m','4');return false;"><img src="images/img_thumb_4_off.png" alt="" id="m_thumb_img4" /></a>
   </div>
 </div> 
 <div id="woman_area1" class="wrap_sec_sub_1_top" style="display:none"> 
@@ -96,10 +96,10 @@
 </div>  
 <div id="woman_area2" class="wrap_sec_sub_1_bottom" style="display:none"> 
   <div class="thumb_movie">
-    <a href="#" onclick="change_chapter('w','1')"><img src="images/img_thumb_1_on.png" alt="" id="w_thumb_img1"/></a>
-    <a href="#" onclick="change_chapter('w','2')"><img src="images/img_thumb_2_off.png" alt="" id="w_thumb_img2" /></a>
-    <a href="#" onclick="change_chapter('w','3')"><img src="images/img_thumb_3_off.png" alt="" id="w_thumb_img3" /></a>
-    <a href="#" onclick="change_chapter('w','4')"><img src="images/img_thumb_4_off.png" alt="" id="w_thumb_img4" /></a>
+    <a href="#" onclick="change_chapter('w','1');return false;"><img src="images/img_thumb_1_on.png" alt="" id="w_thumb_img1"/></a>
+    <a href="#" onclick="change_chapter('w','2');return false;"><img src="images/img_thumb_2_off.png" alt="" id="w_thumb_img2" /></a>
+    <a href="#" onclick="change_chapter('w','3');return false;"><img src="images/img_thumb_3_off.png" alt="" id="w_thumb_img3" /></a>
+    <a href="#" onclick="change_chapter('w','4');return false;"><img src="images/img_thumb_4_off.png" alt="" id="w_thumb_img4" /></a>
   </div>
 </div> 
   <!-- <div id="woman_area" style="width:100%;height:100%;background:orange;display:none;z-index:1000;position:absolute">
