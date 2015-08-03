@@ -42,16 +42,16 @@
     <h1  style="padding-top:20px">STEP.1 설렘학 개론(남성)</h1>
     <a href="#">선물보기</a><br />
     <a href="#">참여방법</a><br />
-    <div id="man_ytplayer1" class="movie_area" style="width:100%;height:200px">
+    <div id="man_ytplayer1" class="movie_area" style="width:500px;height:281px">
       <iframe allowfullscreen="1" src="" frameborder="0" id="m_ytplayer1" class="ytplayer" style="width:100%;height:100%;"></iframe>
     </div>
-    <div id="man_ytplayer2" class="movie_area" style="width:100%;height:200px;display:none">
+    <div id="man_ytplayer2" class="movie_area" style="width:500px;height:281px;display:none">
       <iframe allowfullscreen="1" src="" frameborder="0" id="m_ytplayer2" class="ytplayer" style="width:100%;height:100%;"></iframe>
     </div>
-    <div id="man_ytplayer3" class="movie_area" style="width:100%;height:200px;display:none">
+    <div id="man_ytplayer3" class="movie_area" style="width:500px;height:281px;display:none">
       <iframe allowfullscreen="1" src="" frameborder="0" id="m_ytplayer3" class="ytplayer" style="width:100%;height:100%;"></iframe>
     </div>
-    <div id="man_ytplayer4" class="movie_area" style="width:100%;height:200px;display:none">
+    <div id="man_ytplayer4" class="movie_area" style="width:500px;height:281px;display:none">
       <iframe allowfullscreen="1" src="" frameborder="0" id="m_ytplayer4" class="ytplayer" style="width:100%;height:100%;"></iframe>
     </div>
     <input type="checkbox" name="movie_check" id="movie_check" onclick="chk_reply(this)"><label for="movie_check">영상 선택</label><br />
@@ -64,17 +64,20 @@
     <h1  style="padding-top:20px">STEP.1 설렘학 개론(여성)</h1>
     <a href="#">선물보기</a><br />
     <a href="#">참여방법</a><br />
-    <div id="woman_ytplayer1" class="movie_area" style="width:100%;height:200px">
+    <div id="woman_ytplayer1" class="movie_area" style="width:500px;height:281px">
       <iframe allowfullscreen="1" src="" frameborder="0" id="w_ytplayer1" class="ytplayer" style="width:100%;height:100%;"></iframe>
     </div>
-    <div id="woman_ytplayer2" class="movie_area" style="width:100%;height:200px;display:none">
+    <div id="woman_ytplayer2" class="movie_area" style="width:500px;height:281px;display:none">
       <iframe allowfullscreen="1" src="" frameborder="0" id="w_ytplayer2" class="ytplayer" style="width:100%;height:100%;"></iframe>
     </div>
-    <div id="woman_ytplayer3" class="movie_area" style="width:100%;height:200px;display:none">
+    <div id="woman_ytplayer3" class="movie_area" style="width:500px;height:281px;display:none">
       <iframe allowfullscreen="1" src="" frameborder="0" id="w_ytplayer3" class="ytplayer" style="width:100%;height:100%;"></iframe>
     </div>
-    <div id="woman_ytplayer4" class="movie_area" style="width:100%;height:200px;display:none">
+    <div id="woman_ytplayer4" class="movie_area" style="width:500px;height:281px;display:none">
       <iframe allowfullscreen="1" src="" frameborder="0" id="w_ytplayer4" class="ytplayer" style="width:100%;height:100%;"></iframe>
+    </div>
+    <div id="woman_loading" style="width:500px;height:281px;display:none">
+      <img src="images/loading.gif" style="width:100px;height:100px">
     </div>
     <input type="checkbox" name="movie_check" id="movie_check" onclick="chk_reply(this)"><label for="movie_check">영상 선택</label><br />
     <a href="#" onclick="change_chapter('w','1')">Chapter1. 5cm의 법칙</a><br />
@@ -222,8 +225,13 @@ function change_chapter(gender, cnt)
 			//controllable_player.seekTo(0);controllable_player.stopVideo();
 		}else if (cnt == "2"){
 			$("#w_ytplayer2").attr("src","<?=$_gl['w_yt_url2']?>");
-			$(".movie_area").hide();
-			$("#woman_ytplayer2").show();
+			$(".movie_area").hide(0,function(){
+				$("#woman_loading").show(100,function(){
+					$("#woman_ytplayer2").show(0,function(){
+						$("#woman_loading").hide(0);
+					});
+				});
+			});
 			$("#movie_num").val('w_2');
 			//yt_api(cnt);
 			//controllable_player.seekTo(0);controllable_player.stopVideo();
