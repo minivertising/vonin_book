@@ -29,7 +29,7 @@
 </div>
 
 
-<div id="main_area" class="wrap_sec_top"> 
+<div id="main_area" class="wrap_sec_top" style="overflow:hidden;width:100%;height:100%;min-width:1200px;min-height:600px"> 
   <div class="title">
     <img src="images/title.png" alt=""/>
   </div>
@@ -41,8 +41,8 @@
   <div class="img_gift">
     <a href="#" id="gift_link" onclick="show_gift();"><img src="images/img_gift.png" alt=""/></a>
   </div>
-  <div class="sec_top">
-    <div class="bg_top" id="cover_image1"><img src="images/bg_top.jpg" alt=""/></div>
+  <div class="sec_top" style="width:100%;height:100%;min-width:1200px;min-height:600px">
+    <div class="bg_top"><img src="images/bg_top.jpg" alt=""  id="cover_image1"/></div>
   </div>
 </div>
 
@@ -127,14 +127,15 @@
     <a href="#" onclick="change_chapter('w','3')">Chapter3. 15cm의 법칙</a><br />
     <a href="#" onclick="change_chapter('w','4')">Chapter4. 3020의 법칙</a><br />
   </div> -->
-    <div id="comment_area" class="wrap_sec_sub_2_top" style="display:none"> 
-         <div class="title">
-         	<img src="images/title_sub_2.png" alt=""/>
-        </div>
-		<div class="bg_top"><img src="images/bg_top_sub2.jpg" alt=""/></div> 
-        <div class="bg_blank">ttt</div>    
-    </div>  
-    <div class="sec_comment">
+<div id="comment_area1" class="wrap_sec_sub_2_top" style="display:none"> 
+  <div class="title">
+    <img src="images/title_sub_2.png" alt=""/>
+  </div>
+  <div class="bg_top"><img src="images/bg_top_sub2.jpg" alt=""/></div> 
+  <div class="bg_blank">ttt</div>    
+</div>  
+<div id="comment_area2" class="sec_comment" style="display:none">
+  <div class="input_comment">
     <div id="livereContainer">
 <script type="text/javascript">
 	var consumer_seq		= "1012";
@@ -148,10 +149,12 @@
 	livereLib.start();
 </script>
     </div>   
+  </div>
+</div>   
 <?
 	include_once   "./popup_div.php";
 
-	include_once   "./footer.php";
+	//include_once   "./footer.php";
 ?>
 <script type="text/javascript">
 $(document).ready(function() {
@@ -178,9 +181,58 @@ $(document).ready(function() {
 	$("#cboxMiddleRight").hide();
 	$("#cboxTopCenter").hide();
 	$("#cboxBottomCenter").hide();
-	$("")
+	//$("#cboxContent").css("background","none");
+	resize();
+
+});
+/*
+$(window).resize(function(){
+	resize();
 });
 
+function resize(){
+	$("#cover_image1").height($(window).height());
+}
+*/
+$(window).resize(resize);
+
+//$(window).resize(function(){
+	//resize();
+//});
+function resize(){
+	var __width  = $("body").width();
+	var __height = $("body").height();
+	var __scale  = Math.max(__width/1400, __height/850);
+	var __left   = Math.floor((__width-(1400*__scale))/2);
+	var __top    = Math.floor((__height-(850*__scale))/2);
+
+	//$(".ar-full-bg").css({width:1400*__scale, height:850*__scale, left:__left, top:__top});
+	$("#cover_image1").css({width:1400*__scale, height:850*__scale, left:__left, top:__top});
+}
+
+/*
+var __scale = 0;
+var __width = 0;
+var __height = 0;
+var __left   = 0;
+var __top    = 0;
+function resize(){
+	__width  = $("body").width();
+	__height = $("body").height();
+	//var __width  = $(window).width();
+	//var __height = $(window).height();
+	__scale  = Math.max(__width/1400, __height/850);
+	__left   = Math.floor((__width-(1400*__scale))/2);
+	__top    = Math.floor((__height-(850*__scale))/2);
+
+	$("#cover_image1").css({width:1400*__scale, height:850*__scale, left:__left, top:__top});
+__scale = 0;
+__width = 0;
+__height = 0;
+__left   = 0;
+__top    = 0;
+}
+*/
 var rolling_num=0;
 function changeImage()
 {
@@ -410,6 +462,11 @@ function show_gift()
 {
 	$("#gift_link").colorbox({width:"712px", height:"602px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#gift_popup", onComplete: function(){
 		$("#cboxLoadedContent").height(560);
+		$("#cboxContent").css("background","none");
+
+	},
+	onClosed: function(){
+		$("#cboxContent").css("background","#fff");
 	}});
 
 }
@@ -417,6 +474,10 @@ function show_gift2()
 {
 	$.colorbox({width:"712px", height:"602px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#gift_popup", onComplete: function(){
 		$("#cboxLoadedContent").height(560);
+		$("#cboxContent").css("background","none");
+	},
+	onClosed: function(){
+		$("#cboxContent").css("background","#fff");
 	}});
 }
 
@@ -425,6 +486,10 @@ function show_join()
 	//$("#top_join_link").colorbox({width:"592px", height:"502px", inline:true, opacity:"0.9", closeButton:false, href:"#join_popup"});
 	$.colorbox({width:"592px", height:"502px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#join_popup", onComplete: function(){
 		$("#cboxLoadedContent").height(460);
+		$("#cboxContent").css("background","none");
+	},
+	onClosed: function(){
+		$("#cboxContent").css("background","#fff");
 	}});
 }
 
@@ -468,12 +533,14 @@ function chk_reply(param)
 	{
 		$("#man_area1").hide();
 		$("#man_area2").hide();
-		$( "#comment_area" ).fadeIn("slow");
+		$( "#comment_area1" ).fadeIn("slow");
+		$( "#comment_area2" ).fadeIn("slow");
 		//$("#comment_area").show();
 	}else{
 		$("#woman_area1").hide();
 		$("#woman_area2").hide();
-		$( "#comment_area" ).fadeIn("slow");
+		$( "#comment_area1" ).fadeIn("slow");
+		$( "#comment_area2" ).fadeIn("slow");
 	}
 }
 
