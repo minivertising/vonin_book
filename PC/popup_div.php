@@ -40,66 +40,55 @@
         <div class="block_input">
           <div class="input_one clearfix">
             <div class="input">
-              <input type="text" name="mb_name" id="mb_name">
+              <input type="text" name="mb_name" id="mb_name" value="성함을 입력해 주세요." onfocus="focus_val(this)" onblur="blur_val(this)">
             </div>
           </div>
           <div class="input_one clearfix">
-            <div class="input_phone clearfix">
-              <div class="phone_ip">
-                <select name="mb_phone1" id="mb_phone1">
-                  <option value="010">010</option>
-                  <option value="011">011</option>
-                  <option value="016">016</option>
-                  <option value="017">017</option>
-                  <option value="018">018</option>
-                  <option value="019">019</option>
-                </select>
-              </div>
-              <div class="phone_ip"><input type="tel" name="mb_phone2" id="mb_phone2"></div>
-              <div class="phone_ip"><input type="tel" name="mb_phone3" id="mb_phone3"></div>
+            <div class="input">
+              <input type="text" name="mb_phone" id="mb_phone" value="휴대폰 번호를 입력해 주세요.(숫자만)" onfocus="focus_val(this)" onblur="blur_val(this)" onkeyup="only_num(this);">
             </div>
           </div>
         </div>
         <div class="check_block">
           <div class="check_one first clearfix">
             <div class="in_check">
-            -
+              <img src="images/popup/check_out.png" alt=""  name="all_agree" id="all_agree" alt="" onclick="all_check()" style="cursor:pointer"/>
             </div>
             <div class="txt_check">
-              <img src="images/popup/label_agree_all.png"  name="all_agree" id="all_agree" alt="" onclick="all_check()" />
+              <img src="images/popup/label_agree_all.png" onclick="all_check()" alt="" style="cursor:pointer"/>
             </div>
           </div>  
           <div class="check_one clearfix">
             <div class="in_check">
-            -
+              <img src="images/popup/check_out.png" name="use_agree" id="use_agree" onclick="use_check()" style="cursor:pointer" alt=""/>
             </div>
             <div class="txt_check">
-              <img src="images/popup/agree_info.png" name="use_agree" id="use_agree" onclick="use_check()" alt=""/>
+              <img src="images/popup/label_agree.png" onclick="use_check()" style="cursor:pointer" alt=""/>
             </div>
             <div class="btn_check">
-              <a href="#" onclick="show_use_agree();return false;"><img src="images/popup/btn_agree.png" alt=""/></a>
+              <a href="#" onclick="show_use_agree();return false;"><img src="images/popup/agree_info.png" alt=""/></a>
             </div>
           </div>
           <div class="check_one clearfix">
             <div class="in_check">
-            -
+              <img src="images/popup/check_out.png" name="privacy_agree" id="privacy_agree" style="cursor:pointer" onclick="privacy_check()" alt=""/>
             </div>
             <div class="txt_check">
-              <img src="images/popup/agree_info_agency.png" name="privacy_agree" id="privacy_agree" onclick="privacy_check()" alt=""/>
+              <img src="images/popup/label_agree.png" onclick="privacy_check()" style="cursor:pointer" alt=""/>
             </div>
             <div class="btn_check">
-              <a href="#" onclick="show_privacy_agree();return false;"><img src="images/popup/btn_agree.png" alt=""/></a>
+              <a href="#" onclick="show_privacy_agree();return false;"><img src="images/popup/agree_info_agency.png" alt=""/></a>
             </div>
           </div>
           <div class="check_one clearfix">
             <div class="in_check">
-            -
+              <img src="images/popup/check_out.png" name="adver_agree" id="adver_agree" style="cursor:pointer" onclick="adver_check()" alt=""/>
             </div>
             <div class="txt_check">
-              <img src="images/popup/agree_info_ad.png" name="adver_agree" id="adver_agree" onclick="adver_check()" alt=""/>
+              <img src="images/popup/label_agree.png" onclick="adver_check()" style="cursor:pointer" alt=""/>
             </div>
             <div class="btn_check">
-              <a href="#" onclick="show_adver_agree();return false;"><img src="images/popup/btn_agree.png" alt=""/></a>
+              <a href="#" onclick="show_adver_agree();return false;"><img src="images/popup/agree_info_ad.png" alt=""/></a>
             </div>
           </div>
         </div>
@@ -136,7 +125,7 @@
 <div id="use_agree_popup" class="popup_wrap">
   <div class="p_mid_agree p_position">
     <div class="block_close clearfix">
-      <a href="#" onclick="back_input()" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+      <a href="#" onclick="back_input();return false;" class="btn_close"><img src="images/popup/btn_close.png" /></a>
     </div>
     <div class="block_content">
       <div class="inner">
@@ -166,7 +155,7 @@
 <div id="privacy_agree_popup" class="popup_wrap">
   <div class="p_mid_agree p_position">
     <div class="block_close clearfix">
-      <a href="#"  onclick="back_input()" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+      <a href="#"  onclick="back_input();return false;" class="btn_close"><img src="images/popup/btn_close.png" /></a>
     </div>
     <div class="block_content">
       <div class="inner">
@@ -189,7 +178,7 @@
 <div id="adver_agree_popup" class="popup_wrap">
   <div class="p_mid_agree p_position">
     <div class="block_close clearfix">
-      <a href="#" onclick="back_input()" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+      <a href="#" onclick="back_input();return false;" class="btn_close"><img src="images/popup/btn_close.png" /></a>
     </div>
     <div class="block_content">
       <div class="inner">
