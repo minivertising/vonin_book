@@ -49,7 +49,7 @@
 <div id="man_area1" class="wrap_sec_sub_1_top" style="display:none"> 
   <div class="title"><img src="images/title_sub_1_top.png" alt=""/></div>
   <div class="block_movie">
-    <div class="label_ch"><img src="images/sub_label_ch_1.png" alt="" /></div>
+    <div class="label_ch"><img src="images/sub_label_ch_1.png" alt="" id="m_chapter_label" /></div>
     <div id="man_ytplayer1" class="movie">
       <iframe allowfullscreen="1" src="" frameborder="0" id="m_ytplayer1" class="ytplayer" style="width:100%;height:100%;"></iframe>
     </div>
@@ -77,7 +77,7 @@
 <div id="woman_area1" class="wrap_sec_sub_1_top" style="display:none"> 
   <div class="title"><img src="images/title_sub_1_top.png" alt=""/></div>
   <div class="block_movie">
-    <div class="label_ch"><img src="images/sub_label_ch_1.png" alt=""/></div>
+    <div class="label_ch"><img src="images/sub_label_ch_1.png" alt="" id="w_chapter_label"/></div>
     <div id="woman_ytplayer1" class="movie">
       <iframe allowfullscreen="1" src="" frameborder="0" id="w_ytplayer1" class="ytplayer" style="width:100%;height:100%;"></iframe>
     </div>
@@ -331,6 +331,7 @@ function change_chapter(gender, cnt)
 			$(".movie").hide();
 			$("#woman_ytplayer1").show();
 			$("#movie_num").val('w_1');
+			$("#w_chapter_label").attr("src","images/sub_label_ch_1.png");
 			$("#w_thumb_img1").attr("src","images/img_thumb_1_on.png");
 			$("#w_thumb_img2").attr("src","images/img_thumb_2_off.png");
 			$("#w_thumb_img3").attr("src","images/img_thumb_3_off.png");
@@ -339,14 +340,10 @@ function change_chapter(gender, cnt)
 			//controllable_player.seekTo(0);controllable_player.stopVideo();
 		}else if (cnt == "2"){
 			$("#w_ytplayer2").attr("src","<?=$_gl['w_yt_url2']?>");
-			$(".movie").hide(0,function(){
-				$("#woman_loading").show(100,function(){
-					$("#woman_ytplayer2").show(0,function(){
-						$("#woman_loading").hide(0);
-					});
-				});
-			});
+			$(".movie").hide();
+			$("#woman_ytplayer2").show();
 			$("#movie_num").val('w_2');
+			$("#w_chapter_label").attr("src","images/sub_label_ch_2.png");
 			$("#w_thumb_img1").attr("src","images/img_thumb_1_off.png");
 			$("#w_thumb_img2").attr("src","images/img_thumb_2_on.png");
 			$("#w_thumb_img3").attr("src","images/img_thumb_3_off.png");
@@ -358,6 +355,7 @@ function change_chapter(gender, cnt)
 			$(".movie").hide();
 			$("#woman_ytplayer3").show();
 			$("#movie_num").val('w_3');
+			$("#w_chapter_label").attr("src","images/sub_label_ch_3.png");
 			$("#w_thumb_img1").attr("src","images/img_thumb_1_off.png");
 			$("#w_thumb_img2").attr("src","images/img_thumb_2_off.png");
 			$("#w_thumb_img3").attr("src","images/img_thumb_3_on.png");
@@ -369,6 +367,7 @@ function change_chapter(gender, cnt)
 			$(".movie").hide();
 			$("#woman_ytplayer4").show();
 			$("#movie_num").val('w_4');
+			$("#w_chapter_label").attr("src","images/sub_label_ch_4.png");
 			$("#w_thumb_img1").attr("src","images/img_thumb_1_off.png");
 			$("#w_thumb_img2").attr("src","images/img_thumb_2_off.png");
 			$("#w_thumb_img3").attr("src","images/img_thumb_3_off.png");
@@ -383,6 +382,7 @@ function change_chapter(gender, cnt)
 			$(".movie").hide();
 			$("#man_ytplayer1").show();
 			$("#movie_num").val('m_1');
+			$("#m_chapter_label").attr("src","images/sub_label_ch_1.png");
 			$("#m_thumb_img1").attr("src","images/img_thumb_1_on.png");
 			$("#m_thumb_img2").attr("src","images/img_thumb_2_off.png");
 			$("#m_thumb_img3").attr("src","images/img_thumb_3_off.png");
@@ -394,6 +394,7 @@ function change_chapter(gender, cnt)
 			$(".movie").hide();
 			$("#man_ytplayer2").show();
 			$("#movie_num").val('m_2');
+			$("#m_chapter_label").attr("src","images/sub_label_ch_2.png");
 			$("#m_thumb_img1").attr("src","images/img_thumb_1_off.png");
 			$("#m_thumb_img2").attr("src","images/img_thumb_2_on.png");
 			$("#m_thumb_img3").attr("src","images/img_thumb_3_off.png");
@@ -405,6 +406,7 @@ function change_chapter(gender, cnt)
 			$(".movie").hide();
 			$("#man_ytplayer3").show();
 			$("#movie_num").val('m_3');
+			$("#m_chapter_label").attr("src","images/sub_label_ch_3.png");
 			$("#m_thumb_img1").attr("src","images/img_thumb_1_off.png");
 			$("#m_thumb_img2").attr("src","images/img_thumb_2_off.png");
 			$("#m_thumb_img3").attr("src","images/img_thumb_3_on.png");
@@ -416,6 +418,7 @@ function change_chapter(gender, cnt)
 			$(".movie").hide();
 			$("#man_ytplayer4").show();
 			$("#movie_num").val('m_4');
+			$("#m_chapter_label").attr("src","images/sub_label_ch_4.png");
 			$("#m_thumb_img1").attr("src","images/img_thumb_1_off.png");
 			$("#m_thumb_img2").attr("src","images/img_thumb_2_off.png");
 			$("#m_thumb_img3").attr("src","images/img_thumb_3_off.png");

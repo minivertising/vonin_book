@@ -13,23 +13,23 @@
   </div>
 </div>
 
-    <div id="mobile_menu" class="mobile_menu">
-      <ul>
-      	<li><a href="http://www.babience.co.kr/m/index.jsp" target="_blank"><img src="images/btn_bb_home.png"  alt=""/></a></li>
-        <li><a href="#" onclick="move_area('story')"><img src="images/btn_story.png"  alt=""/></a></li>
-        <li><a href="#" onclick="move_area('give')"><img src="images/btn_give.png"  alt=""/></a></li>
-        <li><a href="#" onclick="move_area('message')"><img src="images/btn_suu.png"  alt=""/></a></li>
-        <li><a href="popup_gift_check.php"><img src="images/btn_view_gift.png"  alt=""/></a></li>
-      </ul>
-      <div class="btn_sns">
-        <div class="inner_sns clearfix">
-          <a href="#" onclick="m_sns_share('kt');" id="kakao-link-btn"><img src="images/btn_kt.jpg"  alt=""/></a>
-          <a href="#" onclick="m_sns_share('ks');"><img src="images/btn_ks.jpg"  alt=""/></a>
-          <a href="#" onclick="m_sns_share('fb');"><img src="images/btn_fb.jpg"  alt=""/></a>
-          <a href="#" onclick="m_sns_share('tw');"><img src="images/btn_tw.jpg"  alt=""/></a>
-        </div>
-      </div>
+<div id="mobile_menu" class="mobile_menu">
+  <ul>
+    <li><a href="http://www.babience.co.kr/m/index.jsp" target="_blank"><img src="images/btn_bb_home.png"  alt=""/></a></li>
+    <li><a href="#" onclick="move_area('story')"><img src="images/btn_story.png"  alt=""/></a></li>
+    <li><a href="#" onclick="move_area('give')"><img src="images/btn_give.png"  alt=""/></a></li>
+    <li><a href="#" onclick="move_area('message')"><img src="images/btn_suu.png"  alt=""/></a></li>
+    <li><a href="popup_gift_check.php"><img src="images/btn_view_gift.png"  alt=""/></a></li>
+  </ul>
+  <div class="btn_sns">
+    <div class="inner_sns clearfix">
+      <a href="#" onclick="m_sns_share('kt');" id="kakao-link-btn"><img src="images/btn_kt.jpg"  alt=""/></a>
+      <a href="#" onclick="m_sns_share('ks');"><img src="images/btn_ks.jpg"  alt=""/></a>
+      <a href="#" onclick="m_sns_share('fb');"><img src="images/btn_fb.jpg"  alt=""/></a>
+      <a href="#" onclick="m_sns_share('tw');"><img src="images/btn_tw.jpg"  alt=""/></a>
     </div>
+  </div>
+</div>
 
 <div id="main_area" class="sec_top">
   <a href="#" onclick="sel_book('w')" class="btn_woman">여자영상</a>
@@ -201,6 +201,13 @@ $(document).ready(function() {
 	$("#cboxTopCenter").hide();
 	$("#cboxBottomCenter").hide();
 	//$("#cboxContent").css("background","none");
+	$(".mask").click(function(){
+		$('#mobile_menu').animate({right:-200},300,'linear',function(){
+			$("#mobile_menu").hide();
+			$(".mask").fadeOut(300);
+			$(window).off(".disableScroll");
+		});
+	});
 
 });
 
