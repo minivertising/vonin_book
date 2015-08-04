@@ -152,7 +152,7 @@
       <input type="text" name="mb_name" id="mb_name" placeholder="성함 입력">
     </div>
     <div class="input">
-      <input type="text" name="mb_phone" id="mb_phone" maxlength="11" placeholder="휴대폰 (번호만 입력)" onkeyup="only_num(this);">
+      <input type="tel" name="mb_phone" id="mb_phone" maxlength="11" placeholder="휴대폰 (번호만 입력)" onkeyup="only_num(this);">
     </div>
     <div class="block_check">
       <div class="one_check all clearfix">
