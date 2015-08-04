@@ -229,7 +229,7 @@ function show_gift()
 
 function show_join()
 {
-	$.colorbox({innerWidth:"100%", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#join_popup", onComplete: function(){
+	$.colorbox({innerWidth:"100%", initialWidth:"95%", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#join_popup", onComplete: function(){
 		$("#cboxContent").css("background","none");
 		$("#colorbox").width($("body").width());
 		$("#cboxWrapper").width($("body").width());
@@ -241,7 +241,7 @@ function show_join()
 
 function show_use_agree()
 {
-	$.colorbox({innerWidth:"100%", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#use_agree_popup", onComplete: function(){
+	$.colorbox({innerWidth:"100%", initialWidth:"95%", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#use_agree_popup", onComplete: function(){
 		$("#cboxContent").css("background","none");
 		$("#colorbox").width($("body").width());
 		$("#cboxWrapper").width($("body").width());
@@ -253,7 +253,7 @@ function show_use_agree()
 
 function show_privacy_agree()
 {
-	$.colorbox({innerWidth:"100%", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#privacy_agree_popup", onComplete: function(){
+	$.colorbox({innerWidth:"100%", initialWidth:"95%", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#privacy_agree_popup", onComplete: function(){
 		$("#cboxContent").css("background","none");
 		$("#colorbox").width($("body").width());
 		$("#cboxWrapper").width($("body").width());
@@ -265,7 +265,7 @@ function show_privacy_agree()
 
 function show_adver_agree()
 {
-	$.colorbox({innerWidth:"100%", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#adver_agree_popup", onComplete: function(){
+	$.colorbox({innerWidth:"100%", initialWidth:"95%", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#adver_agree_popup", onComplete: function(){
 		$("#cboxContent").css("background","none");
 		$("#colorbox").width($("body").width());
 		$("#cboxWrapper").width($("body").width());
@@ -277,7 +277,7 @@ function show_adver_agree()
 
 function show_confirm()
 {
-	$.colorbox({innerWidth:"100%", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#confirm_popup", onComplete: function(){
+	$.colorbox({innerWidth:"100%", initialWidth:"95%", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#confirm_popup", onComplete: function(){
 		$("#cboxContent").css("background","none");
 		$("#colorbox").width($("body").width());
 		$("#cboxWrapper").width($("body").width());
