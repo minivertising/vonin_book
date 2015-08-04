@@ -6,13 +6,6 @@
 <input type="hidden" name="usechk" id="usechk" value="N">
 <input type="hidden" name="privacychk" id="privacychk" value="N">
 <input type="hidden" name="adverchk" id="adverchk" value="N">
-<div class="wrap_page">
-  <div class="navi">
-    <div class="left"><a href="index.php"><img src="images/logo.png" width="70" alt="" id="navi_logo"/></a></div>
-    <div class="right"><a href="#" onclick="show_menu()"><img src="images/menu_ham.png" width="30" alt="" id="navi_menu"/></a></div>
-  </div>
-</div>
-
 <div id="mobile_menu" class="mobile_menu">
   <ul>
     <li><a href="http://www.babience.co.kr/m/index.jsp" target="_blank"><img src="images/btn_bb_home.png"  alt=""/></a></li>
@@ -30,6 +23,13 @@
     </div>
   </div>
 </div>
+<div class="wrap_page">
+  <div class="navi">
+    <div class="left"><a href="index.php"><img src="images/logo.png" width="70" alt="" id="navi_logo"/></a></div>
+    <div class="right"><a href="#" onclick="show_menu()"><img src="images/menu_ham.png" width="30" alt="" id="navi_menu"/></a></div>
+  </div>
+</div>
+
 
 <div id="main_area" class="sec_top">
   <a href="#" onclick="sel_book('w')" class="btn_woman">여자영상</a>
@@ -187,11 +187,14 @@
 <?
 	include_once   "./popup_div.php";
 ?>
+    <script type='text/javascript' src='../lib/pageslide/pageslide.js'></script>
 
 </body>
 </html>
 <script type="text/javascript">
+
 $(document).ready(function() {
+	$(".show_menu").pageslide({ direction: "left", modal: true });
 	$("#cboxTopLeft").hide();
 	$("#cboxTopRight").hide();
 	$("#cboxBottomLeft").hide();

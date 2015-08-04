@@ -123,6 +123,7 @@
 	refer						= refer.replace("http://","");
 
 	livereReply				= new Livere(livere_seq, refer, title);
+	livereReply.description	= "그녀의 마음을 설레이게 하는 4가지 방법. 설렘효과 보장!";
 	livereLib.start();
 </script>
     </div>   
