@@ -8,10 +8,28 @@
 <input type="hidden" name="adverchk" id="adverchk" value="N">
 <div class="wrap_page">
   <div class="navi">
-    <div class="left"><a href="index.php"><img src="images/logo.png" width="70" alt=""/></a></div>
-    <div class="right"><a href="#"><img src="images/menu_ham.png" width="30" alt=""/></a></div>
+    <div class="left"><a href="index.php"><img src="images/logo.png" width="70" alt="" id="navi_logo"/></a></div>
+    <div class="right"><a href="#" onclick="show_menu()"><img src="images/menu_ham.png" width="30" alt="" id="navi_menu"/></a></div>
   </div>
 </div>
+
+    <div id="mobile_menu" class="mobile_menu">
+      <ul>
+      	<li><a href="http://www.babience.co.kr/m/index.jsp" target="_blank"><img src="images/btn_bb_home.png"  alt=""/></a></li>
+        <li><a href="#" onclick="move_area('story')"><img src="images/btn_story.png"  alt=""/></a></li>
+        <li><a href="#" onclick="move_area('give')"><img src="images/btn_give.png"  alt=""/></a></li>
+        <li><a href="#" onclick="move_area('message')"><img src="images/btn_suu.png"  alt=""/></a></li>
+        <li><a href="popup_gift_check.php"><img src="images/btn_view_gift.png"  alt=""/></a></li>
+      </ul>
+      <div class="btn_sns">
+        <div class="inner_sns clearfix">
+          <a href="#" onclick="m_sns_share('kt');" id="kakao-link-btn"><img src="images/btn_kt.jpg"  alt=""/></a>
+          <a href="#" onclick="m_sns_share('ks');"><img src="images/btn_ks.jpg"  alt=""/></a>
+          <a href="#" onclick="m_sns_share('fb');"><img src="images/btn_fb.jpg"  alt=""/></a>
+          <a href="#" onclick="m_sns_share('tw');"><img src="images/btn_tw.jpg"  alt=""/></a>
+        </div>
+      </div>
+    </div>
 
 <div id="main_area" class="sec_top">
   <a href="#" onclick="sel_book('w')" class="btn_woman">여자영상</a>
@@ -32,7 +50,7 @@
     <a href="#" onclick="show_join();return false;"><img src="images/btn_howto.png" alt=""/></a>
   </div>
   <div class="title_chap">
-    <img src="images/label_chap_1.png" alt=""/>
+    <img src="images/label_chap_1.png" alt="" id="m_chapter_label"/>
   </div>
   <div id="man_ytplayer1" class="movie">
     <iframe allowfullscreen="1" src="" frameborder="0" id="m_ytplayer1" class="ytplayer" style="width:100%;height:100%;"></iframe>
@@ -74,7 +92,7 @@
     <a href="#" onclick="show_join();return false;"><img src="images/btn_howto.png" alt=""/></a>
   </div>
   <div class="title_chap">
-    <img src="images/label_chap_1.png" alt=""/>
+    <img src="images/label_chap_1.png" alt="" id="w_chapter_label"/>
   </div>
   <div id="woman_ytplayer1" class="movie">
     <iframe allowfullscreen="1" src="" frameborder="0" id="w_ytplayer1" class="ytplayer" style="width:100%;height:100%;"></iframe>
@@ -131,10 +149,10 @@
   </div>
   <div class="block_input">
     <div class="input">
-      <input type="text" name="mb_name" id="mb_name">
+      <input type="text" name="mb_name" id="mb_name" placeholder="성함 입력">
     </div>
     <div class="input">
-      <input type="text" name="mb_phone" id="mb_phone">
+      <input type="text" name="mb_phone" id="mb_phone" maxlength="11" placeholder="휴대폰 (번호만 입력)" onkeyup="only_num(this);">
     </div>
     <div class="block_check">
       <div class="one_check all clearfix">
@@ -189,12 +207,10 @@ $(document).ready(function() {
 
 function show_gift()
 {
-	$.colorbox({innerWidth:"100%", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#gift_popup", onComplete: function(){
-		//$("#cboxLoadedContent").height(560);
-		//alert($("#colorbox").width());
-	//$("#cboxContent").width(356);
+	$.colorbox({innerWidth:"100%", initialWidth:"95%",inline:true, opacity:"0.9", scrolling:false, preloading:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#gift_popup", onComplete: function(){
 		$("#cboxContent").css("background","none");
-
+		$("#colorbox").width($("body").width());
+		$("#cboxWrapper").width($("body").width());
 	},
 	onClosed: function(){
 		$("#cboxContent").css("background","#fff");
@@ -205,6 +221,8 @@ function show_join()
 {
 	$.colorbox({innerWidth:"100%", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#join_popup", onComplete: function(){
 		$("#cboxContent").css("background","none");
+		$("#colorbox").width($("body").width());
+		$("#cboxWrapper").width($("body").width());
 	},
 	onClosed: function(){
 		$("#cboxContent").css("background","#fff");
@@ -215,6 +233,8 @@ function show_use_agree()
 {
 	$.colorbox({innerWidth:"100%", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#use_agree_popup", onComplete: function(){
 		$("#cboxContent").css("background","none");
+		$("#colorbox").width($("body").width());
+		$("#cboxWrapper").width($("body").width());
 	},
 	onClosed: function(){
 		$("#cboxContent").css("background","#fff");
@@ -225,6 +245,8 @@ function show_privacy_agree()
 {
 	$.colorbox({innerWidth:"100%", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#privacy_agree_popup", onComplete: function(){
 		$("#cboxContent").css("background","none");
+		$("#colorbox").width($("body").width());
+		$("#cboxWrapper").width($("body").width());
 	},
 	onClosed: function(){
 		$("#cboxContent").css("background","#fff");
@@ -235,6 +257,8 @@ function show_adver_agree()
 {
 	$.colorbox({innerWidth:"100%", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#adver_agree_popup", onComplete: function(){
 		$("#cboxContent").css("background","none");
+		$("#colorbox").width($("body").width());
+		$("#cboxWrapper").width($("body").width());
 	},
 	onClosed: function(){
 		$("#cboxContent").css("background","#fff");
@@ -245,6 +269,8 @@ function show_confirm()
 {
 	$.colorbox({innerWidth:"100%", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#confirm_popup", onComplete: function(){
 		$("#cboxContent").css("background","none");
+		$("#colorbox").width($("body").width());
+		$("#cboxWrapper").width($("body").width());
 	},
 	onClosed: function(){
 		$("#cboxContent").css("background","#fff");
@@ -253,6 +279,8 @@ function show_confirm()
 
 function sel_book(gender)
 {
+	$("#navi_logo").attr("src","images/logo_b.png");
+	$("#navi_menu").attr("src","images/menu_ham_b.png");
 	if (gender == "w")
 	{
 		$("#main_area").hide();
@@ -302,17 +330,8 @@ function change_chapter(gender, cnt)
 			$("#w_thumb_img2").attr("src","images/thumb_2_off.png");
 			$("#w_thumb_img3").attr("src","images/thumb_3_off.png");
 			$("#w_thumb_img4").attr("src","images/thumb_4_off.png");
+			$("#w_chapter_label").attr("src","images/label_chap_1.png");
 		}else if (cnt == "2"){
-			/*
-			$("#w_ytplayer2").attr("src","<?=$_gl['w_yt_url2']?>");
-			$(".movie").hide(0,function(){
-				$("#woman_loading").show(100,function(){
-					$("#woman_ytplayer2").show(0,function(){
-						$("#woman_loading").hide(0);
-					});
-				});
-			});
-			*/
 			$("#w_ytplayer2").attr("src","<?=$_gl['w_yt_url2']?>");
 			$(".movie").hide();
 			$("#woman_ytplayer2").show();
@@ -321,6 +340,7 @@ function change_chapter(gender, cnt)
 			$("#w_thumb_img2").attr("src","images/thumb_2_on.png");
 			$("#w_thumb_img3").attr("src","images/thumb_3_off.png");
 			$("#w_thumb_img4").attr("src","images/thumb_4_off.png");
+			$("#w_chapter_label").attr("src","images/label_chap_2.png");
 		}else if (cnt == "3"){
 			$("#w_ytplayer3").attr("src","<?=$_gl['w_yt_url3']?>");
 			$(".movie").hide();
@@ -330,6 +350,7 @@ function change_chapter(gender, cnt)
 			$("#w_thumb_img2").attr("src","images/thumb_2_off.png");
 			$("#w_thumb_img3").attr("src","images/thumb_3_on.png");
 			$("#w_thumb_img4").attr("src","images/thumb_4_off.png");
+			$("#w_chapter_label").attr("src","images/label_chap_3.png");
 		}else if (cnt == "4"){
 			$("#w_ytplayer4").attr("src","<?=$_gl['w_yt_url4']?>");
 			$(".movie").hide();
@@ -339,6 +360,7 @@ function change_chapter(gender, cnt)
 			$("#w_thumb_img2").attr("src","images/thumb_2_off.png");
 			$("#w_thumb_img3").attr("src","images/thumb_3_off.png");
 			$("#w_thumb_img4").attr("src","images/thumb_4_on.png");
+			$("#w_chapter_label").attr("src","images/label_chap_4.png");
 		}
 	}else{
 		if (cnt == "1")
@@ -351,6 +373,7 @@ function change_chapter(gender, cnt)
 			$("#m_thumb_img2").attr("src","images/thumb_2_off.png");
 			$("#m_thumb_img3").attr("src","images/thumb_3_off.png");
 			$("#m_thumb_img4").attr("src","images/thumb_4_off.png");
+			$("#m_chapter_label").attr("src","images/label_chap_1.png");
 		}else if (cnt == "2"){
 			$("#m_ytplayer2").attr("src","<?=$_gl['m_yt_url2']?>");
 			$(".movie").hide();
@@ -360,6 +383,7 @@ function change_chapter(gender, cnt)
 			$("#m_thumb_img2").attr("src","images/thumb_2_on.png");
 			$("#m_thumb_img3").attr("src","images/thumb_3_off.png");
 			$("#m_thumb_img4").attr("src","images/thumb_4_off.png");
+			$("#m_chapter_label").attr("src","images/label_chap_2.png");
 		}else if (cnt == "3"){
 			$("#m_ytplayer3").attr("src","<?=$_gl['m_yt_url3']?>");
 			$(".movie").hide();
@@ -369,6 +393,7 @@ function change_chapter(gender, cnt)
 			$("#m_thumb_img2").attr("src","images/thumb_2_off.png");
 			$("#m_thumb_img3").attr("src","images/thumb_3_on.png");
 			$("#m_thumb_img4").attr("src","images/thumb_4_off.png");
+			$("#m_chapter_label").attr("src","images/label_chap_3.png");
 		}else if (cnt == "4"){
 			$("#m_ytplayer4").attr("src","<?=$_gl['m_yt_url4']?>");
 			$(".movie").hide();
@@ -378,6 +403,7 @@ function change_chapter(gender, cnt)
 			$("#m_thumb_img2").attr("src","images/thumb_2_off.png");
 			$("#m_thumb_img3").attr("src","images/thumb_3_off.png");
 			$("#m_thumb_img4").attr("src","images/thumb_4_on.png");
+			$("#m_chapter_label").attr("src","images/label_chap_4.png");
 		}
 
 	}
@@ -388,8 +414,9 @@ function chk_reply(param)
 {
 	gender_gubun	= $("#movie_num").val();
 
-	$("#navi_main").show();
-	$("#navi_sub").hide();
+	$("#navi_logo").attr("src","images/logo.png");
+	$("#navi_menu").attr("src","images/menu_ham.png");
+
 
 	if (gender_gubun == "m_1" || gender_gubun == "m_2" || gender_gubun == "m_3" || gender_gubun == "m_4")
 	{
@@ -529,6 +556,8 @@ function show_inspop(obj)
 		},
 		url: "../main_exec.php",
 		success: function(response){
+			$("#navi_logo").attr("src","images/logo_b.png");
+			$("#navi_menu").attr("src","images/menu_ham_b.png");
 			$("#comment_area").hide();
 			//$("body").attr("class","sub");
 			//$("#navi_main").hide();
@@ -677,13 +706,69 @@ function input_info()
 				//alert($("#colorbox").width());
 			//$("#cboxContent").width(356);
 				$("#cboxContent").css("background","none");
-
+				$("#colorbox").width($("body").width());
+				$("#cboxWrapper").width($("body").width());
 			},
 			onClosed: function(){
 				$("#cboxContent").css("background","#fff");
 			}});
 		}
 	});
-
 }
+
+function only_num(obj)
+{
+	var inText = obj.value;
+	var outText = "";
+	var flag = true;
+	var ret;
+	for(var i = 0; i < inText.length; i++)
+	{
+		ret = inText.charCodeAt(i);
+		if((ret < 48) || (ret > 57))
+		{
+			flag = false;
+		}
+		else
+		{
+			outText += inText.charAt(i);
+		}
+	}
+ 
+	if(flag == false)
+	{
+		alert("전화번호는 숫자입력만 가능합니다.");
+		obj.value = outText;
+		obj.focus();
+		return false;
+	} 
+	return true;
+}
+
+function show_menu()
+{
+	if ($("#mobile_menu").css("display") == "block")
+	{
+		$('#mobile_menu').animate({right:-200},300,'linear',function(){
+			$("#mobile_menu").hide();
+			$(".mask").fadeOut(300);
+			$(window).off(".disableScroll");
+		});
+	}else{
+		$(".mask").width($(window).width());
+		$(".mask").height($(window).height());
+		$(".mask").fadeTo(1000, 0.6);
+
+		$('#mobile_menu').css('right','-200px');
+		// 이동위치값 지정
+		var position = 0;
+		$('#mobile_menu').show().animate({right:position},300,'linear');
+
+		$(window).on("mousewheel.disableScroll DOMMouseScroll.disableScroll touchmove.disableScroll", function(e) {
+			e.preventDefault();
+			return;
+		});
+	}
+}
+
 </script>
