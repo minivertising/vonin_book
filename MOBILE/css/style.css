@@ -14,7 +14,31 @@ body{
 .wrap_page{
 	width:100%;
 }
+body.menu{
+	background:#83c9bb;
+}
+.wrap_page.menu{
+	width:100%;
+	background:#83c9bb;
+	padding:10% 0;
+	height:100%;
+	text-align:center;
+}
+.wrap_page.menu .btn_close{
+	text-align:center;
+	padding-bottom:20px;
+}
+.wrap_page.menu .bt_list{
+	width:60%;
+	margin:0 auto;
+	text-align:center;
+	border-bottom:1px solid #5f9d7f;
+	padding:15px 0;
+}
 
+.wrap_page.menu .bt_list.sns{
+	border-bottom:none;
+}
 
 .navi{
 	position:fixed;height:50px;width:100%;top:0;left:0;z-index:1000;
