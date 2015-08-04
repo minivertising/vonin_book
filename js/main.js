@@ -33,7 +33,7 @@ function input_info()
 	var privacy_agree		= $("#privacychk").val();
 	var adver_agree		= $("#adverchk").val();
 
-	if (mb_name == "")
+	if (mb_name == "" || mb_name == "성함을 입력해 주세요.")
 	{
 
 		alert('이름을 입력해 주세요.');
@@ -43,7 +43,7 @@ function input_info()
 		return false;
 	}
 
-	if (mb_phone == "")
+	if (mb_phone == "" || mb_phone == "휴대폰 번호를 입력해 주세요.(숫자만)")
 	{
 
 		alert('전화번호를 입력해 주세요.');
