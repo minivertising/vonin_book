@@ -1,98 +1,141 @@
 <?
 	include_once   "./header.php";
 ?>
-<div id="main_wrap" style="width:100%;">
-  <input type="hidden" name="movie_num" id="movie_num">
-  <div style="width:100%;height:70px;background:skyblue">
-    <a href="index.php">VONIN</a>
-    <a href="#" id="top_gift_link" onclick="show_gift2();">GIFT</a>
-    <a href="#" id="top_join_link" onclick="show_join();">JOIN IN</a>
-    <a href="#">VONIN SHOP</a>
+<input type="hidden" name="movie_num" id="movie_num">
+<input type="hidden" name="allchk" id="allchk" value="N">
+<input type="hidden" name="usechk" id="usechk" value="N">
+<input type="hidden" name="privacychk" id="privacychk" value="N">
+<input type="hidden" name="adverchk" id="adverchk" value="N">
+<div class="sec_navi" id="navi_main">
+  <div class="navi">
+    <div class="left"><a href="index.php"><img src="images/logo.png" alt=""/></a></div>
+    <div class="right">
+      <a href="#" onclick="show_gift2();"><img src="images/gnb_gift.png" alt=""/></a>
+      <a href="#" onclick="show_join();"><img src="images/gnb_howto.png" alt=""/></a>
+      <a href="#" onclick="show_notice();"><img src="images/gnb_notice.png" alt=""/></a>
+      <a href="http://everymanis.lgbeautymall.com/everymanis.jsp" target="_blank"><img src="images/gnb_vonin.png" alt=""/></a>
+    </div>
   </div>
-  <div id="main_area" style="width:100%;height:100%;background:gray;z-index:100">
-    <a href="#" onclick="sel_book('w')">여성을 위한 개론서 episode4</a><br />
-    <a href="#" onclick="sel_book('m')">남성을 위한 개론서 episode4</a><br />
-    <a href="#" id="gift_link" onclick="show_gift();">선물보기</a>
+</div>
+
+<div class="sec_navi" id="navi_sub" style="display:none">
+  <div class="navi">
+    <div class="left"><a href="index.php"><img src="images/logo_b.png" alt=""/></a></div>
+    <div class="right">
+      <a href="#" onclick="show_gift2();"><img src="images/gnb_gift_b.png" alt=""/></a>
+      <a href="#" onclick="show_join();"><img src="images/gnb_howto_b.png" alt=""/></a>
+      <a href="#" onclick="show_notice();"><img src="images/gnb_notice_b.png" alt=""/></a>
+      <a href="http://everymanis.lgbeautymall.com/everymanis.jsp" target="_blank"><img src="images/gnb_vonin_b.png" alt=""/></a>
+    </div>
   </div>
-  <div id="man_area" style="width:100%;height:100%;background:orange;display:none">
-    <h1  style="padding-top:20px">STEP.1 설렘학 개론(남성)</h1>
-    <a href="#">선물보기</a><br />
-    <a href="#">참여방법</a><br />
-    <div id="man_ytplayer1" class="movie_area" style="width:100%;height:200px">
+</div>
+
+
+<div id="main_area" class="wrap_sec_top"> 
+  <div class="title">
+    <img src="images/title.png" alt=""/>
+  </div>
+  <div class="btn_block">
+    <a href="#" onclick="sel_book('w')"><img src="images/btn_movie_woman.png" alt=""/></a>
+    <a href="#"><img src="images/bar.png" alt=""/></a>
+    <a href="#" onclick="sel_book('m')"><img src="images/btn_movie_man.png" alt=""/></a>
+  </div>
+  <div class="img_gift">
+    <a href="#" id="gift_link" onclick="show_gift();"><img src="images/img_gift.png" alt=""/></a>
+  </div>
+  <div class="sec_top">
+    <div class="bg_top"><img src="images/bg_top.jpg" alt=""  id="cover_image1"/></div>
+  </div>
+</div>
+
+<div id="man_area1" class="wrap_sec_sub_1_top" style="display:none"> 
+  <div class="title"><img src="images/title_sub_1_top.png" alt=""/></div>
+  <div class="block_movie">
+    <div class="label_ch"><img src="images/sub_label_ch_1.png" alt="" id="m_chapter_label" /></div>
+    <div id="man_ytplayer1" class="movie">
       <iframe allowfullscreen="1" src="" frameborder="0" id="m_ytplayer1" class="ytplayer" style="width:100%;height:100%;"></iframe>
     </div>
-    <div id="man_ytplayer2" class="movie_area" style="width:100%;height:200px;display:none">
+    <div id="man_ytplayer2" class="movie" style="display:none">
       <iframe allowfullscreen="1" src="" frameborder="0" id="m_ytplayer2" class="ytplayer" style="width:100%;height:100%;"></iframe>
     </div>
-    <div id="man_ytplayer3" class="movie_area" style="width:100%;height:200px;display:none">
+    <div id="man_ytplayer3" class="movie" style="display:none">
       <iframe allowfullscreen="1" src="" frameborder="0" id="m_ytplayer3" class="ytplayer" style="width:100%;height:100%;"></iframe>
     </div>
-    <div id="man_ytplayer4" class="movie_area" style="width:100%;height:200px;display:none">
+    <div id="man_ytplayer4" class="movie" style="display:none">
       <iframe allowfullscreen="1" src="" frameborder="0" id="m_ytplayer4" class="ytplayer" style="width:100%;height:100%;"></iframe>
     </div>
-    <input type="checkbox" name="movie_check" id="movie_check" onclick="chk_reply(this)"><label for="movie_check">영상 선택</label><br />
-    <a href="#" onclick="change_chapter('m','1')">Chapter1. 5cm의 법칙</a><br />
-    <a href="#" onclick="change_chapter('m','2')">Chapter2. 3척의 마법</a><br />
-    <a href="#" onclick="change_chapter('m','3')">Chapter3. 15cm의 법칙</a><br />
-    <a href="#" onclick="change_chapter('m','4')">Chapter4. 3020의 법칙</a><br />
+
+    <div class="btn_block"><a href="#" onclick="chk_reply(this)"><img src="images/btn_share_movie.png" alt=""/></a></div>
   </div>
-  <div id="woman_area" style="width:100%;height:100%;background:orange;display:none;z-index:1000;position:absolute">
-    <h1  style="padding-top:20px">STEP.1 설렘학 개론(여성)</h1>
-    <a href="#">선물보기</a><br />
-    <a href="#">참여방법</a><br />
-    <div id="woman_ytplayer1" class="movie_area" style="width:100%;height:200px">
+</div>  
+<div id="man_area2" class="wrap_sec_sub_1_bottom" style="display:none"> 
+  <div class="thumb_movie">
+    <a href="#" onclick="change_chapter('m','1');return false;"><img src="images/img_thumb_1_on.png" alt="" id="m_thumb_img1"/></a>
+    <a href="#" onclick="change_chapter('m','2');return false;"><img src="images/img_thumb_2_off.png" alt="" id="m_thumb_img2" /></a>
+    <a href="#" onclick="change_chapter('m','3');return false;"><img src="images/img_thumb_3_off.png" alt="" id="m_thumb_img3" /></a>
+    <a href="#" onclick="change_chapter('m','4');return false;"><img src="images/img_thumb_4_off.png" alt="" id="m_thumb_img4" /></a>
+  </div>
+</div> 
+<div id="woman_area1" class="wrap_sec_sub_1_top" style="display:none"> 
+  <div class="title"><img src="images/title_sub_1_top.png" alt=""/></div>
+  <div class="block_movie">
+    <div class="label_ch"><img src="images/sub_label_ch_1.png" alt="" id="w_chapter_label"/></div>
+    <div id="woman_ytplayer1" class="movie">
       <iframe allowfullscreen="1" src="" frameborder="0" id="w_ytplayer1" class="ytplayer" style="width:100%;height:100%;"></iframe>
     </div>
-    <div id="woman_ytplayer2" class="movie_area" style="width:100%;height:200px;display:none">
+    <div id="woman_ytplayer2" class="movie" style="display:none">
       <iframe allowfullscreen="1" src="" frameborder="0" id="w_ytplayer2" class="ytplayer" style="width:100%;height:100%;"></iframe>
     </div>
-    <div id="woman_ytplayer3" class="movie_area" style="width:100%;height:200px;display:none">
+    <div id="woman_ytplayer3" class="movie" style="display:none">
       <iframe allowfullscreen="1" src="" frameborder="0" id="w_ytplayer3" class="ytplayer" style="width:100%;height:100%;"></iframe>
     </div>
-    <div id="woman_ytplayer4" class="movie_area" style="width:100%;height:200px;display:none">
+    <div id="woman_ytplayer4" class="movie" style="display:none">
       <iframe allowfullscreen="1" src="" frameborder="0" id="w_ytplayer4" class="ytplayer" style="width:100%;height:100%;"></iframe>
     </div>
-    <input type="checkbox" name="movie_check" id="movie_check" onclick="chk_reply(this)"><label for="movie_check">영상 선택</label><br />
-    <a href="#" onclick="change_chapter('w','1')">Chapter1. 5cm의 법칙</a><br />
-    <a href="#" onclick="change_chapter('w','2')">Chapter2. 3척의 마법</a><br />
-    <a href="#" onclick="change_chapter('w','3')">Chapter3. 15cm의 법칙</a><br />
-    <a href="#" onclick="change_chapter('w','4')">Chapter4. 3020의 법칙</a><br />
+
+    <div class="btn_block"><a href="#" onclick="chk_reply(this)"><img src="images/btn_share_movie.png" alt=""/></a></div>
   </div>
-  <div id="comment_area" style="width:100%;height:100%;background:gray;display:none">
-    <h1  style="padding-top:20px">설렘을 모르는 내 남자에게 영상과 함께 한마디 남겨주세요!</h1>
+</div>  
+<div id="woman_area2" class="wrap_sec_sub_1_bottom" style="display:none"> 
+  <div class="thumb_movie">
+    <a href="#" onclick="change_chapter('w','1');return false;"><img src="images/img_thumb_1_on.png" alt="" id="w_thumb_img1"/></a>
+    <a href="#" onclick="change_chapter('w','2');return false;"><img src="images/img_thumb_2_off.png" alt="" id="w_thumb_img2" /></a>
+    <a href="#" onclick="change_chapter('w','3');return false;"><img src="images/img_thumb_3_off.png" alt="" id="w_thumb_img3" /></a>
+    <a href="#" onclick="change_chapter('w','4');return false;"><img src="images/img_thumb_4_off.png" alt="" id="w_thumb_img4" /></a>
+  </div>
+</div> 
+<div id="comment_area1" class="wrap_sec_sub_2_top" style="display:none"> 
+  <div class="title">
+    <img src="images/title_sub_2.png" alt=""/>
+  </div>
+  <div class="bg_top"><img src="images/bg_top_sub2.jpg" alt=""/></div> 
+  <div class="bg_blank">ttt</div>    
+</div>  
+<div id="comment_area2" class="sec_comment" style="display:none">
+  <div class="input_comment">
     <div id="livereContainer">
 <script type="text/javascript">
 	var consumer_seq		= "1012";
 	var livere_seq			= "23924";
 	var smartlogin_seq		= "1255";
 	var title					= "보닌 설렘학 개론";
-	var refer					= "www.mnv.kr";
+	var refer					= "www.vonin-allinone.com";
 	refer						= refer.replace("http://","");
 
 	livereReply				= new Livere(livere_seq, refer, title);
+	livereReply.description	= "그녀의 마음을 설레이게 하는 4가지 방법. 설렘효과 보장!";
 	livereLib.start();
 </script>
-    </div>
+    </div>   
   </div>
-</div>
+</div>   
 <?
 	include_once   "./popup_div.php";
 
-	include_once   "./footer.php";
+	//include_once   "./footer.php";
 ?>
 <script type="text/javascript">
 $(document).ready(function() {
-	$("#main_area").height($(document).height() - 70);
-	$("#man_area").height($(document).height() - 70);
-	$("#woman_area").height($(document).height() - 70);
-
-	paceOptions = {
-	  // Disable the 'elements' source
-		ajax: true, // disabled
-		document: true, // disabled
-		eventLag: true,
-		restartOnRequestAfter: false
-	}
 
 	$("#cboxTopLeft").hide();
 	$("#cboxTopRight").hide();
@@ -102,7 +145,7 @@ $(document).ready(function() {
 	$("#cboxMiddleRight").hide();
 	$("#cboxTopCenter").hide();
 	$("#cboxBottomCenter").hide();
-
+	//$("#cboxContent").css("background","none");
 });
 
 function sel_book(gender)
@@ -110,27 +153,29 @@ function sel_book(gender)
 	if (gender == "w")
 	{
 		$("#main_area").hide();
-		$( "#woman_area" ).fadeIn( "slow", function() {
+		$("body").attr("class","sub");
+		$("#navi_main").hide();
+		$("#navi_sub").show();
+		$( "#woman_area1" ).fadeIn( "slow", function() {
+			$(".wrap_sec_footer").hide();
 			$("#w_ytplayer1").attr("src","<?=$_gl['w_yt_url1']?>");
 			$("#movie_num").val('w_1');
 		});
-		//$("#woman_area").show();
-		//$("#w_ytplayer2").attr("src","<?=$_gl['w_yt_url2']?>");
-		//$("#w_ytplayer3").attr("src","<?=$_gl['w_yt_url3']?>");
-		//$("#w_ytplayer4").attr("src","<?=$_gl['w_yt_url4']?>");
+		$( "#woman_area2" ).fadeIn("slow");
 	}else{
 		$("#main_area").hide();
-		$( "#man_area" ).fadeIn( "slow", function() {
+		$("body").attr("class","sub");
+		$("#navi_main").hide();
+		$("#navi_sub").show();
+		$( "#man_area1" ).fadeIn( "slow", function() {
+			$(".wrap_sec_footer").hide();
 			$("#m_ytplayer1").attr("src","<?=$_gl['m_yt_url1']?>");
 			$("#movie_num").val('m_1');
 		});
-		$("#m_ytplayer1").attr("src","<?=$_gl['m_yt_url1']?>");
-		$("#movie_num").val('m_1');
-		//$("#m_ytplayer2").attr("src","<?=$_gl['m_yt_url2']?>");
-		//$("#m_ytplayer3").attr("src","<?=$_gl['m_yt_url3']?>");
-		//$("#m_ytplayer4").attr("src","<?=$_gl['m_yt_url4']?>");
+		$( "#man_area2" ).fadeIn("slow");
 	}
 }
+
 
 function change_chapter(gender, cnt)
 {
@@ -139,138 +184,200 @@ function change_chapter(gender, cnt)
 		if (cnt == "1")
 		{
 			$("#w_ytplayer1").attr("src","<?=$_gl['w_yt_url1']?>");
-			$(".movie_area").hide();
+			$(".movie").hide();
 			$("#woman_ytplayer1").show();
 			$("#movie_num").val('w_1');
-			//yt_api(cnt);
-			//controllable_player.seekTo(0);controllable_player.stopVideo();
+			$("#w_chapter_label").attr("src","images/sub_label_ch_1.png");
+			$("#w_thumb_img1").attr("src","images/img_thumb_1_on.png");
+			$("#w_thumb_img2").attr("src","images/img_thumb_2_off.png");
+			$("#w_thumb_img3").attr("src","images/img_thumb_3_off.png");
+			$("#w_thumb_img4").attr("src","images/img_thumb_4_off.png");
 		}else if (cnt == "2"){
 			$("#w_ytplayer2").attr("src","<?=$_gl['w_yt_url2']?>");
-			$(".movie_area").hide();
+			$(".movie").hide();
 			$("#woman_ytplayer2").show();
 			$("#movie_num").val('w_2');
-			//yt_api(cnt);
-			//controllable_player.seekTo(0);controllable_player.stopVideo();
+			$("#w_chapter_label").attr("src","images/sub_label_ch_2.png");
+			$("#w_thumb_img1").attr("src","images/img_thumb_1_off.png");
+			$("#w_thumb_img2").attr("src","images/img_thumb_2_on.png");
+			$("#w_thumb_img3").attr("src","images/img_thumb_3_off.png");
+			$("#w_thumb_img4").attr("src","images/img_thumb_4_off.png");
 		}else if (cnt == "3"){
 			$("#w_ytplayer3").attr("src","<?=$_gl['w_yt_url3']?>");
-			$(".movie_area").hide();
+			$(".movie").hide();
 			$("#woman_ytplayer3").show();
 			$("#movie_num").val('w_3');
-			//yt_api(cnt);
-			//controllable_player.seekTo(0);controllable_player.stopVideo();
+			$("#w_chapter_label").attr("src","images/sub_label_ch_3.png");
+			$("#w_thumb_img1").attr("src","images/img_thumb_1_off.png");
+			$("#w_thumb_img2").attr("src","images/img_thumb_2_off.png");
+			$("#w_thumb_img3").attr("src","images/img_thumb_3_on.png");
+			$("#w_thumb_img4").attr("src","images/img_thumb_4_off.png");
 		}else if (cnt == "4"){
 			$("#w_ytplayer4").attr("src","<?=$_gl['w_yt_url4']?>");
-			$(".movie_area").hide();
+			$(".movie").hide();
 			$("#woman_ytplayer4").show();
 			$("#movie_num").val('w_4');
-			//yt_api(cnt);
-			//controllable_player.seekTo(0);controllable_player.stopVideo();
+			$("#w_chapter_label").attr("src","images/sub_label_ch_4.png");
+			$("#w_thumb_img1").attr("src","images/img_thumb_1_off.png");
+			$("#w_thumb_img2").attr("src","images/img_thumb_2_off.png");
+			$("#w_thumb_img3").attr("src","images/img_thumb_3_off.png");
+			$("#w_thumb_img4").attr("src","images/img_thumb_4_on.png");
 		}
 	}else{
 		if (cnt == "1")
 		{
 			$("#m_ytplayer1").attr("src","<?=$_gl['m_yt_url1']?>");
-			$(".movie_area").hide();
+			$(".movie").hide();
 			$("#man_ytplayer1").show();
 			$("#movie_num").val('m_1');
-			//yt_api(cnt);
-			//controllable_player.seekTo(0);controllable_player.stopVideo();
+			$("#m_chapter_label").attr("src","images/sub_label_ch_1.png");
+			$("#m_thumb_img1").attr("src","images/img_thumb_1_on.png");
+			$("#m_thumb_img2").attr("src","images/img_thumb_2_off.png");
+			$("#m_thumb_img3").attr("src","images/img_thumb_3_off.png");
+			$("#m_thumb_img4").attr("src","images/img_thumb_4_off.png");
 		}else if (cnt == "2"){
 			$("#m_ytplayer2").attr("src","<?=$_gl['m_yt_url2']?>");
-			$(".movie_area").hide();
+			$(".movie").hide();
 			$("#man_ytplayer2").show();
 			$("#movie_num").val('m_2');
-			//yt_api(cnt);
-			//controllable_player.seekTo(0);controllable_player.stopVideo();
+			$("#m_chapter_label").attr("src","images/sub_label_ch_2.png");
+			$("#m_thumb_img1").attr("src","images/img_thumb_1_off.png");
+			$("#m_thumb_img2").attr("src","images/img_thumb_2_on.png");
+			$("#m_thumb_img3").attr("src","images/img_thumb_3_off.png");
+			$("#m_thumb_img4").attr("src","images/img_thumb_4_off.png");
 		}else if (cnt == "3"){
 			$("#m_ytplayer3").attr("src","<?=$_gl['m_yt_url3']?>");
-			$(".movie_area").hide();
+			$(".movie").hide();
 			$("#man_ytplayer3").show();
 			$("#movie_num").val('m_3');
-			//yt_api(cnt);
-			//controllable_player.seekTo(0);controllable_player.stopVideo();
+			$("#m_chapter_label").attr("src","images/sub_label_ch_3.png");
+			$("#m_thumb_img1").attr("src","images/img_thumb_1_off.png");
+			$("#m_thumb_img2").attr("src","images/img_thumb_2_off.png");
+			$("#m_thumb_img3").attr("src","images/img_thumb_3_on.png");
+			$("#m_thumb_img4").attr("src","images/img_thumb_4_off.png");
 		}else if (cnt == "4"){
 			$("#m_ytplayer4").attr("src","<?=$_gl['m_yt_url4']?>");
-			$(".movie_area").hide();
+			$(".movie").hide();
 			$("#man_ytplayer4").show();
 			$("#movie_num").val('m_4');
-			//yt_api(cnt);
-			//controllable_player.seekTo(0);controllable_player.stopVideo();
+			$("#m_chapter_label").attr("src","images/sub_label_ch_4.png");
+			$("#m_thumb_img1").attr("src","images/img_thumb_1_off.png");
+			$("#m_thumb_img2").attr("src","images/img_thumb_2_off.png");
+			$("#m_thumb_img3").attr("src","images/img_thumb_3_off.png");
+			$("#m_thumb_img4").attr("src","images/img_thumb_4_on.png");
 		}
 
-	}
-}
-
-var yt_player_ctr	= "";
-var controllable_player,start;
-function yt_api(cnt)
-{
-	yt_player_ctr	= "m_ytplayer" + cnt;
-	// 유튜브 반복 재생
-	var statechange = function(e){
-		alert('start');
-		if (e.data === 0) // 종료됨
-		{
-			alert('222');
-		}else if (e.data === 1) // 재생중
-		{
-			alert('111');
-		}
-	};
-	function onYouTubeIframeAPIReady() {
-		controllable_player = new YT.Player(yt_player_ctr, {events: {'onStateChange': statechange}}); 
-	}
-
-	if(window.opera){
-		addEventListener('load', onYouTubeIframeAPIReady, false);
-	}
-
-	if (typeof(controllable_player) == 'undefined'){
-		onYouTubeIframeAPIReady();
 	}
 }
 
 function show_gift()
 {
-	//popup_desc("gift_popup");
-	//$("#inline").colorbox({inline:true, href:"#gift_popup"});
-	$("#gift_link").colorbox({width:"542px", height:"742px", inline:true, opacity:"0.9", closeButton:false, href:"#gift_popup"});
-	//$(".iframe").colorbox({iframe:true, fixed:true, width:"1055", height:"80%", opacity: '0.5'});
+	$("#gift_link").colorbox({width:"712px", height:"602px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#gift_popup", onComplete: function(){
+		$("#cboxLoadedContent").height(560);
+		$("#cboxContent").css("background","none");
 
-/*
-	$('#gift_popup').css('top','-1400px');
-	// 이동위치값 지정
-	var position = "50%";
-	event_triger = 0;
-	$('#gift_popup').show().animate({top:position},{duration:1000,easing:'easeOutBounce'});
-*/
+	},
+	onClosed: function(){
+		$("#cboxContent").css("background","#fff");
+	}});
+
 }
 function show_gift2()
 {
-	$("#top_gift_link").colorbox({width:"542px", height:"742px", inline:true, opacity:"0.9", closeButton:false, href:"#gift_popup"});
+	$.colorbox({width:"712px", height:"602px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#gift_popup", onComplete: function(){
+		$("#cboxLoadedContent").height(560);
+		$("#cboxContent").css("background","none");
+	},
+	onClosed: function(){
+		$("#cboxContent").css("background","#fff");
+	}});
 }
 
 function show_join()
 {
-	$("#top_join_link").colorbox({width:"542px", height:"742px", inline:true, opacity:"0.9", closeButton:false, href:"#join_popup"});
+	$.colorbox({width:"592px", height:"502px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#join_popup", onComplete: function(){
+		$("#cboxLoadedContent").height(460);
+		$("#cboxContent").css("background","none");
+	},
+	onClosed: function(){
+		$("#cboxContent").css("background","#fff");
+	}});
+}
+
+function show_notice()
+{
+	$.colorbox({width:"492px", height:"567px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#notice_popup", onComplete: function(){
+		$("#cboxLoadedContent").height(526);
+		$("#cboxContent").css("background","none");
+	},
+	onClosed: function(){
+		$("#cboxContent").css("background","#fff");
+	}});
+}
+
+function back_input()
+{
+	$.colorbox({width:"492px", height:"632px", inline:true, opacity:"0.9", closeButton:false, href:"#insert_popup", onComplete:function(){
+		$("#cboxLoadedContent").height(592);
+		$("#cboxContent").css("background","none");
+	},
+	onClosed: function(){
+		$("#cboxContent").css("background","#fff");
+	}});
+}
+
+function show_use_agree()
+{
+	$.colorbox({width:"492px", height:"566px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#use_agree_popup", onComplete: function(){
+		$("#cboxLoadedContent").height(526);
+		$("#cboxContent").css("background","none");
+	}});
+}
+
+function show_privacy_agree()
+{
+	$.colorbox({width:"492px", height:"566px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#privacy_agree_popup", onComplete: function(){
+		$("#cboxLoadedContent").height(526);
+		$("#cboxContent").css("background","none");
+	}});
+}
+
+function show_adver_agree()
+{
+	$.colorbox({width:"492px", height:"566px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#adver_agree_popup", onComplete: function(){
+		$("#cboxLoadedContent").height(526);
+		$("#cboxContent").css("background","none");
+	}});
+}
+
+function show_confirm()
+{
+	$.colorbox({width:"452px", height:"312px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#confirm_popup", onComplete: function(){
+		$("#cboxLoadedContent").height(526);
+		$("#cboxContent").css("background","none");
+	}});
 }
 
 var gender_gubun;
 function chk_reply(param)
 {
 	gender_gubun	= $("#movie_num").val();
-	if (param.checked == true)
+
+	$("#navi_main").show();
+	$("#navi_sub").hide();
+
+	if (gender_gubun == "m_1" || gender_gubun == "m_2" || gender_gubun == "m_3" || gender_gubun == "m_4")
 	{
-		if (gender_gubun == "m_1" || gender_gubun == "m_2" || gender_gubun == "m_3" || gender_gubun == "m_4")
-		{
-			$("#man_area").hide();
-			$("#comment_area").show();
-		}else{
-			$("#woman_area").hide();
-			$("#comment_area").show();
-		}
+		$("#man_area1").hide();
+		$("#man_area2").hide();
+		$( "#comment_area1" ).fadeIn("slow");
+		$( "#comment_area2" ).fadeIn("slow");
+		//$("#comment_area").show();
 	}else{
-		alert('22');
+		$("#woman_area1").hide();
+		$("#woman_area2").hide();
+		$( "#comment_area1" ).fadeIn("slow");
+		$( "#comment_area2" ).fadeIn("slow");
 	}
 }
 
@@ -403,10 +510,161 @@ function show_inspop(obj)
 		},
 		url: "../main_exec.php",
 		success: function(response){
-			$.colorbox({width:"542px", height:"742px", inline:true, opacity:"0.9", closeButton:false, href:"#insert_popup"});
+			$.colorbox({width:"492px", height:"632px", inline:true, opacity:"0.9", overlayClose:false, closeButton:false, href:"#insert_popup", onComplete:function(){
+				$("#cboxLoadedContent").height(592);
+				$("#cboxContent").css("background","none");
+			},
+			onClosed: function(){
+				$("#cboxContent").css("background","#fff");
+			}});
 		}
 	});
 
-	alert(str);
 }
+
+var all_flag		= 0;
+var use_flag		= 0;
+var privacy_flag	= 0;
+var adver_flag	= 0;
+function all_check()
+{
+	if (all_flag == 0)
+	{
+		$("#allchk").val('Y');
+		$("#usechk").val('Y');
+		$("#privacychk").val('Y');
+		$("#adverchk").val('Y');
+		$("#all_agree").attr("src","images/popup/check_in.png");
+		$("#use_agree").attr("src","images/popup/check_in.png");
+		$("#privacy_agree").attr("src","images/popup/check_in.png");
+		$("#adver_agree").attr("src","images/popup/check_in.png");
+		all_flag	= "1";
+	}else{
+		$("#allchk").val('N');
+		$("#usechk").val('N');
+		$("#privacychk").val('N');
+		$("#adverchk").val('N');
+		$("#all_agree").attr("src","images/popup/check_out.png");
+		$("#use_agree").attr("src","images/popup/check_out.png");
+		$("#privacy_agree").attr("src","images/popup/check_out.png");
+		$("#adver_agree").attr("src","images/popup/check_out.png");
+		all_flag	= "0";
+	}
+}
+
+function use_check()
+{
+	if (use_flag == 0)
+	{
+		$("#usechk").val('Y');
+		$("#use_agree").attr("src","images/popup/check_in.png");
+		use_flag	= "1";
+	}else{
+		$("#usechk").val('N');
+		$("#use_agree").attr("src","images/popup/check_out.png");
+		use_flag	= "0";
+	}
+}
+
+function privacy_check()
+{
+	if (privacy_flag == 0)
+	{
+		$("#privacychk").val('Y');
+		$("#privacy_agree").attr("src","images/popup/check_in.png");
+		privacy_flag	= "1";
+	}else{
+		$("#privacychk").val('N');
+		$("#privacy_agree").attr("src","images/popup/check_out.png");
+		privacy_flag	= "0";
+	}
+}
+
+function adver_check()
+{
+	if (adver_flag == 0)
+	{
+		$("#adverchk").val('Y');
+		$("#adver_agree").attr("src","images/popup/check_in.png");
+		adver_flag	= "1";
+	}else{
+		$("#adverchk").val('N');
+		$("#adver_agree").attr("src","images/popup/check_out.png");
+		adver_flag	= "0";
+	}
+}
+
+function focus_val(param)
+{
+	if (param.id == "mb_name")
+	{
+		if (param.value == "성함을 입력해 주세요.")
+		{
+			param.value = "";
+		}
+	}else{
+		if (param.value == "휴대폰 번호를 입력해 주세요.(숫자만)")
+		{
+			param.value = "";
+		}
+	}
+}
+
+function blur_val(param)
+{
+	if (param.id == "mb_name")
+	{
+		if (param.value == "")
+		{
+			param.value = "성함을 입력해 주세요.";
+		}
+	}else{
+		if (param.value == "")
+		{
+			param.value = "휴대폰 번호를 입력해 주세요.(숫자만)";
+		}
+	}
+
+}
+
+function only_num(obj)
+{
+	var inText = obj.value;
+	var outText = "";
+	var flag = true;
+	var ret;
+	for(var i = 0; i < inText.length; i++)
+	{
+		ret = inText.charCodeAt(i);
+		if((ret < 48) || (ret > 57))
+		{
+			flag = false;
+		}
+		else
+		{
+			outText += inText.charAt(i);
+		}
+	}
+ 
+	if(flag == false)
+	{
+		alert("전화번호는 숫자입력만 가능합니다.");
+		obj.value = outText;
+		obj.focus();
+		return false;
+	} 
+	return true;
+}
+
+
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-65963846-1', 'auto');
+  ga('send', 'pageview');
+
 </script>
