@@ -55,7 +55,7 @@
             </a>
         </div>
         <div class="bt_list sns clearfix">
-        	<a href="#" onclick="m_sns_share('kt');return false;"><img src="images/gnb_kt.png" /></a>
+        	<a href="#" id="kakao-link-btn" onclick="m_sns_share('kt');return false;"><img src="images/gnb_kt.png" /></a>
         	<a href="#" onclick="m_sns_share('ks');return false;"><img src="images/gnb_ks.png" /></a>
         	<a href="#" onclick="m_sns_share('fb');return false;"><img src="images/gnb_fb.png" /></a>
         	<a href="#" onclick="m_sns_share('tw');return false;"><img src="images/gnb_tw.png" /></a>

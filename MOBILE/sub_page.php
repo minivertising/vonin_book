@@ -69,11 +69,11 @@
   <div class="block_thumb">
     <div class="one clearfix">
       <a href="#" onclick="change_chapter('w','1');return false;"><img src="images/thumb_1_on.png" alt="" id="w_thumb_img1"/></a>
-      <a href="#" onclick="change_chapter('w','2');return false;"><img src="images/thumb_2_on.png" alt="" id="w_thumb_img2"/></a>
+      <a href="#" onclick="change_chapter('w','2');return false;"><img src="images/thumb_2_off.png" alt="" id="w_thumb_img2"/></a>
     </div>
     <div class="one clearfix">
-      <a href="#" onclick="change_chapter('w','3');return false;"><img src="images/thumb_3_on.png" alt="" id="w_thumb_img3"/></a>
-      <a href="#" onclick="change_chapter('w','4');return false;"><img src="images/thumb_4_on.png" alt="" id="w_thumb_img4"/></a>
+      <a href="#" onclick="change_chapter('w','3');return false;"><img src="images/thumb_3_off.png" alt="" id="w_thumb_img3"/></a>
+      <a href="#" onclick="change_chapter('w','4');return false;"><img src="images/thumb_4_off.png" alt="" id="w_thumb_img4"/></a>
     </div>
   </div>
   <div class="bg">
