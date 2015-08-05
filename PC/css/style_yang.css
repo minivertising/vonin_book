@@ -201,13 +201,25 @@ body.sub{
 
 .wrap_sec_top_img_gift{
 	position:absolute;
-	text-align:center;
 	width:100%;
 	z-index:3;
 	top:75%;
+	background:url(../images/bg_img.jpg) 0 0;
+	height:179px;
 }
-
-
+.wrap_sec_top_img_gift a{
+	display:block;
+	position:relative;
+	text-align:center;
+	width:100%;
+	height:179px;
+}
+.wrap_sec_top_img_gift a img{
+	position:absolute;
+	top:-20px;
+	left:50%;
+	margin-left:-280px;
+}
 
 
 
