@@ -220,7 +220,7 @@ $(document).ready(function() {
 	$("#cboxBottomCenter").hide();
 	//$("#cboxContent").css("background","none");
 	resize();
-	$("#livere_contentText").val('44444');
+	$("#livere_contentText").val('<?=$YT_url?>');
 });
 
 </script>
