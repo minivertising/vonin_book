@@ -24,6 +24,9 @@ html,body				{ width: 100%; height: 100%; min-width: 1200px; min-height: 600px; 
       <a href="#" onclick="show_join();"><img src="images/gnb_howto.png" alt=""/></a>
       <a href="#" onclick="show_notice();"><img src="images/gnb_notice.png" alt=""/></a>
       <a href="http://everymanis.lgbeautymall.com/everymanis.jsp" target="_blank"><img src="images/gnb_vonin.png" alt=""/></a>
+      <a href="#" onclick="sns_share('fb');"><img src="images/btn_sns_fb.png" alt=""/></a>
+      <a href="#" onclick="sns_share('ks');"><img src="images/btn_sns_ks.png" alt=""/></a>
+      <a href="#" onclick="sns_share('tw');"><img src="images/btn_sns_tw.png" alt=""/></a>
     </div>
   </div>
 </div>
@@ -36,6 +39,9 @@ html,body				{ width: 100%; height: 100%; min-width: 1200px; min-height: 600px; 
       <a href="#" onclick="show_join();"><img src="images/gnb_howto_b.png" alt=""/></a>
       <a href="#" onclick="show_notice();"><img src="images/gnb_notice_b.png" alt=""/></a>
       <a href="http://everymanis.lgbeautymall.com/everymanis.jsp" target="_blank"><img src="images/gnb_vonin_b.png" alt=""/></a>
+      <a href="#" onclick="sns_share('fb');"><img src="images/btn_sns_fb.png" alt=""/></a>
+      <a href="#" onclick="sns_share('ks');"><img src="images/btn_sns_ks.png" alt=""/></a>
+      <a href="#" onclick="sns_share('tw');"><img src="images/btn_sns_tw.png" alt=""/></a>
     </div>
   </div>
 </div>
@@ -50,6 +56,9 @@ html,body				{ width: 100%; height: 100%; min-width: 1200px; min-height: 600px; 
         <a href="#" onclick="show_join();"><img src="images/gnb_howto.png" alt=""/></a>
         <a href="#" onclick="show_notice();"><img src="images/gnb_notice.png" alt=""/></a>
         <a href="http://everymanis.lgbeautymall.com/everymanis.jsp" target="_blank"><img src="images/gnb_vonin.png" alt=""/></a>
+        <a href="#" onclick="sns_share('fb');"><img src="images/btn_sns_fb.png" alt=""/></a>
+        <a href="#" onclick="sns_share('ks');"><img src="images/btn_sns_ks.png" alt=""/></a>
+        <a href="#" onclick="sns_share('tw');"><img src="images/btn_sns_tw.png" alt=""/></a>
       </div>
     </div>
   </div> 
@@ -164,7 +173,43 @@ html,body				{ width: 100%; height: 100%; min-width: 1200px; min-height: 600px; 
 
 	//include_once   "./footer.php";
 ?>
+<?
+	if ($IE7 == "Y")
+	{
+?>
 <script type="text/javascript">
+function sns_share(media)
+{
+	if (media == "fb")
+	{
+		var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.vonin-allinone.com/?media=fb'),'sharer','toolbar=0,status=0,width=600,height=325');
+		$.ajax({
+			type   : "POST",
+			async  : false,
+			url    : "../main_exec.php",
+			data:{
+				"exec" : "insert_share_info",
+				"media" : media
+			}
+		});
+	}else if (media == "tw"){
+		var newWindow = window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent("보닌 설렘학 개론! 여자들이 직접 알려주는 여자를 설레이게 하는 4가지 법칙. 설렘학 개론 배우고 선물도 받자.") + '&url='+ encodeURIComponent('http://bit.ly/1E72Gxy'),'sharer','toolbar=0,status=0,width=600,height=325');
+		$.ajax({
+			type   : "POST",
+			async  : false,
+			url    : "../main_exec.php",
+			data:{
+				"exec" : "insert_share_info",
+				"media" : media
+			}
+		});
+	}else{
+		alert('지원하지 않는 브라우저 입니다.');
+	}
+
+}
+
+
 $(document).ready(function() {
 
 	$("#cboxTopLeft").hide();
@@ -178,6 +223,106 @@ $(document).ready(function() {
 	//$("#cboxContent").css("background","none");
 	resize();
 });
+
+</script>
+<?
+	}else{
+?>
+<script type="text/javascript">
+function sns_share(media)
+{
+	if (media == "fb")
+	{
+		var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.vonin-allinone.com/?media=fb'),'sharer','toolbar=0,status=0,width=600,height=325');
+		$.ajax({
+			type   : "POST",
+			async  : false,
+			url    : "../main_exec.php",
+			data:{
+				"exec" : "insert_share_info",
+				"media" : media
+			}
+		});
+	}else if (media == "tw"){
+		var newWindow = window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent("보닌 설렘학 개론! 여자들이 직접 알려주는 여자를 설레이게 하는 4가지 법칙. 설렘학 개론 배우고 선물도 받자.") + '&url='+ encodeURIComponent('http://bit.ly/1E72Gxy'),'sharer','toolbar=0,status=0,width=600,height=325');
+		$.ajax({
+			type   : "POST",
+			async  : false,
+			url    : "../main_exec.php",
+			data:{
+				"exec" : "insert_share_info",
+				"media" : media
+			}
+		});
+	}else{
+		// 로그인 창을 띄웁니다.
+		Kakao.Auth.login({
+			success: function() {
+
+				// 로그인 성공시, API를 호출합니다.
+				Kakao.API.request( {
+					url : '/v1/api/story/linkinfo',
+					data : {
+						url : 'http://www.vonin-allinone.com/?media=ks'
+					}
+				}).then(function(res) {
+					// 이전 API 호출이 성공한 경우 다음 API를 호출합니다.
+					return Kakao.API.request( {
+						url : '/v1/api/story/post/link',
+						data : {
+						link_info : res,
+							content:"30초만에 여자친구 설레이게 하는 방법!"
+						}
+					});
+				}).then(function(res) {
+					return Kakao.API.request( {
+						url : '/v1/api/story/mystory',
+						data : { id : res.id }
+					});
+				}).then(function(res) {
+					$.ajax({
+						type   : "POST",
+						async  : false,
+						url    : "../main_exec.php",
+						data:{
+							"exec" : "insert_share_info",
+							"media" : "story"
+						}
+					});
+					alert("카카오스토리에 공유 되었습니다.");
+				}, function (err) {
+					alert(JSON.stringify(err));
+				});
+
+			},
+			fail: function(err) {
+				alert(JSON.stringify(err))
+			},
+		});
+	}
+
+}
+
+
+$(document).ready(function() {
+	Kakao.init('33c0597a1dc81a3e616c83f0fb9c2bc5');
+	$("#cboxTopLeft").hide();
+	$("#cboxTopRight").hide();
+	$("#cboxBottomLeft").hide();
+	$("#cboxBottomRight").hide();
+	$("#cboxMiddleLeft").hide();
+	$("#cboxMiddleRight").hide();
+	$("#cboxTopCenter").hide();
+	$("#cboxBottomCenter").hide();
+	//$("#cboxContent").css("background","none");
+	resize();
+});
+
+</script>
+<?
+	}
+?>
+<script type="text/javascript">
 $(window).resize(resize);
 function resize(){
 	var __width  = $("body").width();
