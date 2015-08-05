@@ -87,62 +87,79 @@ html,body				{ width: 100%; height: 100%; min-width: 1200px; min-height: 600px; 
   </div>
 </div>
 
-<div id="man_area1" class="wrap_sec_sub_1_top" style="display:none"> 
-  <div class="title"><img src="images/title_sub_1_2_top.png" alt=""/></div>
-  <div class="block_movie">
-    <div class="label_ch"><img src="images/sub_label_ch_1.png" alt="" id="m_chapter_label" /></div>
-    <div id="man_ytplayer1" class="movie">
-      <iframe allowfullscreen="1" src="" frameborder="0" id="m_ytplayer1" class="ytplayer" style="width:100%;height:100%;"></iframe>
+<div id="man_area" class="sub_2_all" style="display:none;">
+  <div class="wrap_sec_sub_1_top"> 
+    <div class="title"><img src="images/title_sub_1_2_top.png" alt=""/></div>
+        <!-- <div class="title"><img src="images/title_sub_1_top.png" alt=""/></div> -->
+  </div> 
+        
+  <div class="wrap_movie">
+    <div class="inner clearfix">
+      <div class="wrap_sec_sub_1_mid"> 
+        <div class="block_movie">
+          <div class="label_ch"><img src="images/sub_label_ch_1.png" alt="" id="m_chapter_label"/></div>
+          <div id="man_ytplayer1" class="movie">
+            <iframe allowfullscreen="1" src="" frameborder="0" id="m_ytplayer1" class="ytplayer" style="width:100%;height:100%;"></iframe>
+          </div>
+          <div id="man_ytplayer2" class="movie" style="display:none">
+            <iframe allowfullscreen="1" src="" frameborder="0" id="m_ytplayer2" class="ytplayer" style="width:100%;height:100%;"></iframe>
+          </div>
+          <div id="man_ytplayer3" class="movie" style="display:none">
+            <iframe allowfullscreen="1" src="" frameborder="0" id="m_ytplayer3" class="ytplayer" style="width:100%;height:100%;"></iframe>
+          </div>
+          <div id="man_ytplayer4" class="movie" style="display:none">
+            <iframe allowfullscreen="1" src="" frameborder="0" id="m_ytplayer4" class="ytplayer" style="width:100%;height:100%;"></iframe>
+          </div>
+          <div class="btn_block"><a href="#" onclick="chk_reply(this)"><img src="images/btn_share_movie.png" alt=""/></a></div>
+        </div>
+      </div>  
+      <div class="wrap_sec_sub_1_bottom"> 
+        <div class="thumb_movie">
+          <a href="#" onclick="change_chapter('m','1');return false;"><img src="images/img_thumb_1_on.png" alt="" id="m_thumb_img1"/></a>
+          <a href="#" onclick="change_chapter('m','2');return false;"><img src="images/img_thumb_2_off.png" alt="" id="m_thumb_img2"/></a>
+          <a href="#" onclick="change_chapter('m','3');return false;"><img src="images/img_thumb_3_off.png" alt="" id="m_thumb_img3"/></a>
+          <a href="#" onclick="change_chapter('m','4');return false;"><img src="images/img_thumb_4_off.png" alt="" id="m_thumb_img4"/></a>
+        </div>
+      </div> 
     </div>
-    <div id="man_ytplayer2" class="movie" style="display:none">
-      <iframe allowfullscreen="1" src="" frameborder="0" id="m_ytplayer2" class="ytplayer" style="width:100%;height:100%;"></iframe>
-    </div>
-    <div id="man_ytplayer3" class="movie" style="display:none">
-      <iframe allowfullscreen="1" src="" frameborder="0" id="m_ytplayer3" class="ytplayer" style="width:100%;height:100%;"></iframe>
-    </div>
-    <div id="man_ytplayer4" class="movie" style="display:none">
-      <iframe allowfullscreen="1" src="" frameborder="0" id="m_ytplayer4" class="ytplayer" style="width:100%;height:100%;"></iframe>
-    </div>
-
-    <div class="btn_block"><a href="#" onclick="chk_reply(this)"><img src="images/btn_share_movie.png" alt=""/></a></div>
   </div>
-</div>  
-<div id="man_area2" class="wrap_sec_sub_1_bottom" style="display:none"> 
-  <div class="thumb_movie">
-    <a href="#" onclick="change_chapter('m','1');return false;"><img src="images/img_thumb_1_on.png" alt="" id="m_thumb_img1"/></a>
-    <a href="#" onclick="change_chapter('m','2');return false;"><img src="images/img_thumb_2_off.png" alt="" id="m_thumb_img2" /></a>
-    <a href="#" onclick="change_chapter('m','3');return false;"><img src="images/img_thumb_3_off.png" alt="" id="m_thumb_img3" /></a>
-    <a href="#" onclick="change_chapter('m','4');return false;"><img src="images/img_thumb_4_off.png" alt="" id="m_thumb_img4" /></a>
+</div>
+<div id="woman_area" class="sub_2_all" style="display:none;">
+  <div class="wrap_sec_sub_1_top"> 
+    <div class="title"><img src="images/title_sub_1_top.png" alt=""/></div>
+  </div> 
+        
+  <div class="wrap_movie">
+    <div class="inner clearfix">
+      <div class="wrap_sec_sub_1_mid"> 
+        <div class="block_movie">
+          <div class="label_ch"><img src="images/sub_label_ch_1.png" alt="" id="w_chapter_label"/></div>
+          <div id="woman_ytplayer1" class="movie">
+            <iframe allowfullscreen="1" src="" frameborder="0" id="w_ytplayer1" class="ytplayer" style="width:100%;height:100%;"></iframe>
+          </div>
+          <div id="woman_ytplayer2" class="movie" style="display:none">
+            <iframe allowfullscreen="1" src="" frameborder="0" id="w_ytplayer2" class="ytplayer" style="width:100%;height:100%;"></iframe>
+          </div>
+          <div id="woman_ytplayer3" class="movie" style="display:none">
+            <iframe allowfullscreen="1" src="" frameborder="0" id="w_ytplayer3" class="ytplayer" style="width:100%;height:100%;"></iframe>
+          </div>
+          <div id="woman_ytplayer4" class="movie" style="display:none">
+            <iframe allowfullscreen="1" src="" frameborder="0" id="w_ytplayer4" class="ytplayer" style="width:100%;height:100%;"></iframe>
+          </div>
+          <div class="btn_block"><a href="#" onclick="chk_reply(this)"><img src="images/btn_share_movie.png" alt=""/></a></div>
+        </div>
+      </div>  
+      <div class="wrap_sec_sub_1_bottom"> 
+        <div class="thumb_movie">
+          <a href="#" onclick="change_chapter('w','1');return false;"><img src="images/img_thumb_1_on.png" alt="" id="w_thumb_img1"/></a>
+          <a href="#" onclick="change_chapter('w','2');return false;"><img src="images/img_thumb_2_off.png" alt="" id="w_thumb_img2"/></a>
+          <a href="#" onclick="change_chapter('w','3');return false;"><img src="images/img_thumb_3_off.png" alt="" id="w_thumb_img3"/></a>
+          <a href="#" onclick="change_chapter('w','4');return false;"><img src="images/img_thumb_4_off.png" alt="" id="w_thumb_img4"/></a>
+        </div>
+      </div> 
+    </div>
   </div>
-</div> 
-<div id="woman_area1" class="wrap_sec_sub_1_top" style="display:none"> 
-  <div class="title"><img src="images/title_sub_1_top.png" alt=""/></div>
-  <div class="block_movie">
-    <div class="label_ch"><img src="images/sub_label_ch_1.png" alt="" id="w_chapter_label"/></div>
-    <div id="woman_ytplayer1" class="movie">
-      <iframe allowfullscreen="1" src="" frameborder="0" id="w_ytplayer1" class="ytplayer" style="width:100%;height:100%;"></iframe>
-    </div>
-    <div id="woman_ytplayer2" class="movie" style="display:none">
-      <iframe allowfullscreen="1" src="" frameborder="0" id="w_ytplayer2" class="ytplayer" style="width:100%;height:100%;"></iframe>
-    </div>
-    <div id="woman_ytplayer3" class="movie" style="display:none">
-      <iframe allowfullscreen="1" src="" frameborder="0" id="w_ytplayer3" class="ytplayer" style="width:100%;height:100%;"></iframe>
-    </div>
-    <div id="woman_ytplayer4" class="movie" style="display:none">
-      <iframe allowfullscreen="1" src="" frameborder="0" id="w_ytplayer4" class="ytplayer" style="width:100%;height:100%;"></iframe>
-    </div>
-
-    <div class="btn_block"><a href="#" onclick="chk_reply(this)"><img src="images/btn_share_movie.png" alt=""/></a></div>
-  </div>
-</div>  
-<div id="woman_area2" class="wrap_sec_sub_1_bottom" style="display:none"> 
-  <div class="thumb_movie">
-    <a href="#" onclick="change_chapter('w','1');return false;"><img src="images/img_thumb_1_on.png" alt="" id="w_thumb_img1"/></a>
-    <a href="#" onclick="change_chapter('w','2');return false;"><img src="images/img_thumb_2_off.png" alt="" id="w_thumb_img2" /></a>
-    <a href="#" onclick="change_chapter('w','3');return false;"><img src="images/img_thumb_3_off.png" alt="" id="w_thumb_img3" /></a>
-    <a href="#" onclick="change_chapter('w','4');return false;"><img src="images/img_thumb_4_off.png" alt="" id="w_thumb_img4" /></a>
-  </div>
-</div> 
+</div>
 
 <div id="comment_area1" class="wrap_sec_sub_2_top" style="display:none"> 
   <div class="title">
@@ -332,23 +349,23 @@ function sel_book(gender)
 		$("body").attr("class","sub");
 		$("#navi_main").hide();
 		$("#navi_sub").show();
-		$( "#woman_area1" ).fadeIn( "slow", function() {
+		$( "#woman_area" ).fadeIn( "slow", function() {
 			$(".wrap_sec_footer").hide();
 			$("#w_ytplayer1").attr("src","<?=$_gl['w_yt_url1']?>");
 			$("#movie_num").val('w_1');
 		});
-		$( "#woman_area2" ).fadeIn("slow");
+		//$( "#woman_area2" ).fadeIn("slow");
 	}else{
 		$("#main_area").hide();
 		$("body").attr("class","sub");
 		$("#navi_main").hide();
 		$("#navi_sub").show();
-		$( "#man_area1" ).fadeIn( "slow", function() {
+		$( "#man_area" ).fadeIn( "slow", function() {
 			$(".wrap_sec_footer").hide();
 			$("#m_ytplayer1").attr("src","<?=$_gl['m_yt_url1']?>");
 			$("#movie_num").val('m_1');
 		});
-		$( "#man_area2" ).fadeIn("slow");
+		//$( "#man_area2" ).fadeIn("slow");
 	}
 }
 
@@ -554,16 +571,16 @@ function chk_reply(param)
 
 	if (gender_gubun == "m_1" || gender_gubun == "m_2" || gender_gubun == "m_3" || gender_gubun == "m_4")
 	{
-		$("#man_area1").hide();
-		$("#man_area2").hide();
+		$("#man_area").hide();
+		//$("#man_area2").hide();
 		$( "#comment_area1" ).fadeIn("slow");
 		$( "#comment_area2" ).fadeIn("slow");
 		$("#comment_title").attr("src","images/title_sub_2_2.png");
 
 		//$("#comment_area").show();
 	}else{
-		$("#woman_area1").hide();
-		$("#woman_area2").hide();
+		$("#woman_area").hide();
+		//$("#woman_area2").hide();
 		$( "#comment_area1" ).fadeIn("slow");
 		$( "#comment_area2" ).fadeIn("slow");
 	}
