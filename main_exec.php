@@ -44,7 +44,12 @@ switch ($_REQUEST['exec'])
 		$member_title				= $_REQUEST['member_title'];
 		$reply_regdate				= $_REQUEST['reply_regdate'];
 		$status						= $_REQUEST['status'];
-		$septSNSObj				= $_REQUEST['septSNSObj'];
+		//$septSNSObj				= $_REQUEST['septSNSObj'];
+		$septSNSObj = "";
+		foreach ($_REQUEST['septSNSObj'] as $key => $val)
+		{
+			$septSNSObj .= "||".$val;
+		}
 		$info1							= $_REQUEST['info1'];
 		$info2							= $_REQUEST['info2'];
 		$info3							= $_REQUEST['info3'];
