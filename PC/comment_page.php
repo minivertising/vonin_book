@@ -25,6 +25,7 @@
 		$YT_url	= "https://www.youtube.com/watch?v=xk913pR3qpk";
 
 ?>
+<input type="hidden" name="movie_num" id="movie_num" value="<?=$gender_gubun?>">
 <input type="hidden" name="allchk" id="allchk" value="N">
 <input type="hidden" name="usechk" id="usechk" value="N">
 <input type="hidden" name="privacychk" id="privacychk" value="N">
