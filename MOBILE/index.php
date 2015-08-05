@@ -399,7 +399,7 @@ function m_sns_share(media)
 		  container: '#kakao-link-btn',
 		  label: "보닌 설레임학 개론\r\n3020법칙으로 그녀를 심쿵하게 하는 방법! 솔로든 커플이든 꼭 알아야할 설레임 4가지 법칙",
 		  image: {
-			src: 'http://www.babience-giveandtake.com/MOBILE/images/img_sns_share.jpg',
+			src: 'http://www.vonin-allinone.com/MOBILE/images/img_sns_share.jpg',
 			width: '1200',
 			height: '630'
 		  },
