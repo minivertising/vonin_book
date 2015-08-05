@@ -1,6 +1,6 @@
 <div id="man_area" class="sec_top sub_1" style="display:none">
   <div class="title">
-    <img src="images/sub_title_1_1.png" alt=""/>
+    <img src="images/sub_title_1_2.png" alt=""/>
   </div>
   <div class="btn_block">
     <a href="#" onclick="show_gift();return false;"><img src="images/btn_gift.png" alt=""/></a>
@@ -83,7 +83,7 @@
 
 <div id="comment_area" class="sec_top sub_2" style="display:none">
   <div class="title">
-    <img src="images/bg_sub_2_1.jpg" alt=""/>
+    <img src="images/bg_sub_2_1.jpg" alt="" id="comment_title"/>
   </div>
     <div id="livereContainer">
 <script type="text/javascript">

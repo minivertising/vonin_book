@@ -84,7 +84,7 @@ html,body				{ width: 100%; height: 100%; min-width: 1200px; min-height: 600px; 
 </div>
 
 <div id="man_area1" class="wrap_sec_sub_1_top" style="display:none"> 
-  <div class="title"><img src="images/title_sub_1_top.png" alt=""/></div>
+  <div class="title"><img src="images/title_sub_1_2_top.png" alt=""/></div>
   <div class="block_movie">
     <div class="label_ch"><img src="images/sub_label_ch_1.png" alt="" id="m_chapter_label" /></div>
     <div id="man_ytplayer1" class="movie">
@@ -142,7 +142,7 @@ html,body				{ width: 100%; height: 100%; min-width: 1200px; min-height: 600px; 
 
 <div id="comment_area1" class="wrap_sec_sub_2_top" style="display:none"> 
   <div class="title">
-    <img src="images/title_sub_2.png" alt=""/>
+    <img src="images/title_sub_2.png" alt="" id="comment_title"/>
   </div>
   <div class="bg_top"><img src="images/bg_top_sub2.jpg" alt=""/></div> 
   <div class="bg_blank"></div>    
@@ -558,6 +558,8 @@ function chk_reply(param)
 		$("#man_area2").hide();
 		$( "#comment_area1" ).fadeIn("slow");
 		$( "#comment_area2" ).fadeIn("slow");
+		$("#comment_title").attr("src","images/title_sub_2_2.png");
+
 		//$("#comment_area").show();
 	}else{
 		$("#woman_area1").hide();

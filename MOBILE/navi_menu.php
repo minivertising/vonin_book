@@ -413,6 +413,7 @@ function chk_reply(param)
 		$("#man_area").hide();
 		$("body").removeClass('menu');
 		$( "#comment_area" ).fadeIn("slow");
+		$("#comment_title").attr("src","images/bg_sub_2_2.jpg");
 	}else{
 		$("#woman_area").hide();
 		$("body").removeClass('menu');
