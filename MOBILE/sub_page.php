@@ -82,23 +82,6 @@
 </div>
 
 <div id="comment_area" class="sec_top sub_2" style="display:none">
-  <div class="title">
-    <img src="images/bg_sub_2_1.jpg" alt="" id="comment_title"/>
-  </div>
-    <div id="livereContainer">
-<script type="text/javascript">
-	var consumer_seq		= "1012";
-	var livere_seq			= "23924";
-	var smartlogin_seq		= "1255";
-	var title					= "보닌 설렘학 개론";
-	var refer					= "www.vonin-allinone.com";
-	refer						= refer.replace("http://","");
-
-	livereReply				= new Livere(livere_seq, refer, title);
-	livereReply.description	= "그녀의 마음을 설레이게 하는 4가지 방법. 설렘효과 보장!";
-	livereLib.start();
-</script>
-    </div>   
 </div>
 
 <div id="input_area" class="sec_top sub_3" style="display:none">

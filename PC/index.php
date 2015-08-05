@@ -149,20 +149,6 @@ html,body				{ width: 100%; height: 100%; min-width: 1200px; min-height: 600px; 
 </div>  
 <div id="comment_area2" class="sec_comment" style="display:none">
   <div class="input_comment">
-    <div id="livereContainer">
-<script type="text/javascript">
-	var consumer_seq		= "1012";
-	var livere_seq			= "23924";
-	var smartlogin_seq		= "1255";
-	var title					= "보닌 설렘학 개론";
-	var refer					= "www.vonin-allinone.com";
-	refer						= refer.replace("http://","");
-
-	livereReply				= new Livere(livere_seq, refer, title);
-	livereReply.description	= "그녀의 마음을 설레이게 하는 4가지 방법. 설렘효과 보장!";
-	livereLib.start();
-</script>
-    </div>   
   </div>
 </div>   
 
@@ -548,6 +534,16 @@ var gender_gubun;
 function chk_reply(param)
 {
 	gender_gubun	= $("#movie_num").val();
+	$.ajax({
+		type:"POST",
+		data:{
+			"gender_gubun"		: gender_gubun
+		},
+		url: "./livere_ajax.php",
+		success: function(response){
+			$(".input_comment").html(response);
+		}
+	});
 
 	$("#navi_main").show();
 	$("#navi_sub").hide();
@@ -567,6 +563,7 @@ function chk_reply(param)
 		$( "#comment_area1" ).fadeIn("slow");
 		$( "#comment_area2" ).fadeIn("slow");
 	}
+	//$("#livere_contentText").val('44444');
 }
 
 

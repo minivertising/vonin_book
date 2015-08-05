@@ -289,6 +289,19 @@ function chk_reply(param)
 {
 	gender_gubun	= $("#movie_num").val();
 
+	$.ajax({
+		type:"POST",
+		data:{
+			"gender_gubun"		: gender_gubun
+		},
+		url: "./livere_ajax.php",
+		success: function(response){
+			$("#comment_area").html(response);
+		}
+	});
+
+
+
 	$("#navi_logo").attr("src","images/logo.png");
 	$("#navi_menu").attr("src","images/menu_ham.png");
 
