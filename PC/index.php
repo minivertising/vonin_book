@@ -465,8 +465,8 @@ function change_chapter(gender, cnt)
 
 function show_gift()
 {
-	$("#gift_link").colorbox({width:"712px", height:"602px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#gift_popup", onComplete: function(){
-		$("#cboxLoadedContent").height(560);
+	$("#gift_link").colorbox({width:"712px", height:"652px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#gift_popup", onComplete: function(){
+		$("#cboxLoadedContent").height(610);
 		$("#cboxContent").css("background","none");
 
 	},
@@ -477,8 +477,8 @@ function show_gift()
 }
 function show_gift2()
 {
-	$.colorbox({width:"712px", height:"602px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#gift_popup", onComplete: function(){
-		$("#cboxLoadedContent").height(560);
+	$.colorbox({width:"712px", height:"652px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#gift_popup", onComplete: function(){
+		$("#cboxLoadedContent").height(610);
 		$("#cboxContent").css("background","none");
 	},
 	onClosed: function(){
