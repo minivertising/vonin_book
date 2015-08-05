@@ -523,7 +523,7 @@ function resize(){
 
 function change_txt()
 {
-	$("#livere_contentText").val('[보닌] 여자들이 설레는 남자 행동 동영상 바로보기 ▶\r\n<?=$YT_url?>');
+	$("#livere_contentText").val('요즘 설레이지 않는다면 이 영상에 주목하자! \r\n<?=$YT_url?>');
 }
 
 </script>
