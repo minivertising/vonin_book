@@ -513,26 +513,19 @@ body.sub2{
 .popup_wrap .p_position.p_mid.gift{
 	position:relative;
 	width:670px;
-	height:560px;
+	height:610px;
 	background:url(../images/popup/bg_gift.png) no-repeat top left;
 }
 .popup_wrap .p_position.p_mid.gift .block_content a{
 	display:block;
 	position:absolute;
-	top:460px;
+	bottom:50px;
 }
 .popup_wrap .p_position.p_mid.gift .block_content a.pro_1{
-	left:73px;
+	left:50%;
+	margin-left:-100px;
 }
-.popup_wrap .p_position.p_mid.gift .block_content a.pro_2{
-	left:210px;
-}
-.popup_wrap .p_position.p_mid.gift .block_content a.pro_3{
-	left:345px;
-}
-.popup_wrap .p_position.p_mid.gift .block_content a.pro_4{
-	left:475px;
-}
+
 .popup_wrap .p_position.p_mid.small{
 	position:relative;
 	width:500px;

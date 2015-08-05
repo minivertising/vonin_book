@@ -380,16 +380,11 @@ body.menu{
 
 
 .popup_wrap .p_mid.p_position.product .block_content a.btn_p1{
-	left:10%;
-}
-.popup_wrap .p_mid.p_position.product .block_content a.btn_p2{
-	left:31%;
-}
-.popup_wrap .p_mid.p_position.product .block_content a.btn_p3{
-	left:54%;
-}
-.popup_wrap .p_mid.p_position.product .block_content a.btn_p4{
-	left:76%;
+	width:200px;
+	height:50px;
+	left:50%;
+	margin-left:-100px;
+	bottom:30px;
 }
 
 .popup_wrap .p_mid.p_position.movie .block_content{
