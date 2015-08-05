@@ -25,7 +25,7 @@
   </div>
 </div> -->
 
-	<div id="menu_area" class="wrap_page menu" style="display:none;position:absolute;z-index:9999">
+	<div id="menu_area" class="wrap_page menu" style="display:none;">
 		<div class="btn_close">
         	<a href="#" onclick="hide_menu()"><img src="images/popup/btn_close_menu.png" width="30" /></a>
         </div>
@@ -700,14 +700,15 @@ function only_num(obj)
 function show_menu()
 {
 	$("#main_area").hide();
+	$("#all_navi").hide();
 	$("body").addClass("menu");
 	$( "#menu_area" ).fadeIn("slow");
-
 }
 
 function hide_menu()
 {
 	$( "#menu_area" ).hide();
+	$("#all_navi").show();
 	$("body").removeClass("menu");
 	$("#main_area").fadeIn("slow");
 
