@@ -105,7 +105,8 @@
 
 	livereReply				= new Livere(livere_seq, refer, title);
 	livereReply.description	= "여자들이 설레는 남자 행동 BEST4! 누구나 설레게 하는 방법 소개! 자세히 보기";
-	livereReply.site				= "<?=$YT_url?>";
+	//livereReply.site				= "<?=$YT_url?>";
+	livereReply.site				= "http://www.vonin-allinone.com";
 	livereLib.start();
 
 </script>
@@ -119,7 +120,7 @@
 </body>
 </html>
 <script type="text/javascript">
-$(document).ready(function() {
+$(window).load(function() {
 	$("#cboxTopLeft").hide();
 	$("#cboxTopRight").hide();
 	$("#cboxBottomLeft").hide();
@@ -129,6 +130,7 @@ $(document).ready(function() {
 	$("#cboxTopCenter").hide();
 	$("#cboxBottomCenter").hide();
 	//$("#cboxContent").css("background","none");
+	change_txt();
 });
 
 
@@ -552,6 +554,11 @@ function hide_menu()
 	$("body").removeClass("menu");
 	$("#comment_area").fadeIn("slow");
 
+}
+
+function change_txt()
+{
+	$("#livere_contentText").val('[보닌] 여자들이 설레는 남자 행동 동영상 바로보기 ▶\r\n<?=$YT_url?>');
 }
 
 </script>

@@ -65,7 +65,8 @@
 
 	livereReply				= new Livere(livere_seq, refer, title);
 	livereReply.description	= "여자들이 설레는 남자 행동 BEST4! 누구나 설레게 하는 방법 소개! 자세히 보기";
-	livereReply.site				= "<?=$YT_url?>";
+	//livereReply.site				= "<?=$YT_url?>";
+	livereReply.site				= "http://www.vonin-allinone.com";
 	livereLib.start();
 
 </script>
