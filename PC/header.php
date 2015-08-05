@@ -5,7 +5,7 @@
 <html>
   <head>
     <title>Document</title>
-    <meta property="og:title" content="보닌 설렘학 개론">
+    <meta property="og:title" content="보닌 설렘학개론">
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://www.vonin-allinone.com/PC/index.php" />
     <meta property="og:image" content="http://www.vonin-allinone.com/MOBILE/images/img_sns_share.jpg" />
