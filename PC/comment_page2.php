@@ -32,7 +32,7 @@
 <input type="hidden" name="adverchk" id="adverchk" value="N">
 <div class="sec_navi" id="navi_main">
   <div class="navi">
-    <div class="left"><a href="index.php"><img src="images/logo.png" alt=""/></a></div>
+    <div class="left"><a href="#" onclick="change_txt()"><img src="images/logo.png" alt=""/></a></div>
     <div class="right">
       <a href="#" onclick="show_gift2();"><img src="images/gnb_gift.png" alt=""/></a>
       <a href="#" onclick="show_join();"><img src="images/gnb_howto.png" alt=""/></a>
@@ -220,7 +220,6 @@ $(document).ready(function() {
 	$("#cboxBottomCenter").hide();
 	//$("#cboxContent").css("background","none");
 	resize();
-	$("#livere_contentText").val('<?=$YT_url?>');
 });
 
 </script>
@@ -517,6 +516,10 @@ function resize(){
 	$(".ar-full-bg").css({width:1400*__scale, height:850*__scale, left:__left, top:__top});
 }
 
+function change_txt()
+{
+	$("#livere_contentText").val('<?=$YT_url?>');
+}
 </script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
