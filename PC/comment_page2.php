@@ -32,7 +32,7 @@
 <input type="hidden" name="adverchk" id="adverchk" value="N">
 <div class="sec_navi" id="navi_main">
   <div class="navi">
-    <div class="left"><a href="#" onclick="change_txt()"><img src="images/logo.png" alt=""/></a></div>
+    <div class="left"><a href="index.php"><img src="images/logo.png" alt=""/></a></div>
     <div class="right">
       <a href="#" onclick="show_gift2();"><img src="images/gnb_gift.png" alt=""/></a>
       <a href="#" onclick="show_join();"><img src="images/gnb_howto.png" alt=""/></a>
@@ -208,7 +208,7 @@ function sns_share(media)
 }
 
 
-$(document).ready(function() {
+$(window).load(function() {
 	Kakao.init('33c0597a1dc81a3e616c83f0fb9c2bc5');
 	$("#cboxTopLeft").hide();
 	$("#cboxTopRight").hide();
@@ -220,6 +220,7 @@ $(document).ready(function() {
 	$("#cboxBottomCenter").hide();
 	//$("#cboxContent").css("background","none");
 	resize();
+	change_txt();
 });
 
 </script>
