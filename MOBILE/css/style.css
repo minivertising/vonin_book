@@ -33,13 +33,33 @@ body.menu{
 	margin:0 auto;
 	text-align:center;
 	border-bottom:1px solid #5f9d7f;
-	padding:15px 0;
+	padding:13px 0 10px;
+}
+.wrap_page.menu .bt_list a{
+	display:block;
+}
+.wrap_page.menu .bt_list a img{
+	width:100%;
 }
 
-.wrap_page.menu .bt_list.sns{
+.wrap_page.menu .bt_list.sns,
+.wrap_page.menu .bt_list.shop,
+.wrap_page.menu .bt_list.last{
 	border-bottom:none;
 }
-
+.wrap_page.menu .bt_list.sns,
+.wrap_page.menu .bt_list.shop{
+	padding:10px 0 8px;
+}
+.wrap_page.menu .bt_list.sns a{
+	display:block;
+	float:left;
+	width:25%;
+	text-align:center;
+}
+.wrap_page.menu .bt_list.sns a img{
+	width:90%;
+}
 .navi{
 	position:fixed;height:50px;width:100%;top:0;left:0;z-index:1000;
 	padding-top:15px;
