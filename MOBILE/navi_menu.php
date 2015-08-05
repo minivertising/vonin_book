@@ -30,7 +30,7 @@
             </a>
         </div>
         <div class="bt_list">
-        	<a href="#" onclick="sel_book('w')">
+        	<a href="#" onclick="sel_book('m')">
         	<img src="images/gnb_man.png" />
             </a>
         </div>
