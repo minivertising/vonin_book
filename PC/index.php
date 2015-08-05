@@ -306,8 +306,8 @@ function show_join()
 
 function show_notice()
 {
-	$.colorbox({width:"592px", height:"502px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#join_popup", onComplete: function(){
-		$("#cboxLoadedContent").height(460);
+	$.colorbox({width:"492px", height:"567px", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#notice_popup", onComplete: function(){
+		$("#cboxLoadedContent").height(526);
 		$("#cboxContent").css("background","none");
 	},
 	onClosed: function(){

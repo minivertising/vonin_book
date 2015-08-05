@@ -209,4 +209,18 @@
 </div>
 <!----------------- 선택창 팝업 ----------------->
 
+<!----------------- 유의사항 팝업 ----------------->
+<div id="notice_popup" class="popup_wrap">
+  <div class="p_mid notice p_position">
+    <div class="block_close clearfix">
+      <a href="#" onclick="$.colorbox.close();return false;" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+    </div>
+    <div class="block_content">
+      <div class="inner">
+      </div><!--inner-->
+    </div>
+  </div>
+</div>
+<!----------------- 유의사항 팝업 ----------------->
+
 </div>
