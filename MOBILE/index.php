@@ -397,7 +397,7 @@ function m_sns_share(media)
 		// 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
 		Kakao.Link.createTalkLinkButton({
 		  container: '#kakao-link-btn',
-		  label: "보닌 설레임학 개론\r\n3020법칙으로 그녀를 심쿵하게 하는 방법! 솔로든 커플이든 꼭 알아야할 설레임 4가지 법칙",
+		  label: "보닌 설레임학 개론\r\n3020법칙으로 그녀를 심쿵하게 하는 방법!\r\n솔로든 커플이든 꼭 알아야할 설레임 4가지 법칙",
 		  image: {
 			src: 'http://www.vonin-allinone.com/MOBILE/images/img_sns_share.jpg',
 			width: '1200',
