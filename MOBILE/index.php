@@ -134,7 +134,7 @@
 	var livere_seq			= "23924";
 	var smartlogin_seq		= "1255";
 	var title					= "보닌 설렘학 개론";
-	var refer					= "www.mnv.kr";
+	var refer					= "www.vonin-allinone.com";
 	refer						= refer.replace("http://","");
 
 	livereReply				= new Livere(livere_seq, refer, title);
