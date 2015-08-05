@@ -1,19 +1,18 @@
 <div style="display:none;">
 <!----------------- 선물 팝업 ----------------->
-<div id="gift_popup" class="popup_wrap">
-  <div class="p_mid product p_position">
-    <div class="block_close clearfix">
-      <a href="#" onclick="$.colorbox.close();return false;" class="btn_close"><img src="images/popup/btn_close.png" /></a>
-    </div>
-    <div class="block_content">
-      <a href="http://vonin.co.kr/m/product/detail.jsp?pid=ACM25248" target="_blank" class="btn_p1">img</a>
-      <a href="http://vonin.co.kr/m/product/detail.jsp?pid=ACM25247" target="_blank" class="btn_p2">img</a>
-      <a href="http://vonin.co.kr/m/product/detail.jsp?pid=ACM25249" target="_blank" class="btn_p3">img</a>
-      <a href="http://vonin.co.kr/m/product/detail.jsp?pid=ACM25250" target="_blank" class="btn_p4">img</a>
-      <div><img src="images/popup/bg_product.png" class="pop_img" /></div>
-    </div>
-  </div>
-</div>
+	<div id="gift_popup" class="popup_wrap">
+   	  	<div class="p_mid product p_position">
+            <div class="block_close clearfix">
+                <a href="#" onclick="$.colorbox.close();return false;" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+            </div>
+            <div class="block_content">
+            	<a href="http://vonin.co.kr/m/product/list.jsp?typeid=BE" class="btn_p1" target="_blank">img</a>
+                
+            	<div><img src="images/popup/bg_product.png" class="pop_img" /></div>
+            </div>
+        </div>
+	</div>
+
 <!----------------- 선물 팝업 ----------------->
 
 <!----------------- 참여방법  팝업 ----------------->
