@@ -183,16 +183,14 @@ body.sub{
 	position:absolute;
 	width:100%;
 	text-align:center;
-	top:70px;
+	top:24%;
 	z-index:3;
 }
 .wrap_sec_top_btn_block{
 	position:absolute;
 	text-align:center;
 	width:500px;
-	margin:0 auto;
-	top:300px;
-	margin-bottom:-50px;
+	top:47%;
 	left:50%;
 	margin-left:-250px;
 	z-index:3;
@@ -202,31 +200,12 @@ body.sub{
 	position:absolute;
 	text-align:center;
 	width:100%;
+	z-index:3;
+	bottom:20px;
 }
 
-.wrap_sec_top .block_title{
-	text-align:center;
-	background:url(../images/title.png) no-repeat center bottom;
-	width:943px;
-	height:803px;
-	position:relative;
-}
 
-.wrap_sec_top .bg_top{
-	width:100%;
-	position:absolute;
-	top:0;
-}
-.wrap_sec_top .bg_top img{
-	width:100%;
-}
-.wrap_sec_top .img_gift{
-	width:100%;
-	position:absolute;
-	bottom:0;
-	z-index:10;
-	
-}
+
 
 
 .wrap_sec_sub_1_top{
