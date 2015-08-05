@@ -7,27 +7,69 @@
 <input type="hidden" name="usechk" id="usechk" value="N">
 <input type="hidden" name="privacychk" id="privacychk" value="N">
 <input type="hidden" name="adverchk" id="adverchk" value="N">
-<!-- <div id="mobile_menu" class="mobile_menu">
-  <ul>
-    <li><a href="http://www.babience.co.kr/m/index.jsp" target="_blank"><img src="images/btn_bb_home.png"  alt=""/></a></li>
-    <li><a href="#" onclick="move_area('story')"><img src="images/btn_story.png"  alt=""/></a></li>
-    <li><a href="#" onclick="move_area('give')"><img src="images/btn_give.png"  alt=""/></a></li>
-    <li><a href="#" onclick="move_area('message')"><img src="images/btn_suu.png"  alt=""/></a></li>
-    <li><a href="popup_gift_check.php"><img src="images/btn_view_gift.png"  alt=""/></a></li>
-  </ul>
-  <div class="btn_sns">
-    <div class="inner_sns clearfix">
-      <a href="#" onclick="m_sns_share('kt');" id="kakao-link-btn"><img src="images/btn_kt.jpg"  alt=""/></a>
-      <a href="#" onclick="m_sns_share('ks');"><img src="images/btn_ks.jpg"  alt=""/></a>
-      <a href="#" onclick="m_sns_share('fb');"><img src="images/btn_fb.jpg"  alt=""/></a>
-      <a href="#" onclick="m_sns_share('tw');"><img src="images/btn_tw.jpg"  alt=""/></a>
-    </div>
-  </div>
-</div> -->
-<div class="wrap_page" id="all_navi">
+<input type="hidden" name="movie_num" id="movie_num">
+<input type="hidden" name="allchk" id="allchk" value="N">
+<input type="hidden" name="usechk" id="usechk" value="N">
+<input type="hidden" name="privacychk" id="privacychk" value="N">
+<input type="hidden" name="adverchk" id="adverchk" value="N">
+<!-- <div class="wrap_page" id="top_navi" style="display:none;">
   <div class="navi">
     <div class="left"><a href="index.php"><img src="images/logo.png" width="70" alt="" id="navi_logo"/></a></div>
     <div class="right"><a href="navi_menu.php"><img src="images/menu_ham.png" width="30" alt="" id="navi_menu"/></a></div>
+  </div>
+</div>
+
+<div class="wrap_page" id="input_navi" style="display:none">
+  <div class="navi">
+    <div class="right"><a href="#" onclick="show_confirm();return false;" class="btn_close"><img src="images/popup/btn_close.png" width="30" /></a></div>
+  </div>
+</div> -->
+
+	<div id="menu_area" class="wrap_page menu" style="display:none;position:absolute;z-index:9999">
+		<div class="btn_close">
+        	<a href="#" onclick="hide_menu()"><img src="images/popup/btn_close_menu.png" width="30" /></a>
+        </div>
+        <div class="bt_list">
+        	<a href="#" onclick="sel_book('w')">
+        	<img src="images/gnb_woman.png" />
+            </a>
+        </div>
+        <div class="bt_list">
+        	<a href="#" onclick="sel_book('m')">
+        	<img src="images/gnb_man.png" />
+            </a>
+        </div>
+        <div class="bt_list">
+        	<a href="#" onclick="show_gift();return false;">
+        	<img src="images/gnb_gift.png" />
+            </a>
+        </div>
+        <div class="bt_list">
+        	<a href="#" onclick="show_join();return false;">
+        	<img src="images/gnb_howto.png" />
+            </a>
+        </div>
+        <div class="bt_list last">
+        	<a href="#" onclick="show_notice();return false;">
+        	<img src="images/gnb_notice.png" />
+            </a>
+        </div>
+       <div class="bt_list shop">
+        	<a href="http://everymanis.lgbeautymall.com/m/everymanis.jsp" target="_blank">
+        	<img src="images/gnb_shop.png" />
+            </a>
+        </div>
+        <div class="bt_list sns clearfix">
+        	<a href="#" id="kakao-link-btn" onclick="m_sns_share('kt');return false;"><img src="images/gnb_kt.png" /></a>
+        	<a href="#" onclick="m_sns_share('ks');return false;"><img src="images/gnb_ks.png" /></a>
+        	<a href="#" onclick="m_sns_share('fb');return false;"><img src="images/gnb_fb.png" /></a>
+        	<a href="#" onclick="m_sns_share('tw');return false;"><img src="images/gnb_tw.png" /></a>
+        </div>
+    </div>
+<div class="wrap_page" id="all_navi">
+  <div class="navi">
+    <div class="left"><a href="index.php"><img src="images/logo.png" width="70" alt="" id="navi_logo"/></a></div>
+    <div class="right"><a href="#" onclick="show_menu();return false;"><img src="images/menu_ham.png" width="30" alt="" id="navi_menu"/></a></div>
   </div>
 </div>
 
@@ -59,7 +101,6 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
-	$(".show_menu").pageslide({ direction: "left", modal: true });
 	$("#cboxTopLeft").hide();
 	$("#cboxTopRight").hide();
 	$("#cboxBottomLeft").hide();
@@ -152,13 +193,29 @@ function show_confirm()
 	}});
 }
 
+function show_notice()
+{
+	$.colorbox({innerWidth:"100%", initialWidth:"95%", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#notice_popup", onComplete: function(){
+		$("#cboxContent").css("background","none");
+		$("#colorbox").width($("body").width());
+		$("#cboxWrapper").width($("body").width());
+	},
+	onClosed: function(){
+		$("#cboxContent").css("background","#fff");
+	}});
+}
+
+
 function sel_book(gender)
 {
 	$("#navi_logo").attr("src","images/logo_b.png");
 	$("#navi_menu").attr("src","images/menu_ham_b.png");
 	if (gender == "w")
 	{
-		$("#main_area").hide();
+		if($("#menu_area").css("display") == "none")
+			$("#main_area").hide();
+		else
+			$("#menu_area").hide();
 		//$("body").attr("class","sub");
 		//$("#navi_main").hide();
 		//$("#navi_sub").show();
@@ -171,7 +228,10 @@ function sel_book(gender)
 			$(".movie").height(w_yt_height);
 		});
 	}else{
-		$("#main_area").hide();
+		if($("#menu_area").css("display") == "none")
+			$("#main_area").hide();
+		else
+			$("#menu_area").hide();
 		//$("body").attr("class","sub");
 		//$("#navi_main").hide();
 		//$("#navi_sub").show();
@@ -639,28 +699,18 @@ function only_num(obj)
 
 function show_menu()
 {
-	if ($("#mobile_menu").css("display") == "block")
-	{
-		$('#mobile_menu').animate({right:-200},300,'linear',function(){
-			$("#mobile_menu").hide();
-			$(".mask").fadeOut(300);
-			$(window).off(".disableScroll");
-		});
-	}else{
-		$(".mask").width($(window).width());
-		$(".mask").height($(window).height());
-		$(".mask").fadeTo(1000, 0.6);
+	$("#main_area").hide();
+	$("body").addClass("menu");
+	$( "#menu_area" ).fadeIn("slow");
 
-		$('#mobile_menu').css('right','-200px');
-		// 이동위치값 지정
-		var position = 0;
-		$('#mobile_menu').show().animate({right:position},300,'linear');
+}
 
-		$(window).on("mousewheel.disableScroll DOMMouseScroll.disableScroll touchmove.disableScroll", function(e) {
-			e.preventDefault();
-			return;
-		});
-	}
+function hide_menu()
+{
+	$( "#menu_area" ).hide();
+	$("body").removeClass("menu");
+	$("#main_area").fadeIn("slow");
+
 }
 
 </script>
