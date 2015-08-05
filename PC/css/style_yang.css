@@ -130,8 +130,8 @@ body{
 .navi .right{
 	position:absolute;
 	right:1%;
-	width:500px;
-	padding-top:3px;
+	width:600px;
+	padding-top:0;
 	text-align:right;
 }
 .navi .right .right_wrap{
