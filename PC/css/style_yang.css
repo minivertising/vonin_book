@@ -183,9 +183,12 @@ body.sub{
 	position:absolute;
 	width:100%;
 	text-align:center;
-	top:24%;
+	bottom:54%;
 	z-index:3;
 }
+
+
+
 .wrap_sec_top_btn_block{
 	position:absolute;
 	text-align:center;
@@ -201,7 +204,7 @@ body.sub{
 	text-align:center;
 	width:100%;
 	z-index:3;
-	bottom:20px;
+	top:75%;
 }
 
 
