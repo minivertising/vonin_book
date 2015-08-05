@@ -21,6 +21,10 @@
 		$YT_url	= "https://www.youtube.com/watch?v=xk913pR3qpk";
 
 ?>
+<input type="hidden" name="allchk" id="allchk" value="N">
+<input type="hidden" name="usechk" id="usechk" value="N">
+<input type="hidden" name="privacychk" id="privacychk" value="N">
+<input type="hidden" name="adverchk" id="adverchk" value="N">
 	<div id="menu_area" class="wrap_page menu" style="display:none;">
 		<div class="btn_close">
         	<a href="#" onclick="hide_menu()"><img src="images/popup/btn_close_menu.png" width="30" /></a>
