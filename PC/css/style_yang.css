@@ -183,14 +183,8 @@ body.sub{
 	position:absolute;
 	width:100%;
 	text-align:center;
-	top:24%;
+	bottom:54%;
 	z-index:3;
-}
-
-@media screen and (min-device-height: 360px) and (max-device-height: 750px) {
-	.wrap_sec_top_title{
-		top:34%;
-	}		
 }
 
 
