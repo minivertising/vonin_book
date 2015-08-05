@@ -1,5 +1,9 @@
 <?
 	include_once   "./header.php";
+
+	if ($gubun == "MOBILE")
+		echo "<script>location.href='http://www.vonin-allinone.com/MOBILE/index.php';</script>";
+
 ?>
     <style>
 *						{ position: relative; margin: 0px; border: 0px; padding: 0px; }
