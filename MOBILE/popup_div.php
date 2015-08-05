@@ -88,15 +88,28 @@
 <div id="confirm_popup" class="popup_wrap">
   <div class="p_mid keep p_position">
     <div class="block_close clearfix">
-      <a href="#" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+      <a href="#" onclick="$.colorbox.close();return false;" class="btn_close"><img src="images/popup/btn_close.png" /></a>
     </div>
     <div class="block_content">
-      <a href="#" class="btn_out">img</a>
-      <a href="#" class="btn_keep">img</a>
+      <a href="index.php" class="btn_out">img</a>
+      <a href="#" onclick="$.colorbox.close();return false;" class="btn_keep">img</a>
       <div><img src="images/popup/bg_keep.png" class="pop_img" /></div>
     </div>
   </div>
 </div>
 <!----------------- 선택창 팝업 ----------------->
+
+<!----------------- 유의사항 팝업 ----------------->
+<div id="notice_popup" class="popup_wrap">
+  <div class="p_mid notice p_position">
+    <div class="block_close clearfix">
+      <a href="#" onclick="$.colorbox.close();return false;" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+    </div>
+    <div class="block_content">
+      <img src="images/popup/bg_notice.png" class="pop_img" />
+    </div>
+  </div>
+</div>
+<!----------------- 유의사항 팝업 ----------------->
 
 </div>

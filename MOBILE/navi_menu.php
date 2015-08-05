@@ -1,30 +1,13 @@
 <?
 	include_once   "./header.php";
 ?>
- <body>
+<body class="menu">
 <input type="hidden" name="movie_num" id="movie_num">
 <input type="hidden" name="allchk" id="allchk" value="N">
 <input type="hidden" name="usechk" id="usechk" value="N">
 <input type="hidden" name="privacychk" id="privacychk" value="N">
 <input type="hidden" name="adverchk" id="adverchk" value="N">
-<!-- <div id="mobile_menu" class="mobile_menu">
-  <ul>
-    <li><a href="http://www.babience.co.kr/m/index.jsp" target="_blank"><img src="images/btn_bb_home.png"  alt=""/></a></li>
-    <li><a href="#" onclick="move_area('story')"><img src="images/btn_story.png"  alt=""/></a></li>
-    <li><a href="#" onclick="move_area('give')"><img src="images/btn_give.png"  alt=""/></a></li>
-    <li><a href="#" onclick="move_area('message')"><img src="images/btn_suu.png"  alt=""/></a></li>
-    <li><a href="popup_gift_check.php"><img src="images/btn_view_gift.png"  alt=""/></a></li>
-  </ul>
-  <div class="btn_sns">
-    <div class="inner_sns clearfix">
-      <a href="#" onclick="m_sns_share('kt');" id="kakao-link-btn"><img src="images/btn_kt.jpg"  alt=""/></a>
-      <a href="#" onclick="m_sns_share('ks');"><img src="images/btn_ks.jpg"  alt=""/></a>
-      <a href="#" onclick="m_sns_share('fb');"><img src="images/btn_fb.jpg"  alt=""/></a>
-      <a href="#" onclick="m_sns_share('tw');"><img src="images/btn_tw.jpg"  alt=""/></a>
-    </div>
-  </div>
-</div> -->
-<div class="wrap_page" id="all_navi">
+<div class="wrap_page" id="top_navi" style="display:none;">
   <div class="navi">
     <div class="left"><a href="index.php"><img src="images/logo.png" width="70" alt="" id="navi_logo"/></a></div>
     <div class="right"><a href="navi_menu.php"><img src="images/menu_ham.png" width="30" alt="" id="navi_menu"/></a></div>
@@ -37,29 +20,57 @@
   </div>
 </div>
 
-<div id="main_area" class="sec_top">
-  <a href="#" onclick="sel_book('w')" class="btn_woman">여자영상</a>
-  <a href="#" onclick="sel_book('m')" class="btn_man">남자영상</a>
-  <a href="#" class="btn_gift" onclick="show_gift();">선물</a>
-  <div class="bg">
-    <img src="images/bg_main.jpg" alt=""/>
-  </div>
-</div>
-
-<div class="mask"></div>
+	<div id="main_area" class="wrap_page menu">
+		<div class="btn_close">
+        	<a href="index.php"><img src="images/popup/btn_close_menu.png" width="30" /></a>
+        </div>
+        <div class="bt_list">
+        	<a href="#" onclick="sel_book('w')">
+        	<img src="images/gnb_woman.png" />
+            </a>
+        </div>
+        <div class="bt_list">
+        	<a href="#" onclick="sel_book('w')">
+        	<img src="images/gnb_man.png" />
+            </a>
+        </div>
+        <div class="bt_list">
+        	<a href="#" onclick="show_gift();return false;">
+        	<img src="images/gnb_gift.png" />
+            </a>
+        </div>
+        <div class="bt_list">
+        	<a href="#" onclick="show_join();return false;">
+        	<img src="images/gnb_howto.png" />
+            </a>
+        </div>
+        <div class="bt_list last">
+        	<a href="#" onclick="show_notice();return false;">
+        	<img src="images/gnb_notice.png" />
+            </a>
+        </div>
+       <div class="bt_list shop">
+        	<a href="http://everymanis.lgbeautymall.com/m/everymanis.jsp" target="_blank">
+        	<img src="images/gnb_shop.png" />
+            </a>
+        </div>
+        <div class="bt_list sns clearfix">
+        	<a href="#"><img src="images/gnb_kt.png" /></a>
+        	<a href="#"><img src="images/gnb_ks.png" /></a>
+        	<a href="#"><img src="images/gnb_fb.png" /></a>
+        	<a href="#"><img src="images/gnb_tw.png" /></a>
+        </div>
+    </div>
 <?
 	include_once   "./sub_page.php";
 
 	include_once   "./popup_div.php";
 ?>
-    <script type='text/javascript' src='../lib/pageslide/pageslide.js'></script>
-
 </body>
 </html>
 <script type="text/javascript">
 
 $(document).ready(function() {
-	$(".show_menu").pageslide({ direction: "left", modal: true });
 	$("#cboxTopLeft").hide();
 	$("#cboxTopRight").hide();
 	$("#cboxBottomLeft").hide();
@@ -69,13 +80,6 @@ $(document).ready(function() {
 	$("#cboxTopCenter").hide();
 	$("#cboxBottomCenter").hide();
 	//$("#cboxContent").css("background","none");
-	$(".mask").click(function(){
-		$('#mobile_menu').animate({right:-200},300,'linear',function(){
-			$("#mobile_menu").hide();
-			$(".mask").fadeOut(300);
-			$(window).off(".disableScroll");
-		});
-	});
 
 });
 
@@ -95,6 +99,18 @@ function show_gift()
 function show_join()
 {
 	$.colorbox({innerWidth:"100%", initialWidth:"95%", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#join_popup", onComplete: function(){
+		$("#cboxContent").css("background","none");
+		$("#colorbox").width($("body").width());
+		$("#cboxWrapper").width($("body").width());
+	},
+	onClosed: function(){
+		$("#cboxContent").css("background","#fff");
+	}});
+}
+
+function show_notice()
+{
+	$.colorbox({innerWidth:"100%", initialWidth:"95%", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#notice_popup", onComplete: function(){
 		$("#cboxContent").css("background","none");
 		$("#colorbox").width($("body").width());
 		$("#cboxWrapper").width($("body").width());
@@ -154,6 +170,7 @@ function show_confirm()
 
 function sel_book(gender)
 {
+	$("#top_navi").show();
 	$("#navi_logo").attr("src","images/logo_b.png");
 	$("#navi_menu").attr("src","images/menu_ham_b.png");
 	if (gender == "w")
@@ -296,9 +313,11 @@ function chk_reply(param)
 	if (gender_gubun == "m_1" || gender_gubun == "m_2" || gender_gubun == "m_3" || gender_gubun == "m_4")
 	{
 		$("#man_area").hide();
+		$("body").removeClass('menu');
 		$( "#comment_area" ).fadeIn("slow");
 	}else{
 		$("#woman_area").hide();
+		$("body").removeClass('menu');
 		$( "#comment_area" ).fadeIn("slow");
 	}
 }
@@ -433,11 +452,12 @@ function show_inspop(obj)
 		success: function(response){
 			$("#navi_logo").attr("src","images/logo_b.png");
 			$("#navi_menu").attr("src","images/menu_ham_b.png");
-			$("#all_navi").hide();
+			$("#top_navi").hide();
 			$("#comment_area").hide();
 			//$("body").attr("class","sub");
 			//$("#navi_main").hide();
 			//$("#navi_sub").show();
+			$("body").removeClass('menu');
 			$( "#input_area" ).fadeIn( "slow",function(){
 				$("#input_navi").show();
 			});
