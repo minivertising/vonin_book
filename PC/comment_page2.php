@@ -60,7 +60,7 @@
 	var livere_seq			= "23924";
 	var smartlogin_seq		= "1255";
 	var title					= "보닌 설렘학개론";
-	var refer					= "www.vonin-allinone.com";
+	var refer					= "www.vonin-allinone.com/?test";
 	refer						= refer.replace("http://","");
 
 	livereReply				= new Livere(livere_seq, refer, title);
