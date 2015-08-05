@@ -825,7 +825,7 @@ body.sub2{
 }
 .popup_wrap .p_position.p_mid_input .block_input .input_one{
 	width:100%;
-	padding-top:0;
+	padding-bottom:7px;
 }
 .popup_wrap .p_position.p_mid_input .block_input .input_one .label,
 .popup_wrap .p_position.p_mid_input .block_input .input_one .input,
