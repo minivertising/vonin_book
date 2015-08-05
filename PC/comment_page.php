@@ -114,7 +114,7 @@ function sns_share(media)
 }
 
 
-$(document).ready(function() {
+$(window).load(function() {
 
 	$("#cboxTopLeft").hide();
 	$("#cboxTopRight").hide();
@@ -126,6 +126,7 @@ $(document).ready(function() {
 	$("#cboxBottomCenter").hide();
 	//$("#cboxContent").css("background","none");
 	resize();
+	change_txt();
 });
 
 </script>
@@ -208,7 +209,7 @@ function sns_share(media)
 }
 
 
-$(document).ready(function() {
+$(window).load(function() {
 	Kakao.init('33c0597a1dc81a3e616c83f0fb9c2bc5');
 	$("#cboxTopLeft").hide();
 	$("#cboxTopRight").hide();
@@ -220,6 +221,9 @@ $(document).ready(function() {
 	$("#cboxBottomCenter").hide();
 	//$("#cboxContent").css("background","none");
 	resize();
+
+	change_txt();
+
 });
 
 </script>
@@ -514,6 +518,11 @@ function resize(){
 	var __top    = Math.floor((__height-(850*__scale))/2);
 
 	$(".ar-full-bg").css({width:1400*__scale, height:850*__scale, left:__left, top:__top});
+}
+
+function change_txt()
+{
+	$("#livere_contentText").val('[보닌] 여자들이 설레는 남자 행동 동영상 바로보기 ▶\r\n<?=$YT_url?>');
 }
 
 </script>
