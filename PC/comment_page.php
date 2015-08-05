@@ -127,7 +127,7 @@ $(window).load(function() {
 	$("#cboxBottomCenter").hide();
 	//$("#cboxContent").css("background","none");
 	resize();
-	change_txt();
+	setTimeout(change_txt(),2000);
 });
 
 </script>
@@ -223,7 +223,7 @@ $(window).load(function() {
 	//$("#cboxContent").css("background","none");
 	resize();
 
-	change_txt();
+	setTimeout(change_txt(),2000);
 
 });
 
