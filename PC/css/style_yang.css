@@ -177,19 +177,16 @@ body.sub{
 .sec_top .bg_top img{
 	width:100%;
 }
-.wrap_sec_top{
-	position:relative;
-	width:100%;
-	background:url(../images/bg_sub.jpg);	
-}
-.wrap_sec_top .title{
+
+
+.wrap_sec_top_title{
 	position:absolute;
 	width:100%;
 	text-align:center;
 	top:70px;
 	z-index:3;
 }
-.wrap_sec_top .btn_block{
+.wrap_sec_top_btn_block{
 	position:absolute;
 	text-align:center;
 	width:500px;
@@ -201,11 +198,10 @@ body.sub{
 	z-index:3;
 }
 
-.wrap_sec_top .img_gift{
+.wrap_sec_top_img_gift{
 	position:absolute;
 	text-align:center;
 	width:100%;
-	background:url(../images/bg_sub.jpg);
 }
 
 .wrap_sec_top .block_title{
