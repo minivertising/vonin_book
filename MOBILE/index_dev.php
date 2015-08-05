@@ -7,7 +7,11 @@
 <input type="hidden" name="usechk" id="usechk" value="N">
 <input type="hidden" name="privacychk" id="privacychk" value="N">
 <input type="hidden" name="adverchk" id="adverchk" value="N">
-<input type="hidden" name="b_page" id="b_page" value="main">
+<input type="hidden" name="movie_num" id="movie_num">
+<input type="hidden" name="allchk" id="allchk" value="N">
+<input type="hidden" name="usechk" id="usechk" value="N">
+<input type="hidden" name="privacychk" id="privacychk" value="N">
+<input type="hidden" name="adverchk" id="adverchk" value="N">
 <!-- <div class="wrap_page" id="top_navi" style="display:none;">
   <div class="navi">
     <div class="left"><a href="index.php"><img src="images/logo.png" width="70" alt="" id="navi_logo"/></a></div>
@@ -106,6 +110,14 @@ $(document).ready(function() {
 	$("#cboxTopCenter").hide();
 	$("#cboxBottomCenter").hide();
 	//$("#cboxContent").css("background","none");
+	$(".mask").click(function(){
+		$('#mobile_menu').animate({right:-200},300,'linear',function(){
+			$("#mobile_menu").hide();
+			$(".mask").fadeOut(300);
+			$(window).off(".disableScroll");
+		});
+	});
+
 });
 
 
@@ -342,22 +354,358 @@ var gender_gubun;
 function chk_reply(param)
 {
 	gender_gubun	= $("#movie_num").val();
-	location.href	= "./comment_page.php?gender_gubun=" + gender_gubun;
+
+	$.ajax({
+		type:"POST",
+		data:{
+			"gender_gubun"		: gender_gubun
+		},
+		url: "./livere_ajax.php",
+		success: function(response){
+			$("#comment_area").html(response);
+		}
+	});
+
+
+
+	$("#navi_logo").attr("src","images/logo.png");
+	$("#navi_menu").attr("src","images/menu_ham.png");
+
+
+	if (gender_gubun == "m_1" || gender_gubun == "m_2" || gender_gubun == "m_3" || gender_gubun == "m_4")
+	{
+		$("#man_area").hide();
+		$( "#comment_area" ).fadeIn("slow");
+		$("#comment_title").attr("src","images/bg_sub_2_2.jpg");
+	}else{
+		$("#woman_area").hide();
+		$( "#comment_area" ).fadeIn("slow");
+	}
 }
 
-function show_menu(param)
+var consumer_seq;
+var content;
+var image1;
+var image2;
+var image3;
+var ip_address;
+var link1;
+var link2;
+var link3;
+var livere_seq;
+var member_domain;
+var member_group_seq;
+var member_icon;
+var member_id;
+var member_seq;
+var member_url;
+var member_name;
+var parent_seq;
+var rep_seq;
+var reply_seq;
+var site;
+var agent;
+var member_title;
+var reply_regdate;
+var status;
+var septSNSObj;
+var info1;
+var info2;
+var info3;
+function show_inspop(obj)
 {
-	if($("#main_area").css("display") == "block")
-	{
-		$("#main_area").hide();
-		$("#b_page").val("main");
-	}else if($("#man_area").css("display") == "block"){
-		$("#man_area").hide();
-		$("#b_page").val("man");
-	}else if($("#woman_area").css("display") == "block"){
-		$("#woman_area").hide();
-		$("#b_page").val("woman");
+	for(key in obj) {
+		if (key = "consumer_seq")
+			consumer_seq = obj[key];
+		if (key = "content")
+			content = obj[key];
+		if (key = "image1")
+			image1 = obj[key];
+		if (key = "image2")
+			image2 = obj[key];
+		if (key = "image3")
+			image3 = obj[key];
+		if (key = "ip_address")
+			ip_address = obj[key];
+		if (key = "link1")
+			link1 = obj[key];
+		if (key = "link2")
+			link2 = obj[key];
+		if (key = "link3")
+			link3 = obj[key];
+		if (key = "livere_seq")
+			livere_seq = obj[key];
+		if (key = "member_domain")
+			member_domain = obj[key];
+		if (key = "member_group_seq")
+			member_group_seq = obj[key];
+		if (key = "member_icon")
+			member_icon = obj[key];
+		if (key = "member_id")
+			member_id = obj[key];
+		if (key = "member_seq")
+			member_seq = obj[key];
+		if (key = "member_url")
+			member_url = obj[key];
+		if (key = "name")
+			member_name = obj[key];
+		if (key = "parent_seq")
+			parent_seq = obj[key];
+		if (key = "rep_seq")
+			rep_seq = obj[key];
+		if (key = "reply_seq")
+			reply_seq = obj[key];
+		if (key = "site")
+			site = obj[key];
+		if (key = "agent")
+			agent = obj[key];
+		if (key = "title")
+			member_title = obj[key];
+		if (key = "reply_regdate")
+			reply_regdate = obj[key];
+		if (key = "status")
+			status = obj[key];
+		if (key = "septSNSObj")
+			septSNSObj = obj[key];
+		if (key = "info1")
+			info1 = obj[key];
+		if (key = "info2")
+			info2 = obj[key];
+		if (key = "info3")
+			info3 = obj[key];
 	}
+
+	$.ajax({
+		type:"POST",
+		data:{
+			"exec"					: "insert_comment_info",
+			"consumer_seq"		: consumer_seq,
+			"content"				: content,
+			"image1"					: image1,
+			"image2"					: image2,
+			"image3"					: image3,
+			"ip_address"				: ip_address,
+			"link1"					: link1,
+			"link2"					: link2,
+			"link3"					: link3,
+			"livere_seq"				: livere_seq,
+			"member_domain"		: member_domain,
+			"member_group_seq"	: member_group_seq,
+			"member_icon"			: member_icon,
+			"member_id"			: member_id,
+			"member_seq"			: member_seq,
+			"member_url"			: member_url,
+			"member_name"		: member_name,
+			"parent_seq"			: parent_seq,
+			"rep_seq"				: rep_seq,
+			"reply_seq"				: reply_seq,
+			"site"						: site,
+			"agent"					: agent,
+			"member_title"			: member_title,
+			"reply_regdate"			: reply_regdate,
+			"status"					: status,
+			"septSNSObj"			: septSNSObj,
+			"info1"					: info1,
+			"info2"					: info2,
+			"info3"					: info3
+		},
+		url: "../main_exec.php",
+		success: function(response){
+			$("#navi_logo").attr("src","images/logo_b.png");
+			$("#navi_menu").attr("src","images/menu_ham_b.png");
+			$("#all_navi").hide();
+			$("#comment_area").hide();
+			//$("body").attr("class","sub");
+			//$("#navi_main").hide();
+			//$("#navi_sub").show();
+			$( "#input_area" ).fadeIn( "slow",function(){
+				$("#input_navi").show();
+			});
+
+		}
+	});
+
+}
+
+var all_flag		= 0;
+var use_flag		= 0;
+var privacy_flag	= 0;
+var adver_flag	= 0;
+function all_check()
+{
+	if (all_flag == 0)
+	{
+		$("#allchk").val('Y');
+		$("#usechk").val('Y');
+		$("#privacychk").val('Y');
+		$("#adverchk").val('Y');
+		$("#all_agree").attr("src","images/check_in.png");
+		$("#use_agree").attr("src","images/check_in.png");
+		$("#privacy_agree").attr("src","images/check_in.png");
+		$("#adver_agree").attr("src","images/check_in.png");
+		all_flag	= "1";
+	}else{
+		$("#allchk").val('N');
+		$("#usechk").val('N');
+		$("#privacychk").val('N');
+		$("#adverchk").val('N');
+		$("#all_agree").attr("src","images/check_out.png");
+		$("#use_agree").attr("src","images/check_out.png");
+		$("#privacy_agree").attr("src","images/check_out.png");
+		$("#adver_agree").attr("src","images/check_out.png");
+		all_flag	= "0";
+	}
+}
+
+function use_check()
+{
+	if (use_flag == 0)
+	{
+		$("#usechk").val('Y');
+		$("#use_agree").attr("src","images/check_in.png");
+		use_flag	= "1";
+	}else{
+		$("#usechk").val('N');
+		$("#use_agree").attr("src","images/check_out.png");
+		use_flag	= "0";
+	}
+}
+
+function privacy_check()
+{
+	if (privacy_flag == 0)
+	{
+		$("#privacychk").val('Y');
+		$("#privacy_agree").attr("src","images/check_in.png");
+		privacy_flag	= "1";
+	}else{
+		$("#privacychk").val('N');
+		$("#privacy_agree").attr("src","images/check_out.png");
+		privacy_flag	= "0";
+	}
+}
+
+function adver_check()
+{
+	if (adver_flag == 0)
+	{
+		$("#adverchk").val('Y');
+		$("#adver_agree").attr("src","images/check_in.png");
+		adver_flag	= "1";
+	}else{
+		$("#adverchk").val('N');
+		$("#adver_agree").attr("src","images/check_out.png");
+		adver_flag	= "0";
+	}
+}
+
+function input_info()
+{
+	var mb_name			= $("#mb_name").val();
+	var mb_phone			= $("#mb_phone").val();
+	var sel_movie			= $("#movie_num").val();
+	var use_agree			= $("#usechk").val();
+	var privacy_agree		= $("#privacychk").val();
+	var adver_agree		= $("#adverchk").val();
+
+	if (mb_name == "" || mb_name == "성함을 입력해 주세요.")
+	{
+
+		alert('이름을 입력해 주세요.');
+
+		$("#mb_name").focus();
+		chk_ins = 0;
+		return false;
+	}
+
+	if (mb_phone == "" || mb_phone == "휴대폰 번호를 입력해 주세요.(숫자만)")
+	{
+
+		alert('전화번호를 입력해 주세요.');
+
+		$("#mb_phone").focus();
+		chk_ins = 0;
+		return false;
+	}
+
+	if (use_agree == "N")
+	{
+		alert("개인정보 활용 동의를 안 하셨습니다");
+		chk_ins = 0;
+		return false;
+	}
+
+	if (privacy_agree == "N")
+	{
+		alert("개인정보 취급 위탁 동의를 안 하셨습니다");
+		chk_ins = 0;
+		return false;
+	}
+
+	if (adver_agree == "N")
+	{
+		alert("광고성 정보전송 약관에 동의를 안 하셨습니다");
+		chk_ins = 0;
+		return false;
+	}
+
+	$.ajax({
+		type:"POST",
+		data:{
+			"exec"					: "insert_info",
+			"mb_name"			: mb_name,
+			"mb_phone"			: mb_phone,
+			"sel_movie"			: sel_movie
+		},
+		url: "../main_exec.php",
+		success: function(response){
+			$.colorbox({innerWidth:"100%", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#thanks_popup", onComplete: function(){
+				//$("#cboxLoadedContent").height(560);
+				//alert($("#colorbox").width());
+			//$("#cboxContent").width(356);
+				$("#cboxContent").css("background","none");
+				$("#colorbox").width($("body").width());
+				$("#cboxWrapper").width($("body").width());
+			},
+			onClosed: function(){
+				$("#cboxContent").css("background","#fff");
+			}});
+		}
+	});
+}
+
+function only_num(obj)
+{
+	var inText = obj.value;
+	var outText = "";
+	var flag = true;
+	var ret;
+	for(var i = 0; i < inText.length; i++)
+	{
+		ret = inText.charCodeAt(i);
+		if((ret < 48) || (ret > 57))
+		{
+			flag = false;
+		}
+		else
+		{
+			outText += inText.charAt(i);
+		}
+	}
+ 
+	if(flag == false)
+	{
+		alert("전화번호는 숫자입력만 가능합니다.");
+		obj.value = outText;
+		obj.focus();
+		return false;
+	} 
+	return true;
+}
+
+function show_menu()
+{
+	$("#main_area").hide();
 	$("#all_navi").hide();
 	$("body").addClass("menu");
 	$( "#menu_area" ).fadeIn("slow");
@@ -368,16 +716,18 @@ function hide_menu()
 	$( "#menu_area" ).hide();
 	$("#all_navi").show();
 	$("body").removeClass("menu");
-	if ($("#b_page").val() == "main")
-	{
-		$("#main_area").fadeIn("slow");
-	}else if ($("#b_page").val() == "man"){
-		$("#man_area").fadeIn("slow");
-	}else if ($("#b_page").val() == "woman"){
-		$("#woman_area").fadeIn("slow");
-	}
+	$("#main_area").fadeIn("slow");
+
 }
 
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
+  ga('create', 'UA-65963846-1', 'auto');
+  ga('send', 'pageview');
 
 </script>
