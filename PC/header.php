@@ -9,7 +9,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="http://www.vonin-allinone.com/PC/index.php" />
     <meta property="og:image" content="http://www.vonin-allinone.com/MOBILE/images/img_sns_share.jpg" />
-    <meta property="og:description" content="그녀의 마음을 설레이게 하는 4가지 방법. 설렘효과 보장!">
+    <meta property="og:description" content="여자들이 설레는 남자 행동 BEST 4! 누구나 설레게 하는 벙법 소개! 자세히 보기">
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" />
     <!-- <link rel="shortcut icon" type="image/x-icon" href="./images/pavicon.ico" /> -->
