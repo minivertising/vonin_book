@@ -519,7 +519,7 @@ body.sub2{
 .popup_wrap .p_position.p_mid.gift .block_content a{
 	display:block;
 	position:absolute;
-	bottom:50px;
+	top:510px;
 }
 .popup_wrap .p_position.p_mid.gift .block_content a.pro_1{
 	left:50%;
