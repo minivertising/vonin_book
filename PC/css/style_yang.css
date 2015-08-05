@@ -492,6 +492,12 @@ body.sub2{
 	height:460px;
 	background:url(../images/popup/bg_howto.png) no-repeat top left;
 }
+.popup_wrap .p_position.p_mid.notice{
+	position:relative;
+	width:450px;
+	height:525px;
+	background:url(../images/popup/bg_notice.png) no-repeat top left;
+}
 .popup_wrap .p_position.p_mid.gift{
 	position:relative;
 	width:670px;
