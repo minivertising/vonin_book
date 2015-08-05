@@ -213,9 +213,12 @@ function sel_book(gender)
 	if (gender == "w")
 	{
 		if($("#menu_area").css("display") == "none")
+		{
 			$("#main_area").hide();
-		else
+		}else{
+			$("#all_navi").show();
 			$("#menu_area").hide();
+		}
 		//$("body").attr("class","sub");
 		//$("#navi_main").hide();
 		//$("#navi_sub").show();
@@ -229,9 +232,12 @@ function sel_book(gender)
 		});
 	}else{
 		if($("#menu_area").css("display") == "none")
+		{
 			$("#main_area").hide();
-		else
+		}else{
+			$("#all_navi").show();
 			$("#menu_area").hide();
+		}
 		//$("body").attr("class","sub");
 		//$("#navi_main").hide();
 		//$("#navi_sub").show();
