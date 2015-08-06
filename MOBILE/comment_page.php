@@ -101,6 +101,7 @@
 	var smartlogin_seq		= "1255";
 	var title					= "보닌 설렘학개론";
 	var refer					= "www.vonin-allinone.com";
+	 var isNaverPosting		= true; // 네이버 포스팅
 	refer						= refer.replace("http://","");
 
 	livereReply				= new Livere(livere_seq, refer, title);

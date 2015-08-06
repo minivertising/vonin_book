@@ -61,7 +61,8 @@
 	var smartlogin_seq		= "1255";
 	var title					= "보닌 설렘학개론";
 	var refer					= "www.vonin-allinone.com";
-	refer						= refer.replace("http://","");
+	 var isNaverPosting		= true; // 네이버 포스팅
+	 refer						= refer.replace("http://","");
 
 	livereReply				= new Livere(livere_seq, refer, title);
 	livereReply.description	= "여자들이 설레는 남자 행동 BEST4! 누구나 설레게 하는 방법 소개! 자세히 보기";
