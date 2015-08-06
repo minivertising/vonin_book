@@ -315,7 +315,31 @@ body.menu{
 	width:95%;
 	z-index:200;
 	margin:0 auto;
+	
 }
+.popup_wrap .p_mid.p_position.agree{
+}
+.popup_wrap .p_mid.p_position.agree .block_content{
+	
+}
+.popup_wrap .p_mid.p_position.agree .block_content .inner{
+	padding:0;
+	
+}
+.popup_wrap .p_mid.p_position.agree .block_content .inner .txt{
+	width:80%;
+	position:absolute;
+	overflow:scroll;
+	height:310px;
+	margin-left:10%;
+	margin-top:40px;
+	margin-bottom:20px;
+	font-size:12px;
+}
+.popup_wrap .p_mid.p_position.agree .block_content .inner .bg img{
+	width:100%;
+}
+
 .popup_wrap .p_mid.p_position.howto .block_notice{
 	position:absolute;
 	width:100%;
