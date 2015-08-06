@@ -502,13 +502,21 @@ body.sub2{
 .popup_wrap .p_position.p_mid.howto{
 	position:relative;
 	width:550px;
-	height:460px;
+	height:480px;
 	background:url(../images/popup/bg_howto.png) no-repeat top left;
+}
+.popup_wrap .p_position.p_mid.howto .block_content a.btn_notice{
+	width:120px;
+	height:40px;
+	position:absolute;
+	bottom:55px;
+	right:60px;
+	text-indent:-99999px;
 }
 .popup_wrap .p_position.p_mid.notice{
 	position:relative;
-	width:450px;
-	height:525px;
+	width:430px;
+	height:374px;
 	background:url(../images/popup/bg_notice.png) no-repeat top left;
 }
 .popup_wrap .p_position.p_mid.gift{
@@ -805,14 +813,19 @@ body.sub2{
 .popup_wrap .p_position .txt_notice{
 	text-align:center;
 }
-
+.popup_wrap .p_position.p_mid_agree .block_content{
+	padding:50px 40px;
+}
 .popup_wrap .p_position.p_mid_agree .block_content .inner{
-	padding:50px 50px;
+	overflow:scroll; 
+	width:360px;
+	height:390px;
 	font-size:13px;
 	line-height:17px;
 	font-family:'나눔고딕',nanumgothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;
 	color:#666;
 }
+
 .popup_wrap .p_position.p_mid_agree .block_content .inner .title{
 	padding:10px 0 30px;
 }
@@ -893,7 +906,8 @@ body.sub2{
 	width:100%;
 }
 .popup_wrap .p_position.p_mid_input .check_block .check_one.first{
-	border-bottom:1px solid #735d46;
+	border-top:1px solid #735d46;
+	padding-top:10px;
 }
 .popup_wrap .p_position.p_mid_input .check_block .check_one .in_check,
 .popup_wrap .p_position.p_mid_input .check_block .check_one .txt_check,
