@@ -1,13 +1,18 @@
 <?
 	include_once   "./header.php";
 ?>
-<body class="menu">
+ <body>
 <input type="hidden" name="movie_num" id="movie_num">
 <input type="hidden" name="allchk" id="allchk" value="N">
 <input type="hidden" name="usechk" id="usechk" value="N">
 <input type="hidden" name="privacychk" id="privacychk" value="N">
 <input type="hidden" name="adverchk" id="adverchk" value="N">
-<div class="wrap_page" id="top_navi" style="display:none;">
+<input type="hidden" name="movie_num" id="movie_num">
+<input type="hidden" name="allchk" id="allchk" value="N">
+<input type="hidden" name="usechk" id="usechk" value="N">
+<input type="hidden" name="privacychk" id="privacychk" value="N">
+<input type="hidden" name="adverchk" id="adverchk" value="N">
+<!-- <div class="wrap_page" id="top_navi" style="display:none;">
   <div class="navi">
     <div class="left"><a href="index.php"><img src="images/logo.png" width="70" alt="" id="navi_logo"/></a></div>
     <div class="right"><a href="navi_menu.php"><img src="images/menu_ham.png" width="30" alt="" id="navi_menu"/></a></div>
@@ -18,11 +23,11 @@
   <div class="navi">
     <div class="right"><a href="#" onclick="show_confirm();return false;" class="btn_close"><img src="images/popup/btn_close.png" width="30" /></a></div>
   </div>
-</div>
+</div> -->
 
-	<div id="main_area" class="wrap_page menu">
+	<div id="menu_area" class="wrap_page menu" style="display:none;">
 		<div class="btn_close">
-        	<a href="index.php"><img src="images/popup/btn_close_menu.png" width="30" /></a>
+        	<a href="#" onclick="hide_menu()"><img src="images/popup/btn_close_menu.png" width="30" /></a>
         </div>
         <div class="bt_list">
         	<a href="#" onclick="sel_book('w')">
@@ -61,114 +66,41 @@
         	<a href="#" onclick="m_sns_share('tw');return false;"><img src="images/gnb_tw.png" /></a>
         </div>
     </div>
+<div class="wrap_page" id="all_navi">
+  <div class="navi">
+    <div class="left"><a href="index.php"><img src="images/logo.png" width="70" alt="" id="navi_logo"/></a></div>
+    <div class="right"><a href="#" onclick="show_menu();return false;"><img src="images/menu_ham.png" width="30" alt="" id="navi_menu"/></a></div>
+  </div>
+</div>
+
+<div class="wrap_page" id="input_navi" style="display:none">
+  <div class="navi">
+    <div class="right"><a href="#" onclick="show_confirm();return false;" class="btn_close"><img src="images/popup/btn_close.png" width="30" /></a></div>
+  </div>
+</div>
+
+<div id="main_area" class="sec_top">
+  <a href="#" onclick="sel_book('w')" class="btn_woman">여자영상</a>
+  <a href="#" onclick="sel_book('m')" class="btn_man">남자영상</a>
+  <a href="#" class="btn_gift" onclick="show_gift();">선물</a>
+  <div class="bg">
+    <img src="images/bg_main.jpg" alt=""/>
+  </div>
+</div>
+
+<div class="mask"></div>
 <?
 	include_once   "./sub_page.php";
 
 	include_once   "./popup_div.php";
 ?>
+    <script type='text/javascript' src='../lib/pageslide/pageslide.js'></script>
+
 </body>
 </html>
 <script type="text/javascript">
-function m_sns_share(media)
-{
-	if (media == "fb")
-	{
-		var newWindow = window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('http://www.vonin-allinone.com/?media=fb'),'sharer','toolbar=0,status=0,width=600,height=325');
-		$.ajax({
-			type   : "POST",
-			async  : false,
-			url    : "../main_exec.php",
-			data:{
-				"exec" : "insert_share_info",
-				"media" : media
-			}
-		});
-	}else if (media == "kt"){
-		// 카카오톡 링크 버튼을 생성합니다. 처음 한번만 호출하면 됩니다.
-		Kakao.Link.createTalkLinkButton({
-		  container: '#kakao-link-btn',
-		  label: "보닌 설레임학 개론\r\n3020법칙으로 그녀를 심쿵하게 하는 방법! 솔로든 커플이든 꼭 알아야할 설레임 4가지 법칙",
-		  image: {
-			src: 'http://www.babience-giveandtake.com/MOBILE/images/img_sns_share.jpg',
-			width: '1200',
-			height: '630'
-		  },
-		  webButton: {
-			text: '보닌 설렘학 개론',
-			url: 'http://www.vonin-allinone.com/?media=kt' // 앱 설정의 웹 플랫폼에 등록한 도메인의 URL이어야 합니다.
-		  }
-		});
-		$.ajax({
-			type   : "POST",
-			async  : false,
-			url    : "../main_exec.php",
-			data:{
-				"exec" : "insert_share_info",
-				"media" : media
-			}
-		});
-	}else if (media == "tw"){
-		var newWindow = window.open('https://twitter.com/intent/tweet?text=' + encodeURIComponent("보닌 설렘학 개론! 여자들이 직접 알려주는 여자를 설레이게 하는 4가지 법칙. 설렘학 개론 배우고 선물도 받자.") + '&url='+ encodeURIComponent('http://bit.ly/1E72Gxy'),'sharer','toolbar=0,status=0,width=600,height=325');
-		$.ajax({
-			type   : "POST",
-			async  : false,
-			url    : "../main_exec.php",
-			data:{
-				"exec" : "insert_share_info",
-				"media" : media
-			}
-		});
-	}else{
-		// 로그인 창을 띄웁니다.
-		Kakao.Auth.login({
-			success: function() {
-
-				// 로그인 성공시, API를 호출합니다.
-				Kakao.API.request( {
-					url : '/v1/api/story/linkinfo',
-					data : {
-						url : 'http://www.vonin-allinone.com/?media=ks'
-					}
-				}).then(function(res) {
-					// 이전 API 호출이 성공한 경우 다음 API를 호출합니다.
-					return Kakao.API.request( {
-						url : '/v1/api/story/post/link',
-						data : {
-						link_info : res,
-							content:"30초만에 여자친구 설레이게 하는 방법!"
-						}
-					});
-				}).then(function(res) {
-					return Kakao.API.request( {
-						url : '/v1/api/story/mystory',
-						data : { id : res.id }
-					});
-				}).then(function(res) {
-					$.ajax({
-						type   : "POST",
-						async  : false,
-						url    : "../main_exec.php",
-						data:{
-							"exec" : "insert_share_info",
-							"media" : "story"
-						}
-					});
-					alert("카카오스토리에 공유 되었습니다.");
-				}, function (err) {
-					alert(JSON.stringify(err));
-				});
-
-			},
-			fail: function(err) {
-				alert(JSON.stringify(err))
-			},
-		});
-	}
-
-}
 
 $(document).ready(function() {
-	Kakao.init('33c0597a1dc81a3e616c83f0fb9c2bc5');
 	$("#cboxTopLeft").hide();
 	$("#cboxTopRight").hide();
 	$("#cboxBottomLeft").hide();
@@ -178,6 +110,13 @@ $(document).ready(function() {
 	$("#cboxTopCenter").hide();
 	$("#cboxBottomCenter").hide();
 	//$("#cboxContent").css("background","none");
+	$(".mask").click(function(){
+		$('#mobile_menu').animate({right:-200},300,'linear',function(){
+			$("#mobile_menu").hide();
+			$(".mask").fadeOut(300);
+			$(window).off(".disableScroll");
+		});
+	});
 
 });
 
@@ -197,18 +136,6 @@ function show_gift()
 function show_join()
 {
 	$.colorbox({innerWidth:"100%", initialWidth:"95%", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#join_popup", onComplete: function(){
-		$("#cboxContent").css("background","none");
-		$("#colorbox").width($("body").width());
-		$("#cboxWrapper").width($("body").width());
-	},
-	onClosed: function(){
-		$("#cboxContent").css("background","#fff");
-	}});
-}
-
-function show_notice()
-{
-	$.colorbox({innerWidth:"100%", initialWidth:"95%", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#notice_popup", onComplete: function(){
 		$("#cboxContent").css("background","none");
 		$("#colorbox").width($("body").width());
 		$("#cboxWrapper").width($("body").width());
@@ -266,14 +193,32 @@ function show_confirm()
 	}});
 }
 
+function show_notice()
+{
+	$.colorbox({innerWidth:"100%", initialWidth:"95%", inline:true, opacity:"0.9", scrolling:false, closeButton:false, overlayClose: true, fadeOut: 300, href:"#notice_popup", onComplete: function(){
+		$("#cboxContent").css("background","none");
+		$("#colorbox").width($("body").width());
+		$("#cboxWrapper").width($("body").width());
+	},
+	onClosed: function(){
+		$("#cboxContent").css("background","#fff");
+	}});
+}
+
+
 function sel_book(gender)
 {
-	$("#top_navi").show();
 	$("#navi_logo").attr("src","images/logo_b.png");
 	$("#navi_menu").attr("src","images/menu_ham_b.png");
 	if (gender == "w")
 	{
-		$("#main_area").hide();
+		if($("#menu_area").css("display") == "none")
+		{
+			$("#main_area").hide();
+		}else{
+			$("#all_navi").show();
+			$("#menu_area").hide();
+		}
 		//$("body").attr("class","sub");
 		//$("#navi_main").hide();
 		//$("#navi_sub").show();
@@ -286,7 +231,13 @@ function sel_book(gender)
 			$(".movie").height(w_yt_height);
 		});
 	}else{
-		$("#main_area").hide();
+		if($("#menu_area").css("display") == "none")
+		{
+			$("#main_area").hide();
+		}else{
+			$("#all_navi").show();
+			$("#menu_area").hide();
+		}
 		//$("body").attr("class","sub");
 		//$("#navi_main").hide();
 		//$("#navi_sub").show();
@@ -415,6 +366,8 @@ function chk_reply(param)
 		}
 	});
 
+
+
 	$("#navi_logo").attr("src","images/logo.png");
 	$("#navi_menu").attr("src","images/menu_ham.png");
 
@@ -422,12 +375,10 @@ function chk_reply(param)
 	if (gender_gubun == "m_1" || gender_gubun == "m_2" || gender_gubun == "m_3" || gender_gubun == "m_4")
 	{
 		$("#man_area").hide();
-		$("body").removeClass('menu');
 		$( "#comment_area" ).fadeIn("slow");
-		//$("#comment_title").attr("src","images/bg_sub_2_2.jpg");
+		$("#comment_title").attr("src","images/bg_sub_2_2.jpg");
 	}else{
 		$("#woman_area").hide();
-		$("body").removeClass('menu');
 		$( "#comment_area" ).fadeIn("slow");
 	}
 }
@@ -562,12 +513,11 @@ function show_inspop(obj)
 		success: function(response){
 			$("#navi_logo").attr("src","images/logo_b.png");
 			$("#navi_menu").attr("src","images/menu_ham_b.png");
-			$("#top_navi").hide();
+			$("#all_navi").hide();
 			$("#comment_area").hide();
 			//$("body").attr("class","sub");
 			//$("#navi_main").hide();
 			//$("#navi_sub").show();
-			$("body").removeClass('menu');
 			$( "#input_area" ).fadeIn( "slow",function(){
 				$("#input_navi").show();
 			});
@@ -755,28 +705,19 @@ function only_num(obj)
 
 function show_menu()
 {
-	if ($("#mobile_menu").css("display") == "block")
-	{
-		$('#mobile_menu').animate({right:-200},300,'linear',function(){
-			$("#mobile_menu").hide();
-			$(".mask").fadeOut(300);
-			$(window).off(".disableScroll");
-		});
-	}else{
-		$(".mask").width($(window).width());
-		$(".mask").height($(window).height());
-		$(".mask").fadeTo(1000, 0.6);
+	$("#main_area").hide();
+	$("#all_navi").hide();
+	$("body").addClass("menu");
+	$( "#menu_area" ).fadeIn("slow");
+}
 
-		$('#mobile_menu').css('right','-200px');
-		// 이동위치값 지정
-		var position = 0;
-		$('#mobile_menu').show().animate({right:position},300,'linear');
+function hide_menu()
+{
+	$( "#menu_area" ).hide();
+	$("#all_navi").show();
+	$("body").removeClass("menu");
+	$("#main_area").fadeIn("slow");
 
-		$(window).on("mousewheel.disableScroll DOMMouseScroll.disableScroll touchmove.disableScroll", function(e) {
-			e.preventDefault();
-			return;
-		});
-	}
 }
 
 </script>

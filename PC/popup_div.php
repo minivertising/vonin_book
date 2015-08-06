@@ -1,20 +1,18 @@
 <div style="display:none;">
 <!----------------- 선물 팝업 ----------------->
-<div id="gift_popup" class="popup_wrap">
-  <div class="p_mid gift p_position">
-    <div class="block_close clearfix">
-      <a href="#" onclick="$.colorbox.close();return false;" class="btn_close"><img src="images/popup/btn_close.png" /></a>
-    </div>
-    <div class="block_content">
-      <div class="inner">
-        <a href="http://www.vonin.co.kr/product/detail.jsp?pid=ACM25248" target="_blank" class="pro_1"><img src="images/popup/btn_p_1.png" /></a>
-        <a href="http://www.vonin.co.kr/product/detail.jsp?pid=ACM25247" target="_blank" class="pro_2"><img src="images/popup/btn_p_2.png" /></a>
-        <a href="http://www.vonin.co.kr/product/detail.jsp?pid=ACM25249" target="_blank" class="pro_3"><img src="images/popup/btn_p_3.png" /></a>
-        <a href="http://www.vonin.co.kr/product/detail.jsp?pid=ACM25250" target="_blank" class="pro_4"><img src="images/popup/btn_p_4.png" /></a>
-      </div><!--inner-->
-    </div>
-  </div>
-</div>
+	<div id="gift_popup" class="popup_wrap">
+   	  <div class="p_mid gift p_position">
+            <div class="block_close clearfix">
+                <a href="#" onclick="$.colorbox.close();return false;" class="btn_close"><img src="images/popup/btn_close.png" /></a>
+            </div>
+            <div class="block_content">
+            	<div class="inner">
+                    <a href="http://www.vonin.co.kr/product/list.jsp?cid1=1" target="_blank" class="pro_1"><img src="images/popup/btn_all.png" /></a>
+                </div><!--inner-->
+            </div>
+        </div>
+	</div>
+
 <!----------------- 선물 팝업 ----------------->
 <!----------------- 참여방법  팝업 ----------------->
 <div id="join_popup" class="popup_wrap">
@@ -50,14 +48,6 @@
           </div>
         </div>
         <div class="check_block">
-          <div class="check_one first clearfix">
-            <div class="in_check">
-              <img src="images/popup/check_out.png" alt=""  name="all_agree" id="all_agree" alt="" onclick="all_check()" style="cursor:pointer"/>
-            </div>
-            <div class="txt_check">
-              <img src="images/popup/label_agree_all.png" onclick="all_check()" alt="" style="cursor:pointer"/>
-            </div>
-          </div>  
           <div class="check_one clearfix">
             <div class="in_check">
               <img src="images/popup/check_out.png" name="use_agree" id="use_agree" onclick="use_check()" style="cursor:pointer" alt=""/>
@@ -67,28 +57,6 @@
             </div>
             <div class="btn_check">
               <a href="#" onclick="show_use_agree();return false;"><img src="images/popup/agree_info.png" alt=""/></a>
-            </div>
-          </div>
-          <div class="check_one clearfix">
-            <div class="in_check">
-              <img src="images/popup/check_out.png" name="privacy_agree" id="privacy_agree" style="cursor:pointer" onclick="privacy_check()" alt=""/>
-            </div>
-            <div class="txt_check">
-              <img src="images/popup/label_agree.png" onclick="privacy_check()" style="cursor:pointer" alt=""/>
-            </div>
-            <div class="btn_check">
-              <a href="#" onclick="show_privacy_agree();return false;"><img src="images/popup/agree_info_agency.png" alt=""/></a>
-            </div>
-          </div>
-          <div class="check_one clearfix">
-            <div class="in_check">
-              <img src="images/popup/check_out.png" name="adver_agree" id="adver_agree" style="cursor:pointer" onclick="adver_check()" alt=""/>
-            </div>
-            <div class="txt_check">
-              <img src="images/popup/label_agree.png" onclick="adver_check()" style="cursor:pointer" alt=""/>
-            </div>
-            <div class="btn_check">
-              <a href="#" onclick="show_adver_agree();return false;"><img src="images/popup/agree_info_ad.png" alt=""/></a>
             </div>
           </div>
         </div>

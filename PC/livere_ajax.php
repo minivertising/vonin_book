@@ -2,21 +2,21 @@
 	$gender_gubun	= $_REQUEST['gender_gubun'];
 
 	if ($gender_gubun == "m_1")
-		$YT_url	= "https://www.youtube.com/watch?v=3rBxaOJPVGk";
+		$YT_url	= "https://www.youtube.com/watch?v=uqULeqzTI2w";
 	else if ($gender_gubun == "m_2")
-		$YT_url	= "https://www.youtube.com/watch?v=WWAwu4iYLE8";
+		$YT_url	= "https://www.youtube.com/watch?v=EDKRv_2K2cc";
 	else if ($gender_gubun == "m_3")
-		$YT_url	= "https://www.youtube.com/watch?v=h16U39DzIBc";
+		$YT_url	= "https://www.youtube.com/watch?v=7WbzHaeXoSs";
 	else if ($gender_gubun == "m_4")
-		$YT_url	= "https://www.youtube.com/watch?v=eefSEWT_1jI";
+		$YT_url	= "https://www.youtube.com/watch?v=4eBLryCRBTk";
 	else if ($gender_gubun == "w_1")
-		$YT_url	= "https://www.youtube.com/watch?v=3rBxaOJPVGk";
+		$YT_url	= "https://www.youtube.com/watch?v=1rU95PG4QA8 ";
 	else if ($gender_gubun == "w_2")
-		$YT_url	= "https://www.youtube.com/watch?v=WWAwu4iYLE8";
+		$YT_url	= "https://www.youtube.com/watch?v=FB_o6r_pO4A";
 	else if ($gender_gubun == "w_3")
-		$YT_url	= "https://www.youtube.com/watch?v=h16U39DzIBc";
+		$YT_url	= "https://www.youtube.com/watch?v=gxVuph4wbb0";
 	else if ($gender_gubun == "w_4")
-		$YT_url	= "https://www.youtube.com/watch?v=eefSEWT_1jI";
+		$YT_url	= "https://www.youtube.com/watch?v=xk913pR3qpk";
 ?>
 	<div id="livereContainer">
 <script type="text/javascript">
