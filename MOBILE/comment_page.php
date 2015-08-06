@@ -50,11 +50,11 @@
         	<img src="images/gnb_howto.png" />
             </a>
         </div>
-        <div class="bt_list last">
+        <!-- <div class="bt_list last">
         	<a href="#" onclick="show_notice();return false;">
         	<img src="images/gnb_notice.png" />
             </a>
-        </div>
+        </div> -->
        <div class="bt_list shop">
         	<a href="http://everymanis.lgbeautymall.com/m/everymanis.jsp" target="_blank">
         	<img src="images/gnb_shop.png" />

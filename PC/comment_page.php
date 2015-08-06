@@ -36,7 +36,7 @@
     <div class="right">
       <a href="#" onclick="show_gift2();"><img src="images/gnb_gift.png" alt=""/></a>
       <a href="#" onclick="show_join();"><img src="images/gnb_howto.png" alt=""/></a>
-      <a href="#" onclick="show_notice();"><img src="images/gnb_notice.png" alt=""/></a>
+      <!-- <a href="#" onclick="show_notice();"><img src="images/gnb_notice.png" alt=""/></a> -->
       <a href="http://everymanis.lgbeautymall.com/everymanis.jsp" target="_blank"><img src="images/gnb_vonin.png" alt=""/></a>
       <a href="#" onclick="sns_share('fb');"><img src="images/btn_sns_fb.png" alt=""/></a>
       <a href="#" onclick="sns_share('ks');"><img src="images/btn_sns_ks.png" alt=""/></a>
