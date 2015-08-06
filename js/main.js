@@ -30,11 +30,12 @@ function input_info()
 
 	if (use_agree == "N")
 	{
-		alert("개인정보 활용 동의를 안 하셨습니다");
+		alert("개인정보 이용 약관에 동의를 안 하셨습니다");
 		chk_ins = 0;
 		return false;
 	}
 
+/*
 	if (privacy_agree == "N")
 	{
 		alert("개인정보 취급 위탁 동의를 안 하셨습니다");
@@ -48,7 +49,7 @@ function input_info()
 		chk_ins = 0;
 		return false;
 	}
-
+*/
 /*
 	if ($('#use_agree').is(":checked") == false)
 	{

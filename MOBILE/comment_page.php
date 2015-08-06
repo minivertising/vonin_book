@@ -471,7 +471,7 @@ function input_info()
 		chk_ins = 0;
 		return false;
 	}
-
+/*
 	if (privacy_agree == "N")
 	{
 		alert("개인정보 취급 위탁 동의를 안 하셨습니다");
@@ -485,7 +485,7 @@ function input_info()
 		chk_ins = 0;
 		return false;
 	}
-
+*/
 	$.ajax({
 		type:"POST",
 		data:{
@@ -540,13 +540,22 @@ function only_num(obj)
 	return true;
 }
 
-function show_menu()
+function show_menu(param)
 {
-	$("#comment_area").hide();
+	if($("#comment_area").css("display") == "block")
+	{
+		$("#comment_area").hide();
+	}else if($("#man_area").css("display") == "block"){
+		$("#man_area").hide();
+	}else if($("#woman_area").css("display") == "block"){
+		$("#woman_area").hide();
+	}
 	$("#all_navi").hide();
 	$("body").addClass("menu");
 	$( "#menu_area" ).fadeIn("slow");
 }
+
+
 
 function hide_menu()
 {
@@ -560,6 +569,158 @@ function hide_menu()
 function change_txt()
 {
 	$("#livere_contentText").val('요즘 설레이지 않는다면 이 영상에 주목하자! \r\n<?=$YT_url?>');
+}
+
+
+function sel_book(gender)
+{
+	$("#navi_logo").attr("src","images/logo_b.png");
+	$("#navi_menu").attr("src","images/menu_ham_b.png");
+	if (gender == "w")
+	{
+		if($("#menu_area").css("display") == "none")
+		{
+			$("#main_area").hide();
+		}else{
+			$("#all_navi").show();
+			$("#menu_area").hide();
+		}
+		//$("body").attr("class","sub");
+		//$("#navi_main").hide();
+		//$("#navi_sub").show();
+		$( "#woman_area" ).fadeIn( "slow", function() {
+			$("#w_ytplayer1").attr("src","<?=$_gl['w_yt_url1']?>");
+			$("#movie_num").val('w_1');
+			
+			var w_yt_width	= $(window).width() * 0.85;
+			var w_yt_height	= (w_yt_width*9) / 16;
+			$(".movie").height(w_yt_height);
+		});
+	}else{
+		if($("#menu_area").css("display") == "none")
+		{
+			$("#main_area").hide();
+		}else{
+			$("#all_navi").show();
+			$("#menu_area").hide();
+		}
+		//$("body").attr("class","sub");
+		//$("#navi_main").hide();
+		//$("#navi_sub").show();
+		$( "#man_area" ).fadeIn( "slow", function() {
+			$("#m_ytplayer1").attr("src","<?=$_gl['m_yt_url1']?>");
+			$("#movie_num").val('m_1');
+			
+			var m_yt_width	= $(window).width() * 0.85;
+			var m_yt_height	= (m_yt_width*9) / 16;
+			$(".movie").height(m_yt_height);
+		});
+		//$("#m_ytplayer1").attr("src","<?=$_gl['m_yt_url1']?>");
+		//$("#movie_num").val('m_1');
+		//$("#m_ytplayer2").attr("src","<?=$_gl['m_yt_url2']?>");
+		//$("#m_ytplayer3").attr("src","<?=$_gl['m_yt_url3']?>");
+		//$("#m_ytplayer4").attr("src","<?=$_gl['m_yt_url4']?>");
+	}
+}
+
+var gender_gubun;
+function chk_reply(param)
+{
+	gender_gubun	= $("#movie_num").val();
+	location.href	= "./comment_page.php?gender_gubun=" + gender_gubun;
+}
+
+function change_chapter(gender, cnt)
+{
+	if (gender == "w")
+	{
+		if (cnt == "1")
+		{
+			$("#w_ytplayer1").attr("src","<?=$_gl['w_yt_url1']?>");
+			$(".movie").hide();
+			$("#woman_ytplayer1").show();
+			$("#movie_num").val('w_1');
+			$("#w_thumb_img1").attr("src","images/thumb_1_on.png");
+			$("#w_thumb_img2").attr("src","images/thumb_2_off.png");
+			$("#w_thumb_img3").attr("src","images/thumb_3_off.png");
+			$("#w_thumb_img4").attr("src","images/thumb_4_off.png");
+			$("#w_chapter_label").attr("src","images/label_chap_1.png");
+		}else if (cnt == "2"){
+			$("#w_ytplayer2").attr("src","<?=$_gl['w_yt_url2']?>");
+			$(".movie").hide();
+			$("#woman_ytplayer2").show();
+			$("#movie_num").val('w_2');
+			$("#w_thumb_img1").attr("src","images/thumb_1_off.png");
+			$("#w_thumb_img2").attr("src","images/thumb_2_on.png");
+			$("#w_thumb_img3").attr("src","images/thumb_3_off.png");
+			$("#w_thumb_img4").attr("src","images/thumb_4_off.png");
+			$("#w_chapter_label").attr("src","images/label_chap_2.png");
+		}else if (cnt == "3"){
+			$("#w_ytplayer3").attr("src","<?=$_gl['w_yt_url3']?>");
+			$(".movie").hide();
+			$("#woman_ytplayer3").show();
+			$("#movie_num").val('w_3');
+			$("#w_thumb_img1").attr("src","images/thumb_1_off.png");
+			$("#w_thumb_img2").attr("src","images/thumb_2_off.png");
+			$("#w_thumb_img3").attr("src","images/thumb_3_on.png");
+			$("#w_thumb_img4").attr("src","images/thumb_4_off.png");
+			$("#w_chapter_label").attr("src","images/label_chap_3.png");
+		}else if (cnt == "4"){
+			$("#w_ytplayer4").attr("src","<?=$_gl['w_yt_url4']?>");
+			$(".movie").hide();
+			$("#woman_ytplayer4").show();
+			$("#movie_num").val('w_4');
+			$("#w_thumb_img1").attr("src","images/thumb_1_off.png");
+			$("#w_thumb_img2").attr("src","images/thumb_2_off.png");
+			$("#w_thumb_img3").attr("src","images/thumb_3_off.png");
+			$("#w_thumb_img4").attr("src","images/thumb_4_on.png");
+			$("#w_chapter_label").attr("src","images/label_chap_4.png");
+		}
+	}else{
+		if (cnt == "1")
+		{
+			$("#m_ytplayer1").attr("src","<?=$_gl['m_yt_url1']?>");
+			$(".movie").hide();
+			$("#man_ytplayer1").show();
+			$("#movie_num").val('m_1');
+			$("#m_thumb_img1").attr("src","images/thumb_1_on.png");
+			$("#m_thumb_img2").attr("src","images/thumb_2_off.png");
+			$("#m_thumb_img3").attr("src","images/thumb_3_off.png");
+			$("#m_thumb_img4").attr("src","images/thumb_4_off.png");
+			$("#m_chapter_label").attr("src","images/label_chap_1.png");
+		}else if (cnt == "2"){
+			$("#m_ytplayer2").attr("src","<?=$_gl['m_yt_url2']?>");
+			$(".movie").hide();
+			$("#man_ytplayer2").show();
+			$("#movie_num").val('m_2');
+			$("#m_thumb_img1").attr("src","images/thumb_1_off.png");
+			$("#m_thumb_img2").attr("src","images/thumb_2_on.png");
+			$("#m_thumb_img3").attr("src","images/thumb_3_off.png");
+			$("#m_thumb_img4").attr("src","images/thumb_4_off.png");
+			$("#m_chapter_label").attr("src","images/label_chap_2.png");
+		}else if (cnt == "3"){
+			$("#m_ytplayer3").attr("src","<?=$_gl['m_yt_url3']?>");
+			$(".movie").hide();
+			$("#man_ytplayer3").show();
+			$("#movie_num").val('m_3');
+			$("#m_thumb_img1").attr("src","images/thumb_1_off.png");
+			$("#m_thumb_img2").attr("src","images/thumb_2_off.png");
+			$("#m_thumb_img3").attr("src","images/thumb_3_on.png");
+			$("#m_thumb_img4").attr("src","images/thumb_4_off.png");
+			$("#m_chapter_label").attr("src","images/label_chap_3.png");
+		}else if (cnt == "4"){
+			$("#m_ytplayer4").attr("src","<?=$_gl['m_yt_url4']?>");
+			$(".movie").hide();
+			$("#man_ytplayer4").show();
+			$("#movie_num").val('m_4');
+			$("#m_thumb_img1").attr("src","images/thumb_1_off.png");
+			$("#m_thumb_img2").attr("src","images/thumb_2_off.png");
+			$("#m_thumb_img3").attr("src","images/thumb_3_off.png");
+			$("#m_thumb_img4").attr("src","images/thumb_4_on.png");
+			$("#m_chapter_label").attr("src","images/label_chap_4.png");
+		}
+
+	}
 }
 
 </script>

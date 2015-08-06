@@ -48,14 +48,6 @@
           </div>
         </div>
         <div class="check_block">
-          <div class="check_one first clearfix">
-            <div class="in_check">
-              <img src="images/popup/check_out.png" alt=""  name="all_agree" id="all_agree" alt="" onclick="all_check()" style="cursor:pointer"/>
-            </div>
-            <div class="txt_check">
-              <img src="images/popup/label_agree_all.png" onclick="all_check()" alt="" style="cursor:pointer"/>
-            </div>
-          </div>  
           <div class="check_one clearfix">
             <div class="in_check">
               <img src="images/popup/check_out.png" name="use_agree" id="use_agree" onclick="use_check()" style="cursor:pointer" alt=""/>
@@ -65,28 +57,6 @@
             </div>
             <div class="btn_check">
               <a href="#" onclick="show_use_agree();return false;"><img src="images/popup/agree_info.png" alt=""/></a>
-            </div>
-          </div>
-          <div class="check_one clearfix">
-            <div class="in_check">
-              <img src="images/popup/check_out.png" name="privacy_agree" id="privacy_agree" style="cursor:pointer" onclick="privacy_check()" alt=""/>
-            </div>
-            <div class="txt_check">
-              <img src="images/popup/label_agree.png" onclick="privacy_check()" style="cursor:pointer" alt=""/>
-            </div>
-            <div class="btn_check">
-              <a href="#" onclick="show_privacy_agree();return false;"><img src="images/popup/agree_info_agency.png" alt=""/></a>
-            </div>
-          </div>
-          <div class="check_one clearfix">
-            <div class="in_check">
-              <img src="images/popup/check_out.png" name="adver_agree" id="adver_agree" style="cursor:pointer" onclick="adver_check()" alt=""/>
-            </div>
-            <div class="txt_check">
-              <img src="images/popup/label_agree.png" onclick="adver_check()" style="cursor:pointer" alt=""/>
-            </div>
-            <div class="btn_check">
-              <a href="#" onclick="show_adver_agree();return false;"><img src="images/popup/agree_info_ad.png" alt=""/></a>
             </div>
           </div>
         </div>

@@ -81,8 +81,8 @@
   </div>
 </div>
 
-<div id="comment_area" class="sec_top sub_2" style="display:none">
-</div>
+<!-- <div id="comment_area" class="sec_top sub_2" style="display:none">
+</div> -->
 
 <div id="input_area" class="sec_top sub_3" style="display:none">
   <div class="title">
@@ -96,10 +96,10 @@
       <input type="tel" name="mb_phone" id="mb_phone" maxlength="11" placeholder="휴대폰 (번호만 입력)" onkeyup="only_num(this);">
     </div>
     <div class="block_check">
-      <div class="one_check all clearfix">
+      <!-- <div class="one_check all clearfix">
         <span class="check"><img src="images/check_out.png" width="20px" alt="" name="all_agree" id="all_agree" alt="" onclick="all_check()"/></span>
         <span class="txt" onclick="all_check()">전체약관동의</span>
-      </div>
+      </div> -->
       <div class="one_check clearfix">
         <span class="check"><img src="images/check_out.png" width="20px" alt="" name="use_agree" id="use_agree" onclick="use_check()"/></span>
         <span class="txt" onclick="use_check()">동의</span>
