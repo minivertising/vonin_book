@@ -5,7 +5,6 @@
 		//echo "<script>location.href='http://www.vonin-allinone.com/MOBILE/index.php';</script>";
 
 	$gender_gubun	= $_REQUEST['gender_gubun'];
-	print_r($gender_gubun);
 
 	if ($gender_gubun == "m_1")
 		$YT_url	= "https://www.youtube.com/watch?v=uqULeqzTI2w";
@@ -60,7 +59,7 @@
 	var livere_seq			= "23924";
 	var smartlogin_seq		= "1255";
 	var title					= "보닌 설렘학개론";
-	var refer					= "www.vonin-allinone.com/?test";
+	var refer					= "www.vonin-allinone.com";
 	refer						= refer.replace("http://","");
 
 	livereReply				= new Livere(livere_seq, refer, title);
@@ -220,7 +219,7 @@ $(window).load(function() {
 	$("#cboxBottomCenter").hide();
 	//$("#cboxContent").css("background","none");
 	resize();
-	change_txt();
+	//change_txt();
 });
 
 </script>
