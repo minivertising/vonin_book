@@ -233,7 +233,7 @@ body.menu{
 	width:90%;
 	background:url(../images/bg_input.jpg) no-repeat center top;
 	background-size: contain;
-	padding:11% 5% 8%;
+	padding:7% 5% 8%;
 }
 .sec_top.sub_3 .block_input .input{
 	width:80%;
@@ -256,7 +256,7 @@ body.menu{
 	font-size:12px;
 	letter-spacing:-1px;
 	position:relative;
-	padding-top:15px;
+	padding-top:5px;
 	padding-bottom:10px;
 }
 .block_check .one_check{
@@ -264,9 +264,8 @@ body.menu{
 	padding-bottom:3px;
 }
 .block_check .one_check.all{
-	border-bottom:1px solid #725d47;
-	padding-bottom:7px;
-	margin-bottom:7px;
+	border-top:1px solid #725d47;
+	padding-top:7px;
 }
 .block_check .one_check span,
 .block_check .one_check a{
@@ -293,7 +292,7 @@ body.menu{
 .block_comp_btn{
 	text-align:center;
 	width:100%;
-	margin:10px 0 20px;
+	margin:0px 0 20px;
 }
 
 .block_comp_btn img{
@@ -317,7 +316,18 @@ body.menu{
 	z-index:200;
 	margin:0 auto;
 }
-.popup_wrap .p_mid.p_position.aleardy{
+.popup_wrap .p_mid.p_position.howto .block_notice{
+	position:absolute;
+	width:100%;
+	height:30px;
+	bottom:10%;
+}
+.popup_wrap .p_mid.p_position.howto .block_notice a{
+	display:block;
+	width:30%;
+	margin:0 auto;
+	height:30px;
+	text-indent:-9999px;
 }
 .popup_wrap .p_mid.p_position.agree{
 	position:relative;
@@ -398,119 +408,6 @@ body.menu{
 	border:none;
 }
 
-.popup_wrap .p_mid.p_position.big .block_content.posting .bloger_title{
-	padding-left:5%;
-	padding-bottom:10px;
-	padding-top:10px;
-}
-.popup_wrap .p_mid.p_position.big .block_content.posting .tab_menu{
-	padding-left:13%;
-}
-.popup_wrap .p_mid.p_position.big .block_content.posting .tab_menu a{
-	display:block;
-	float:left;
-}
-
-.popup_wrap .p_mid.p_position.big .block_content.posting .content_posting,
-.popup_wrap .p_mid.p_position.big .block_content.posting .txt_notice{
-	width:100%;
-	margin-top:-1%;
-}
-.popup_wrap .p_mid.p_position.big .block_content.posting .content_posting{
-	margin-top:-3%;
-}
-.popup_wrap .p_mid.p_position.big .block_content.posting .content_posting img,
-.popup_wrap .p_mid.p_position.big .block_content.posting .txt_notice img{
-	width:100%;
-}
-.popup_wrap .p_mid.p_position.big .block_content.posting .txt_notice{
-}
-.popup_wrap .p_mid.p_position.big .block_content.posting .block_suggest{
-	width:230px;
-	margin:0 auto;
-	padding-bottom:30px;
-}
-.popup_wrap .p_mid.p_position.big .block_content.posting .block_suggest a{
-	display:block;
-	color:#fff;
-	font-weight:bold;
-	width:190px;
-	padding-right:30px;
-	padding-top:9px;
-	height:30px;
-	background:url(../images/popup/btn_suggest_bg.png) center top no-repeat;
-	background-size:contain;
-	font-size:12px;
-	text-align:right;
-	text-decoration:none;
-}
-
-.popup_wrap .p_mid.p_position.big .block_content.posting .sec_comment{
-	padding:13px 0;
-	padding-left:4%;
-	padding-right:4%;
-	background:#f7e2c4;
-}
-.popup_wrap .p_mid.p_position.big .block_content.posting .sec_comment .label{
-	border-bottom:1px solid #e4c89f;
-	padding-bottom:10px;
-}
-.popup_wrap .p_mid.p_position.big .block_content.posting .sec_comment .comment{
-	padding-top:10px;
-	width:100%;
-}
-.popup_wrap .p_mid.p_position.big .block_content.posting .sec_comment .comment div{
-	float:left;
-	font-size:13px;
-	letter-spacing:-1px;
-}
-
-.popup_wrap .p_mid.p_position.big .block_content.posting .sec_comment .comment div.id{
-	width:18%;
-	color:#7f7669;
-	text-align:center;
-}
-
-.popup_wrap .p_mid.p_position.big .block_content.posting .sec_comment .comment div.dash{
-	color:#ff8c00;
-
-}
-
-.popup_wrap .p_mid.p_position.big .block_content.posting .sec_comment .comment div.txt{
-	width:75%;
-	padding-left:2%;
-	color:#2f2f2f;
-}
-
-.popup_wrap .p_position .block_content.block_gift_num .inner .block_btn{
-	padding-bottom:30px;
-}
-.popup_wrap .p_position .block_content.block_gift_num .inner .block_btn img{
-	width:100%;
-}
-.popup_wrap .p_position .block_content.block_gift_num .inner .gift_num_list{
-	padding:5px 0;
-}
-.popup_wrap .p_position .block_content.block_gift_num .inner .gift_num_list .inner_gift_num{
-	padding:20px 0;
-	background:#fdf9f4;
-	margin:0 3%;
-}
-.popup_wrap .p_position .block_content.block_gift_num .inner .block_input_bg{
-	background: none;
-}
-.popup_wrap .p_position .block_content.block_gift_num .inner .block_input .input_txt input{
-	background: #fff;
-}
-
-.popup_wrap .p_position .block_content.block_gift_num .inner .gift_num_list .no_gift{
-	width:100%;
-	padding-bottom:40px;
-}
-
-.popup_wrap .p_position .block_content.block_gift_num .inner .gift_num_list .no_gift img{
-	width:100%;
-}
 
 
 
