@@ -155,6 +155,16 @@ body.menu{
 	width:27%;
 }
 
+.sec_top.sub_1 .btn_p{
+	position:absolute;
+	top:26.5%;
+	right:4%;
+	width:15%;
+	z-index:1000;
+}
+.sec_top.sub_1 .btn_p img{
+	width:100%;
+}
 .sec_top.sub_1 .title_chap{
 	position:absolute;
 	top:28%;
