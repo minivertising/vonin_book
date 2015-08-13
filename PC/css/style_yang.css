@@ -226,9 +226,7 @@ body.sub{
 .sub_2_all{
 	width:100%;
 	position:absolute;
-	top:50%;
-	/*margin-top:-400px;*/
-	margin-top:-22%;
+	padding-top:30px;
 }
 
 .wrap_sec_sub_1_top{
@@ -253,6 +251,12 @@ body.sub{
 .wrap_sec_sub_1_mid .block_movie{
 	background:url(../images/bg_movie2.png) no-repeat 0 0;
 	height:600px;
+	position:relative;
+}
+.wrap_sec_sub_1_mid .block_movie .btn_product{
+	position:absolute;
+	top:17px;
+	right:60px;
 }
 .wrap_sec_sub_1_mid .block_movie .label_ch{
 	padding:30px 0 15px;
@@ -499,6 +503,33 @@ body.sub2{
 	height:270px;
 	background:url(../images/popup/bg_out.png) no-repeat top left;
 }
+
+
+.popup_wrap .p_position.p_mid.view_p_1{
+	position:relative;
+	width:520px;
+	height:470px;
+	background:url(../images/popup/bg_p_1.png) no-repeat top left;
+}
+.popup_wrap .p_position.p_mid.view_p_2{
+	position:relative;
+	width:520px;
+	height:470px;
+	background:url(../images/popup/bg_p_2.png) no-repeat top left;
+}
+.popup_wrap .p_position.p_mid.view_p_3{
+	position:relative;
+	width:520px;
+	height:470px;
+	background:url(../images/popup/bg_p_3.png) no-repeat top left;
+}
+.popup_wrap .p_position.p_mid.view_p_4{
+	position:relative;
+	width:520px;
+	height:470px;
+	background:url(../images/popup/bg_p_4.png) no-repeat top left;
+}
+
 .popup_wrap .p_position.p_mid.howto{
 	position:relative;
 	width:550px;
