@@ -130,7 +130,7 @@ body{
 .navi .right{
 	position:absolute;
 	right:1%;
-	width:600px;
+	width:720px;
 	padding-top:0;
 	text-align:right;
 }
@@ -565,6 +565,25 @@ body.sub2{
 	left:50%;
 	margin-left:-100px;
 }
+
+
+.popup_wrap .p_position.p_mid.deal{
+	position:relative;
+	width:822px;
+	height:594px;
+	background:url(../images/popup/bg_deal.png) no-repeat top left;
+}
+.popup_wrap .p_position.p_mid.deal .block_content a{
+	display:block;
+	position:absolute;
+	top:415px;
+	left:50%;
+	margin-left:-170px;
+	width:340px;
+	height:50px;
+	text-indent:-9999px;
+}
+
 
 .popup_wrap .p_position.p_mid.small{
 	position:relative;
