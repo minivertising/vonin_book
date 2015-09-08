@@ -544,6 +544,51 @@ body.sub2{
 	right:60px;
 	text-indent:-99999px;
 }
+
+.popup_wrap .p_position.p_mid.winner{
+	position:relative;
+	width:450px;
+	height:590px;
+	background:url(../images/popup/bg_winner.png) no-repeat top left;
+}
+.popup_wrap .p_position.p_mid.winner div.winner_list{
+	position: absolute;
+	width:400px;
+	height:240px;
+	top:210px;
+	left:27px;
+	overflow:scroll;
+}
+.popup_wrap .p_position.p_mid.winner div.winner_list div{
+	width:100%;
+}
+.popup_wrap .p_position.p_mid.winner div.winner_list ul{
+	padding:10px 0;
+	float:left;
+	width:47%;
+}
+.popup_wrap .p_position.p_mid.winner div.winner_list ul.sec{
+	float:right;
+}
+.popup_wrap .p_position.p_mid.winner div.winner_list ul li{
+	padding:3px 0;
+	font-size:13px;
+	line-height:18px;
+	color:#666;
+}
+.popup_wrap .p_position.p_mid.winner div.winner_list ul li span{
+	display:inline-block;
+	width:60px;
+}
+.popup_wrap .p_position.p_mid.winner .block_content a{
+	width:120px;
+	height:40px;
+	position:absolute;
+	bottom:55px;
+	right:170px;
+	text-indent:-99999px;
+}
+
 .popup_wrap .p_position.p_mid.notice{
 	position:relative;
 	width:430px;
