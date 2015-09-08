@@ -575,6 +575,7 @@ body.sub2{
 	font-size:13px;
 	line-height:18px;
 	color:#666;
+	font-family:font-family:'나눔고딕',nanumgothic,'돋움',Dotum,Helvetica,'Apple SD Gothic Neo',Sans-serif;
 }
 .popup_wrap .p_position.p_mid.winner div.winner_list ul li span{
 	display:inline-block;
